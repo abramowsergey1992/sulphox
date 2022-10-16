@@ -60,6 +60,15 @@ h4,
 	color: $blue
 }
 
+a {
+	transition: color 0.3s;
+	color: $blue;
+
+	&:hover {
+		color: $orange;
+	}
+}
+
 p {
 	margin-bottom: 22px;
 }

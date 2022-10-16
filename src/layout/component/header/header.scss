@@ -1,0 +1,360 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    background: transparent;
+    transition: background 0.3s;
+    width: 100%;
+
+
+    @media(max-width:992px) {
+        background-color: rgba(246, 249, 252, 1);
+    }
+
+    body._not-top & {
+        // box-shadow: 0 0 15px 0 rgba($color: #000000, $alpha: 0.20);
+        // background: #fff;
+        background-color: rgba(246, 249, 252, 1);
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 0;
+        height: 100px;
+
+        @media(max-width:992px) {
+            height: 70px;
+
+        }
+    }
+
+    &__logo {
+        margin-right: 36px;
+        line-height: 0;
+
+        @media(max-width:1200px) {
+            margin-right: auto;
+        }
+
+        a {}
+    }
+
+    &__mobmenu-close {
+        width: 15px;
+        height: 13px;
+        display: block;
+        margin-left: 20px;
+        background: transparent;
+        border: 0 solid;
+        position: relative;
+        display: none;
+
+        @media(max-width:1200px) {
+            display: block;
+        }
+
+        &::before {
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $orange;
+            content: '';
+            transition: top 0.3s, transform 0.3s;
+            will-change: transform, opacity;
+
+
+        }
+
+        span {
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -1px;
+            background: $orange;
+
+        }
+
+        &::after {
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: calc(100% - 2px);
+            background: $orange;
+            content: '';
+            transition: transform 0.3s;
+            will-change: transform, opacity;
+
+            transition: top 0.3s, transform 0.3s;
+
+
+        }
+
+
+        span {
+            opacity: 0;
+
+        }
+
+        &::before {
+
+            top: 50%;
+            transform: translateY(-1px) rotate(-45deg)
+        }
+
+        &::after {
+
+            top: 50%;
+            transform: translateY(-1px) rotate(45deg)
+        }
+
+    }
+
+    &__mobmenu {
+        width: 15px;
+        height: 13px;
+        display: block;
+        margin-left: 20px;
+        background: transparent;
+        border: 0 solid;
+        position: relative;
+        display: none;
+
+        @media(max-width:1200px) {
+            display: block;
+        }
+
+        &::before {
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $orange;
+            content: '';
+            transition: top 0.3s, transform 0.3s;
+            will-change: transform, opacity;
+
+
+        }
+
+        span {
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -1px;
+            background: $orange;
+
+        }
+
+        &::after {
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            left: 0;
+            top: calc(100% - 2px);
+            background: $orange;
+            content: '';
+            transition: transform 0.3s;
+            will-change: transform, opacity;
+
+            transition: top 0.3s, transform 0.3s;
+
+
+        }
+    }
+
+    &__menu-wrap {
+        margin-right: auto;
+
+        @media(max-width:1200px) {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+
+
+        &-item {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: -20px;
+            margin-top: -20px;
+            margin-right: 30px;
+            position: relative;
+
+
+            &-icon {
+                ._has-dropdown & {
+                    width: 8px;
+                    height: 8px;
+                    margin-left: 9px;
+                    position: relative;
+                    display: inline-block;
+
+                    &::before {
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: $blue;
+                        content: '';
+                        transition: top 0.3s, transform 0.3s;
+                        will-change: transform, opacity;
+
+
+                    }
+
+                    span {
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        margin-top: -1px;
+                        background: $blue;
+
+                    }
+
+                    &::after {
+                        width: 100%;
+                        height: 2px;
+                        position: absolute;
+                        left: 0;
+                        top: calc(100% - 2px);
+                        background: $blue;
+                        content: '';
+                        transition: transform 0.3s;
+                        will-change: transform, opacity;
+
+                        transition: top 0.3s, transform 0.3s;
+
+
+                    }
+                }
+
+                ._has-dropdown:hover & {
+                    span {
+                        opacity: 0;
+                        background: #627197;
+                    }
+
+                    &::before {
+                        background: #627197;
+                        top: 50%;
+                        transform: translateY(-1px) rotate(-45deg)
+                    }
+
+                    &::after {
+                        background: #627197;
+                        top: 50%;
+                        transform: translateY(-1px) rotate(45deg)
+                    }
+                }
+            }
+
+            &-link {
+                font-weight: 700;
+                font-size: 10px;
+                line-height: 12px;
+                text-transform: uppercase;
+                text-decoration: none;
+
+                &:hover {
+                    color: $orange !important;
+                }
+
+                ._has-dropdown:hover & {
+                    color: #627197;
+                }
+
+            }
+        }
+
+        &-dropdown {
+            position: absolute;
+            padding: 20px 15px;
+            background: #FFFFFF;
+            border: 1px solid #627197;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: transform 0.3s, opacity 0.3s;
+            top: 50px;
+
+            ._has-dropdown:hover & {
+                opacity: 1;
+                transform: translateY(0px);
+                pointer-events: all;
+            }
+
+            a {
+                white-space: nowrap;
+                font-weight: 700;
+                font-size: 10px;
+                line-height: 12px;
+                text-transform: uppercase;
+                color: #627197;
+                transition: color 0.3s;
+                will-change: color;
+                text-decoration: none;
+
+                &:hover {
+                    color: $orange
+                }
+            }
+        }
+    }
+
+    &__feedback {
+        @media (max-width:600px) {
+            display: none;
+        }
+    }
+
+    &__contact {
+        text-align: right;
+        margin-left: 30px;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width:600px) {
+            display: none;
+        }
+    }
+
+    &__mail {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 10px;
+        text-align: right;
+        text-decoration-line: underline;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__phone {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 15px;
+        text-decoration: none;
+        position: relative;
+        margin-bottom: 5px;
+    }
+}
