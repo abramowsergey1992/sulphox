@@ -1,0 +1,102 @@
+.card-st-1 {
+    background: #FFFFFF;
+    border: 1px solid #DFE5EE;
+    border-radius: 30px;
+    padding: 30px;
+    position: relative;
+    padding-bottom: 60px;
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #F6F8FA;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+
+        svg {
+            stroke: $orange
+        }
+    }
+
+    &:last-child {
+        border-color: $orange;
+
+        h4,
+        .h4 {
+            color: $orange
+        }
+
+        .card-st-1__icon {
+            background-color: $orange;
+        }
+
+        svg {
+            stroke: white
+        }
+    }
+}
+
+.card-arrow-link {
+    background: #F6F8FA;
+    border-radius: 30px;
+    padding: 40px 30px;
+    padding-right: 92px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='38' height='39' viewBox='0 0 38 39' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M34.9196 3.30674H2.30654M34.9196 3.30674L2.30654 35.9198M34.9196 3.30674L34.9196 0.289773L34.9196 35.9198' stroke='%23F35F42' stroke-width='6'/%3E%3C/svg%3E%0A");
+        width: 38px;
+        height: 39px;
+        display: block;
+        content: '';
+        bottom: 40px;
+        right: 30px;
+        position: absolute;
+        transition: transform 0.3s;
+        will-change: transform;
+    }
+
+    &:hover::after {
+        transform: rotate(45deg);
+    }
+
+    &__title {
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 162%;
+        /* identical to box height, or */
+        position: relative;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #0A2973;
+        transition: color 0.3s;
+        z-index: 4;
+
+        &::after {
+            position: absolute;
+            width: 100vmax;
+            height: 100vmax;
+            display: block;
+            z-index: 11;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            content: '';
+        }
+
+        &:hover {
+            color: $orange
+        }
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}

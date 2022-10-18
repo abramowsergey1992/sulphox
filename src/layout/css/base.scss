@@ -46,6 +46,11 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 
+	.inner {
+		padding: 0;
+		max-width: 1047px;
+	}
+
 	@media(max-width:1300px) {
 		padding: 0 25px;
 	}
@@ -82,4 +87,12 @@ img {
 	text-align: center;
 }
 
+.page {
+	overflow: hidden;
+}
+
 .page-inner {}
+
+._m-0 {
+	margin: 0;
+}

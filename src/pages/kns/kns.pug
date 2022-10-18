@@ -1,0 +1,262 @@
+extends ../../layout/layout
+block title
+	title Салфокс
+block content
+	+breadcrumb(['Главная'], 'Канализационно-насосные станции')
+	.kns-main.block
+		.kns-main__air
+		img(src="img/kns-main-bg.svg", alt="").kns-main__bg
+		h1 канализационно насосные станции и очистные сооружения
+		p
+			big Эффективное решение по удалению запахов
+				br
+				| очистительных сооружений
+		img(src="img/kns-main.svg", alt="").kns-main__main
+	.inner
+		.block
+			.row 
+				.col-lg-6
+					h3._m-0
+						color канализационно насосные станции и очистные сооружения
+				.col-lg-6
+					p Удаляют запахи на канализационных насосных станциях и очистных сооружениях. Предлагают эффективные решения по очистке воздуха от сероводорода и других дурнопахнущих токсичных веществ. 
+		.block
+			.center 
+				h2 Мы поможем вам подобрать решение
+			.quiz
+				form.swiper.quiz-slider(action="/",method="GET")
+					.quiz-slider__paginator
+						.quiz-slider__progress
+							span.quiz-slider__progress-line
+				
+					.swiper-wrapper
+						.swiper-slide
+							h2.quiz-slider__title Где необходимо очистить воздух?
+							label.quiz-radio
+								input(type="radio",name="quiz-1").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-1").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-1").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Небольшая канализационная насосная станция
+							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
+						.swiper-slide
+							h2.quiz-slider__title Где необходимо очистить воздух 2?
+							label.quiz-radio
+								input(type="radio",name="quiz-2").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-2").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-2").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Небольшая канализационная насосная станция
+							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
+						.swiper-slide
+							h2.quiz-slider__title Где необходимо очистить воздух 3?
+							label.quiz-radio
+								input(type="radio",name="quiz-3").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-3").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-3").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Небольшая канализационная насосная станция
+							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
+						.swiper-slide
+							h2.quiz-slider__title Где необходимо очистить воздух 4?
+							label.quiz-radio
+								input(type="radio",name="quiz-4").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-4").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-4").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Небольшая канализационная насосная станция
+							button(type='submit',disabled).quiz-slider__next.btn-arrow  Далее
+		.block
+			h2  Задачи, которые решает Салфокс 
+			.row
+				.col-lg-4.card-st-1
+					h4 Исполнение национальных проектов России
+					p Исполнение национальных проектов России «Экология» и «Комфортное жильё» — снижение выбросов загрязняющих веществ в атмосферу, а также кардинальное повышение комфортности городской среды.
+					.card-st-1__icon 
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 5.44967V15.4497M4 5.94967L6.69761 1.71058C7.14413 1.0089 8.06839 0.790706 8.78158 1.21862C9.4691 1.63113 9.72312 2.50343 9.36455 3.22057L8 5.94967H13C14.1046 5.94967 15 6.8451 15 7.94967V10.9497L12.6 14.1497C12.2223 14.6533 11.6295 14.9497 11 14.9497H6C4.89543 14.9497 4 14.0542 4 12.9497V5.94967Z"  stroke-width="2"/>
+						</svg>
+				.col-lg-4.card-st-1
+					h4 Создание комфорта
+					p Чистый воздух без резких запахов помогает создать комфортную и безопасную атмосферу  для сотрудников, а также снизить число жалоб от жильцов близлежащих домов.
+					.card-st-1__icon 
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M5.5 7.42857H7.5M12.5 7.42857H14.5M6.14286 11.9286C8.07143 14.5 11.9286 14.5 13.8571 11.9286M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19Z" stroke="" stroke-width="2"/>
+						</svg>
+
+				.col-lg-4.card-st-1
+					h4 Уменьшение санитарно защитной зоны
+					p Согласно СанПиН 2.2.1/2.1.1.1200-03 «Санитарно-защитные зоны и санитарная классификация предприятий, сооружений и иных объектов», при снижении уровня загрязнения, размер СЗЗ может быть уменьшен.
+					.card-st-1__icon 
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.6667 11.6667L16.3333 11.6667M11.6667 11.6667L11.6667 16.3333M11.6667 11.6667L17 17M16.3333 6.33333L11.6667 6.33333M11.6667 6.33333V1.66667M11.6667 6.33333L17 1M1.66666 6.33334L6.33333 6.33334M6.33333 6.33334L6.33333 1.66667M6.33333 6.33334L1 1M6.33333 16.3333L6.33333 11.6667M6.33333 11.6667L1.66667 11.6667M6.33333 11.6667L1 17" stroke="" stroke-width="2"/>
+						</svg>
+
+				.col-lg-4.card-st-1
+					h4 Защита от коррозии
+					p Защита металлических и железо-бетонных конструкций от коррозии за счёт уменьшения концентрации сероводорода в воздухе под перекрытиями и в цеху.
+					.card-st-1__icon 
+						<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M5 10L8.42857 12.8571L13 7.14286M9 2L1 6.57143V7.39416C1 12.3189 4.2647 16.6471 9 18C13.7353 16.6471 17 12.3189 17 7.39416V6.57143L9 2Z" stroke="" stroke-width="2"/>
+						</svg>
+
+				.col-lg-8.card-st-1
+					h4 Очистка воздуха 
+					p Оборудование Салфокс удаляет из воздуха неприятный запах канализационных насосных станций и очистных сооружений, а также минимизирует выбросы опасных химических загрязнителей, таких как сероводород, меркаптаны, аммиак. 
+					p При этом высокая эффективность его работы сохраняется даже при залповых выбросах загрязнителей.
+					.card-st-1__icon 
+						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9 18V8.62069M9 9.2069V12.7241M9 9.2069C9 6.61687 6.9533 4.51724 4.42857 4.51724H1V8.03448C1 10.6245 3.0467 12.7241 5.57143 12.7241H9M9 9.2069H12.4286C14.9533 9.2069 17 7.10727 17 4.51724V1H13.5714C11.0467 1 9 3.09963 9 5.68966V9.2069ZM9 9.2069L13.5714 4.51724M9 12.7241L4.42857 8.03448" stroke="" stroke-width="2"/>
+						</svg>
+		.block 
+			.row._gap-22 
+				.col-lg-6.card-arrow-link
+					a(href="@").card-arrow-link__title  технология очистки
+					p Базовая технология Салфокс — двухступенчатая очистка воздушных выбросов по схеме: скруббер + адсорбер.
+					
+				.col-lg-6.card-arrow-link
+					a(href="@").card-arrow-link__title сертификаты
+					p Оборудование и реагенты сертифицированы  и имеют всю необходимую разрешительную документацию.
+	.block.kns-about 
+		.kns-about__row
+			.kns-about__left
+				.kns-about__sub-title.h3 о компании
+				.kns-about__title.h2  
+					color Салфокс — российская компания, 
+					| которая 
+					color разрабатывает и производит системы очистки воздуха
+					| от дурнопахнущих 
+					| и токсичных веществ, таких 
+					| как сероводород, меркаптаны, аммиак.
+				a(href="@").btn._invert._big  Подробнее о компании
+			.kns-about__right
+				.kns-about__slider.swiper 
+					.swiper-wrapper 
+						.swiper-slide 
+							+picture('g-1','jpg')
+						.swiper-slide 
+							+picture('g-2','jpg')
+						.swiper-slide 
+							+picture('g-3','jpg')
+						.swiper-slide 
+							+picture('g-4','jpg')
+					.kns-about__slider-nav
+						.kns-about__slider-prev
+							<svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M2.30005 7.50003L8.43338 13.6334M2.30005 7.50003H21.4667M2.30005 7.50003L8.43338 1.3667" stroke="" stroke-width="2"/>
+							</svg>
+						.kns-about__slider-next
+							<svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M19.4668 7.49997L13.3335 1.36663M19.4668 7.49997L0.300131 7.49997M19.4668 7.49997L13.3335 13.6333" stroke="" stroke-width="2"/>
+							</svg>
+
+	.inner
+		.block.news 
+			.block__head
+				h2 Новости и статьи 
+				.news__filters
+					button(type='button').news__filter.btn ВСЕ
+					button(type='button').news__filter.btn КНС
+					button(type='button').news__filter.btn Нефтепром
+			.news__row.row._gap-22
+				.col-lg-6.news-item
+					.news-item__img-wrap 
+						+picture('news-1','jpg').news-item__img
+						.news-item__tags 
+							.news-item__tag КНС
+					.news-item__head 
+						a(href="#") НОВОСТИ
+						span.news-item__divider
+						| 13.09.2022
+						span.news-item__divider
+						| 10:34
+					.news-item__title Почему он используется? 
+					.news-item__body
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+					a(href="#").news-item__more читать целиком 
+						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+						</svg>
+				.col-lg-6.news-item
+					.news-item__img-wrap 
+						+picture('news-2','jpg').news-item__img
+						.news-item__tags 
+							.news-item__tag нефтепром
+					.news-item__head 
+						a(href="#") НОВОСТИ
+						span.news-item__divider
+						| 13.09.2022
+						span.news-item__divider
+						| 10:34
+					.news-item__title Почему он используется? 
+					.news-item__body
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+					a(href="#").news-item__more читать целиком 
+						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+						</svg>
+				.col-lg-4.article-item
+					.article-item__head 
+						a(href="#") статьи
+						span.article-item__divider
+						| 13.09.2022
+						span.article-item__divider
+						| 10:34
+					.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+					a(href="#").article-item__more читать целиком 
+						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+						</svg>
+				.col-lg-4.article-item
+					.article-item__head 
+						a(href="#") статьи
+						span.article-item__divider
+						| 13.09.2022
+						span.article-item__divider
+						| 10:34
+					.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+					a(href="#").article-item__more читать целиком 
+						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+						</svg>
+				.col-lg-4.article-item
+					.article-item__head 
+						a(href="#") статьи
+						span.article-item__divider
+						| 13.09.2022
+						span.article-item__divider
+						| 10:34
+					.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+					a(href="#").article-item__more читать целиком 
+						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+						</svg>
+			.news__btn-wrap 
+				a(href="#").btn._big Все новости 
+				a(href="#").btn._big Все статьи 
+
+		

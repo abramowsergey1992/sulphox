@@ -1,0 +1,297 @@
+@keyframes animateAir {
+
+    0% {
+        background-position: 1323px center;
+
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+.kns-main {
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+
+    &__bg {
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 75px;
+        max-width: initial;
+    }
+
+    &__main {
+        margin-top: 100px;
+    }
+
+    &__air {
+        background-image: url(../img/kns-main-air.svg);
+        background-position: left;
+        background-repeat: repeat-x;
+        height: 307px;
+        width: 100vw;
+        left: 50%;
+        top: -150px;
+        position: absolute;
+        pointer-events: none;
+        transform: translateX(-50%);
+        animation: animateAir 10s infinite linear;
+    }
+}
+
+.quiz {
+    background: $blue;
+    border-radius: 30px;
+    padding: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+    margin-top: 49px;
+
+}
+
+.quiz-slider {
+    &__paginator {
+        max-width: 602px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    &__progress {
+        height: 2px;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        background: #627197;
+        width: 100%;
+
+        &-line {
+            height: 100%;
+            width: 0;
+            background: $orange;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: width 0.4s;
+        }
+    }
+
+    &__pagi {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #627197;
+        background: $blue;
+        color: #fff;
+        border-radius: 100px;
+        font-weight: 700;
+        font-size: 9px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        &._past {
+            border: 2px solid $orange;
+            color: $orange;
+            background: $orange;
+            position: relative;
+
+            &::after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L4.42857 7L9 1' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+                height: 100%;
+                content: '';
+            }
+        }
+
+        &._now {
+            border: 2px solid $orange;
+            color: $orange;
+            background: #fff;
+        }
+    }
+
+    &__next {
+        color: #fff;
+        margin-top: 84px;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        color: #fff;
+        text-transform: none;
+        font-weight: 500;
+    }
+}
+
+.quiz-radio {
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+    max-width: 590px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    text-align: left;
+    padding: 14px 20px;
+    border: 1px solid rgba(84, 105, 155, 1);
+    padding-left: 46px;
+    position: relative;
+    cursor: pointer;
+    line-height: 0;
+
+    text-transform: uppercase;
+    overflow: hidden;
+
+    &:hover {
+        border-color: #fff;
+        ;
+    }
+
+    input {
+        position: absolute;
+        left: 0;
+        cursor: pointer;
+        top: 0;
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &__indicator {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        left: 20px;
+        box-sizing: content-box;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        border: 4px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px #DFE5EE;
+
+        input:checked+& {
+            background: $orange;
+        }
+    }
+}
+
+.kns-about {
+    background: $blue;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background: $blue;
+        display: block;
+        content: '';
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 800px auto;
+    }
+
+    &__left {
+        height: 812px;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+        flex-direction: column;
+        align-items: flex-start;
+
+
+    }
+
+    &__sub-title {
+        color: #fff
+    }
+
+    &__title {
+        color: rgba($color: #fff, $alpha: 0.2);
+
+        color {
+            color: #fff;
+        }
+    }
+
+    &__right {
+        position: absolute;
+        left: 850px;
+        width: calc((100vw - 800px) + (100% - 1047px)/2);
+        top: 0;
+        height: 100%;
+        line-height: 0;
+    }
+
+    &__slider {
+        img {
+            height: 812px;
+            object-fit: cover;
+        }
+
+        &-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+        }
+
+        &-prev,
+        &-next {
+            width: 63px;
+            height: 63px;
+            background: #fff;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f6f9fc;
+
+                svg {
+                    stroke: $orange;
+                }
+            }
+
+            svg {
+                stroke: $blue;
+            }
+        }
+    }
+}
+
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}

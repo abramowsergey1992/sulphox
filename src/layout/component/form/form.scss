@@ -43,3 +43,32 @@
         color: $blue;
     }
 }
+
+.btn-arrow {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0 solid;
+    color: $blue;
+    cursor: pointer;
+
+    &[disabled] {
+        opacity: 0.3;
+    }
+
+    &:hover {
+        svg {
+            left: 3px;
+        }
+    }
+
+    svg {
+        transition: left 0.3s;
+        left: 0;
+        position: relative;
+        fill: currentColor;
+        margin-left: 10px;
+    }
+}
