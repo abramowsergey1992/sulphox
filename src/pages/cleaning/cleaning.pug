@@ -1,0 +1,178 @@
+extends ../../layout/layout
+block title
+	title Салфокс
+block content
+	+breadcrumb(['Главная','Канализационно-насосные станции'], 'Технология очистки')
+	.inner
+		.block
+			.center
+				h1 Технология Салфокс для КНС и ОС»
+				p
+					big Базовая технология Салфокс — двухступенчатая очистка воздушных выбросов по схеме: скруббер + адсорбер. В зависимости от концентрации загрязняющих веществ, каждая из ступеней может применяться отдельно, независимо друг от друга.
+
+		.block
+			+picture('scrubber','jpg')
+	.block.cleaning-method 
+		.inner 
+		.cleaning-method__btns
+			button(type='button',data-slide='0').cleaning-method__btn._big.btn._white._active Скруббер
+			button(type='button',data-slide='1').cleaning-method__btn._big.btn._white Адсорбер
+		.swiper.cleaning-method__swiper
+			.swiper-wrapper 
+				.swiper-slide
+					.cleaning-method__row 
+						.cleaning-method__left
+							.cleaning-method-it 
+								h4 Скруббер
+								p Хемосорбционный окислительный скруббер — жидкостная система удаления дурнопахнущих веществ. Предназначена для очистки воздуха от высоких концентраций сероводорода в системах вытяжной вентиляции.
+							.cleaning-method-it 
+								h4 Физико-химические реакции
+								p Растворение газов H2S → H2Saq, O2 → O2
+								p Необратимое окисление сероводорода H2S + 1⁄2 O2 = S + H2O
+						.cleaning-method__right.cleaning-method-it._full
+							h4 Принципиальная схема работы
+							p Воздушные выбросы поступают в контактный аппарат, где загрязнители поглощаются в циркулирующий рабочий раствор и окисляются кислородом воздуха в присутствии гомогенного катализатора до безвредных веществ (серы).
+							img(src="img/cleaning-1.svg", alt="")
+				.swiper-slide
+					.cleaning-method__row 
+						.cleaning-method__left
+							.cleaning-method-it 
+								h4 Адсорбер
+								p Очищает воздух от серосодержащих соединений (сероводород, меркаптаны), а также от летучих органических соединений, аммиака.
+					
+						.cleaning-method__right.cleaning-method-it._full
+							h4 Принципиальная схема работы
+							p Поглощает дурнопахнущие и токсичные вещества твёрдым сорбентом, например, активированным углём.
+							img(src="img/cleaning-2.svg", alt="")
+
+	.inner
+		.block
+			h2  Преимущества технологии Салфокс
+			.row
+				.col-lg-4.card-st-1
+					h4 Высокая эффективность
+					p Высокая эффективность очистки воздуха сохраняется как при низких, так и при высоких концентрациях сероводорода и других дурнопахнущих веществ.
+					.card-st-1__icon 
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 0V14.5H15.5M3 11.5L7 5.5L10 9.5L15 2.5" stroke-width="2"/>
+						</svg>
+
+				.col-lg-4.card-st-1
+					h4 Большая ёмкость катализатора
+					p Одна тонна раствора Салфокс может поглотить тонну сероводорода без изменения эффективности.
+					.card-st-1__icon 
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 15H10.9167M15 15L15 10.9167M15 15L10.3333 10.3333M10.9167 1H15M15 1V5.08333M15 1L10.3333 5.66667M5.08333 1H1M1 1V5.08333M1 1L5.66667 5.66667M1 10.9167V15M1 15H5.08333M1 15L5.66667 10.3333" stroke-width="2"/>
+						</svg>
+
+
+				.col-lg-4.card-st-1
+					h4 Экономичность
+					p Благодаря высокой ёмкости катализатора, замена расходных материалов производится в пять раз реже, чем при использовании твёрдых сорбентов.
+					.card-st-1__icon 
+						<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 4.6H17M2.71429 9.4H9.57143M11.8571 9.4H15.2857M1 2.2L1 11.8C1 12.4627 1.51168 13 2.14286 13L15.8571 13C16.4883 13 17 12.4627 17 11.8V2.2C17 1.53726 16.4883 1 15.8571 1L2.14286 1C1.51168 1 1 1.53726 1 2.2Z" stroke-width="2"/>
+						</svg>
+
+
+				.col-lg-4.card-st-1
+					h4 Экологичность
+					p Продуктом окисления является суспензия серы — безвредное вещество, не имеющее запаха, которое утилизируется в голову очистных сооружений.
+					.card-st-1__icon 
+						<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M9.57143 1L11 1.71429V3.14286L9.57143 3.85714L11.7143 5.28571H12.4286V3.85714H14.5714V5.28571L15.2857 6V7.42857L14.5714 8.14286H13.1429L10.2857 6.71429L8.85714 7.42857H6.71429L6 10.2857L8.14286 12.4286L9.57143 13.1429V15.2857L10.2857 16V17.4286L11 18.8571H12.4286L13.8571 16.7143L14.5714 15.2857V13.8571L16.7143 11L16 9.57143H18.1429V8.14286H21M11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11C21 16.5228 16.5228 21 11 21Z" stroke="#F35F42" stroke-width="2"/>
+						</svg>
+				.col-lg-8.card-st-1
+					h4 Безопасность
+					p Рабочий раствор в скруббере обладает pH близким к нейтральному, а образующаяся в результате реакции, сера является химически инертным соединением. Класс химической безопасности и катализатора, и отходов — IV, что подтверждено паспортом безопасности. 
+					p В технологии Салфокс нет электроразрядных ячеек, которые потенциально могут привести к взрыву, так как в воздушных выбросах канализационных насосных станций и очистных сооружений содержится метан.
+					.card-st-1__icon 
+						<svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1 7.14286L10 2L19 7.14286V8.06843C19 13.6088 15.3272 18.4779 10 20C4.67279 18.4779 1 13.6088 1 8.06843V7.14286Z" stroke="white" stroke-width="2"/>
+						</svg>
+
+		.block 
+			.row._gap-22 
+				.col-lg-6.card-arrow-link
+					a(href="@").card-arrow-link__title  технология очистки
+					p Базовая технология Салфокс — двухступенчатая очистка воздушных выбросов по схеме: скруббер + адсорбер.
+					
+				.col-lg-6.card-arrow-link
+					a(href="@").card-arrow-link__title сертификаты
+					p Оборудование и реагенты сертифицированы  и имеют всю необходимую разрешительную документацию.
+	
+	.block.efficiency
+		.inner
+			
+			
+			.efficiency__row 
+				.efficiency__left 
+					.h3 Эффективность
+					.h2 98,8 %— эффективность очистки воздуха от сероводорода 
+					p  Высокие показатели сохраняются даже при больших концентрациях H2S (до 1 400 мг/м3).
+				.efficiency__right
+					blockquote Сероводород H2S — 98,8 %
+						br
+						| Диоксид азота NO2— 100 %
+						br
+						| Оксид азота NO — 94,3 %
+						br
+						| Метилмеркаптан CH4S— 98,6 %
+						br
+						| Аммиак NH3— 97,6 %
+
+				.efficiency__left 
+					.efficiency__img-scroll 
+						img(src="img/efficiency.svg", alt="")
+				.efficiency__right._bottom
+					blockquote Эффективность очистки воздуха подтверждена независимыми исследованиями.
+				.efficiency__left 
+					.efficiency__legends
+						.efficiency__legend
+							.efficiency__legend-color(style="background:#fff")
+							.efficiency__legend-text Количество H2S на входе в установку, мг/м3
+						.efficiency__legend
+							.efficiency__legend-color(style="background:#F35F42;") 
+							.efficiency__legend-text Количество H2S на выходе из установки, мг/м3 
+	.inner
+		.block 
+			.block__head 
+				h2  сертификаты
+					
+				a.btn._big._white(href="#") все сертификаты
+			.block__desc 
+				p Оборудование и реагенты сертифицированы и имеют всю необходимую разрешительную документацию.
+			.sertificate-gallery.swiper 
+				.swiper-wrapper 
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-1','jpg')
+						a(href="#").sertificate-it__link Скачать
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-2','jpg')
+						a(href="#").sertificate-it__link Скачать
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-3','jpg')
+						a(href="#").sertificate-it__link Скачать
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-4','jpg')
+						a(href="#").sertificate-it__link Скачать
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-1','jpg')
+						a(href="#").sertificate-it__link Скачать
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-2','jpg')
+						a(href="#").sertificate-it__link Скачать
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-3','jpg')
+						a(href="#").sertificate-it__link Скачать
+					.swiper-slide.sertificate-it
+						.sertificate-it__img 
+							+picture('s-4','jpg')
+						a(href="#").sertificate-it__link Скачать

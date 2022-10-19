@@ -12,6 +12,7 @@
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
 
     &._white {
         background: #fff;
@@ -20,6 +21,13 @@
         &:hover {
             background-color: $blue;
             color: #fff;
+        }
+
+        &._active {
+            background: $blue;
+            color: #fff;
+
+
         }
     }
 
@@ -71,4 +79,16 @@
         fill: currentColor;
         margin-left: 10px;
     }
+}
+
+blockquote {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    padding-left: 29px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-left: 3px solid #F35F42;
 }

@@ -80,3 +80,23 @@ if (document.querySelector(".kns-about__slider")) {
 		});
 	});
 }
+
+// Фильт-слайдер новостей
+if (document.querySelector(".news")) {
+	document.querySelectorAll(".news").forEach((news) => {
+		const swiper = new Swiper(news.querySelector(".news-slider"), {
+			speed: 400,
+			allowTouchMove: false,
+		});
+		let filters = news.querySelectorAll(".news__filter");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}

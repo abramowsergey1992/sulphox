@@ -1,4 +1,4 @@
-@keyframes animateAir {
+@keyframes animateAirKNS {
 
     0% {
         background-position: 1323px center;
@@ -39,7 +39,7 @@
         position: absolute;
         pointer-events: none;
         transform: translateX(-50%);
-        animation: animateAir 10s infinite linear;
+        animation: animateAirKNS 19s infinite linear;
     }
 }
 
@@ -47,6 +47,7 @@
     background: $blue;
     border-radius: 30px;
     padding: 30px;
+    padding-top: 42px;
     padding-bottom: 50px;
     text-align: center;
     margin-top: 49px;
@@ -62,6 +63,7 @@
         flex-direction: row;
         position: relative;
         justify-content: space-between;
+        margin-bottom: 54px;
     }
 
     &__progress {
@@ -145,7 +147,7 @@
     margin-right: auto;
     border-radius: 50px;
     text-align: left;
-    padding: 14px 20px;
+    padding: 12px 20px;
     border: 1px solid rgba(84, 105, 155, 1);
     padding-left: 46px;
     position: relative;
@@ -242,7 +244,7 @@
     &__right {
         position: absolute;
         left: 850px;
-        width: calc((100vw - 800px) + (100% - 1047px)/2);
+        width: calc((100vw - 800px) + (100% - 1164px)/2);
         top: 0;
         height: 100%;
         line-height: 0;
@@ -289,9 +291,13 @@
     }
 }
 
-
-.swiper {}
-
-.swiper-wrapper {}
-
-.swiper-slide {}
+.news {
+    &__btn-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}

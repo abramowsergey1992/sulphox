@@ -179,84 +179,241 @@ block content
 			.block__head
 				h2 Новости и статьи 
 				.news__filters
-					button(type='button').news__filter.btn ВСЕ
-					button(type='button').news__filter.btn КНС
-					button(type='button').news__filter.btn Нефтепром
-			.news__row.row._gap-22
-				.col-lg-6.news-item
-					.news-item__img-wrap 
-						+picture('news-1','jpg').news-item__img
-						.news-item__tags 
-							.news-item__tag КНС
-					.news-item__head 
-						a(href="#") НОВОСТИ
-						span.news-item__divider
-						| 13.09.2022
-						span.news-item__divider
-						| 10:34
-					.news-item__title Почему он используется? 
-					.news-item__body
-						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
-					a(href="#").news-item__more читать целиком 
-						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
-						</svg>
-				.col-lg-6.news-item
-					.news-item__img-wrap 
-						+picture('news-2','jpg').news-item__img
-						.news-item__tags 
-							.news-item__tag нефтепром
-					.news-item__head 
-						a(href="#") НОВОСТИ
-						span.news-item__divider
-						| 13.09.2022
-						span.news-item__divider
-						| 10:34
-					.news-item__title Почему он используется? 
-					.news-item__body
-						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
-					a(href="#").news-item__more читать целиком 
-						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
-						</svg>
-				.col-lg-4.article-item
-					.article-item__head 
-						a(href="#") статьи
-						span.article-item__divider
-						| 13.09.2022
-						span.article-item__divider
-						| 10:34
-					.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
-					a(href="#").article-item__more читать целиком 
-						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
-						</svg>
-				.col-lg-4.article-item
-					.article-item__head 
-						a(href="#") статьи
-						span.article-item__divider
-						| 13.09.2022
-						span.article-item__divider
-						| 10:34
-					.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
-					a(href="#").article-item__more читать целиком 
-						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
-						</svg>
-				.col-lg-4.article-item
-					.article-item__head 
-						a(href="#") статьи
-						span.article-item__divider
-						| 13.09.2022
-						span.article-item__divider
-						| 10:34
-					.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
-					a(href="#").article-item__more читать целиком 
-						<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
-						</svg>
-			.news__btn-wrap 
-				a(href="#").btn._big Все новости 
-				a(href="#").btn._big Все статьи 
+					button(type='button',data-slide='0')._white.news__filter.btn._active ВСЕ
+					button(type='button',data-slide='1')._white.news__filter.btn КНС
+					button(type='button',data-slide='2')._white.news__filter.btn Нефтепром
+			.news-slider.swiper 
+				.swiper-wrapper 
+					.swiper-slide
+						.news__row.row._gap-22
+							.col-lg-6.news-item
+								.news-item__img-wrap 
+									+picture('news-1','jpg').news-item__img
+									.news-item__tags 
+										.news-item__tag КНС
+								.news-item__head 
+									a(href="#") НОВОСТИ
+									span.news-item__divider
+									| 13.09.2022
+									span.news-item__divider
+									| 10:34
+								.news-item__title Почему он используется? 
+								.news-item__body
+									p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+								a(href="#").news-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-6.news-item
+								.news-item__img-wrap 
+									+picture('news-2','jpg').news-item__img
+									.news-item__tags 
+										.news-item__tag нефтепром
+								.news-item__head 
+									a(href="#") НОВОСТИ
+									span.news-item__divider
+									| 13.09.2022
+									span.news-item__divider
+									| 10:34
+								.news-item__title Почему он используется? 
+								.news-item__body
+									p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+								a(href="#").news-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+						.news__btn-wrap 
+							a(href="#")._white.btn._big Все новости 
+							a(href="#")._white.btn._big Все статьи 
+					.swiper-slide
+						.news__row.row._gap-22
+							.col-lg-6.news-item
+								.news-item__img-wrap 
+									+picture('news-1','jpg').news-item__img
+									.news-item__tags 
+										.news-item__tag КНС
+								.news-item__head 
+									a(href="#") НОВОСТИ
+									span.news-item__divider
+									| 13.09.2022
+									span.news-item__divider
+									| 10:34
+								.news-item__title Почему он используется? 
+								.news-item__body
+									p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+								a(href="#").news-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-6.news-item
+								.news-item__img-wrap 
+									+picture('news-2','jpg').news-item__img
+									.news-item__tags 
+										.news-item__tag нефтепром
+								.news-item__head 
+									a(href="#") НОВОСТИ
+									span.news-item__divider
+									| 13.09.2022
+									span.news-item__divider
+									| 10:34
+								.news-item__title Почему он используется? 
+								.news-item__body
+									p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+								a(href="#").news-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+						.news__btn-wrap 
+							a(href="#")._white.btn._big Все новости 
+							a(href="#")._white.btn._big Все статьи 
+					.swiper-slide
+						.news__row.row._gap-22
+							.col-lg-6.news-item
+								.news-item__img-wrap 
+									+picture('news-1','jpg').news-item__img
+									.news-item__tags 
+										.news-item__tag КНС
+								.news-item__head 
+									a(href="#") НОВОСТИ
+									span.news-item__divider
+									| 13.09.2022
+									span.news-item__divider
+									| 10:34
+								.news-item__title Почему он используется? 
+								.news-item__body
+									p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+								a(href="#").news-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-6.news-item
+								.news-item__img-wrap 
+									+picture('news-2','jpg').news-item__img
+									.news-item__tags 
+										.news-item__tag нефтепром
+								.news-item__head 
+									a(href="#") НОВОСТИ
+									span.news-item__divider
+									| 13.09.2022
+									span.news-item__divider
+									| 10:34
+								.news-item__title Почему он используется? 
+								.news-item__body
+									p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+								a(href="#").news-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+							.col-lg-4.article-item
+								.article-item__head 
+									a(href="#") статьи
+									span.article-item__divider
+									| 13.09.2022
+									span.article-item__divider
+									| 10:34
+								.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+								a(href="#").article-item__more читать целиком 
+									<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+									</svg>
+						.news__btn-wrap 
+							a(href="#")._white.btn._big Все новости 
+							a(href="#")._white.btn._big Все статьи 
 
 		

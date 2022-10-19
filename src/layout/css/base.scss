@@ -48,7 +48,7 @@ img {
 
 	.inner {
 		padding: 0;
-		max-width: 1047px;
+		max-width: 1164px;
 	}
 
 	@media(max-width:1300px) {
@@ -80,6 +80,37 @@ img {
 
 	@media (max-width: 992px) {
 		margin-bottom: 80px;
+	}
+
+	&__desc {
+		.block__head+& {
+			margin-top: -30px;
+		}
+
+		p {
+			max-width: 584px;
+		}
+	}
+
+	&__head {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+		margin-bottom: 40px;
+
+		&-left {
+			margin-right: auto;
+		}
+
+
+		h2,
+		.h2,
+		h1,
+		.h1 {
+			margin: 0;
+			margin-right: AUTO;
+		}
 	}
 }
 
