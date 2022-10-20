@@ -25,7 +25,6 @@ function filterRender(
 ) {
 	if (reload) {
 		items.forEach((item) => {
-			console.log(items, item);
 			item.classList.add("_d-none");
 		});
 	}
