@@ -1,0 +1,356 @@
+extends ../../layout/layout
+block title
+	title Салфокс
+block content
+	+breadcrumb(['Главная','О компании'], 'Новости и статьи')
+	.inner.block.news-page
+		.news-page__head 
+			.news-page__left 
+				h1 Новости
+				a.news-page__head-link(href="#") Статьи
+			.news-page__filters
+					button(type="button",data-filter='all').ours-project__filter.btn._white._active Все
+					button(type="button",data-filter='КНС').ours-project__filter.btn._white КНС
+					button(type="button",data-filter='Нефтепром').ours-project__filter.btn._white Нефтепром
+		.news-page__row.row._gap-22(data-pagelength="6")
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+			.col-lg-6.news-item(data-filter="КНС")
+				.news-item__img-wrap 
+					+picture('news-1','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag КНС
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+			.col-lg-6.news-item(data-filter='Нефтепром')
+				.news-item__img-wrap 
+					+picture('news-2','jpg').news-item__img
+					.news-item__tags 
+						.news-item__tag нефтепром
+				.news-item__head 
+					a(href="#") НОВОСТИ
+					span.news-item__divider
+					| 13.09.2022
+					span.news-item__divider
+					| 10:34
+				.news-item__title Почему он используется? 
+				.news-item__body
+					p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+				a(href="#").news-item__more читать целиком 
+					<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+					</svg>
+		
+		.news-page__more
+			span
+				<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M9 0V18M0 9H18" stroke="#0A2973" stroke-width="2"/>
+				</svg>
+				| Показать еще
+
+

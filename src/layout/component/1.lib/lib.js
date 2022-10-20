@@ -15,3 +15,37 @@ const fadeOut = (el, timeout) => {
 		el.style.display = "none";
 	}, timeout);
 };
+
+function filterRender(
+	pageLength,
+	items,
+	filter = "all",
+	reload = false,
+	moreBtn
+) {
+	if (reload) {
+		items.forEach((item) => {
+			console.log(items, item);
+			item.classList.add("_d-none");
+		});
+	}
+	let count = 1;
+
+	items.forEach((item) => {
+		if (filter == "all" || item.dataset.filter == filter) {
+			if (item.classList.contains("_d-none") && count <= pageLength) {
+				item.classList.remove("_d-none");
+				count++;
+			} else {
+				// item.classList.add("_d-none");
+			}
+		} else {
+			item.classList.add("_d-none");
+		}
+	});
+	if (count <= pageLength) {
+		moreBtn.classList.add("_d-none");
+	} else {
+		moreBtn.classList.remove("_d-none");
+	}
+}
