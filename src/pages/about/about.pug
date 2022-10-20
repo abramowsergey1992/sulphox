@@ -1,0 +1,458 @@
+extends ../../layout/layout
+block title
+	title Салфокс
+block content
+	+breadcrumb(['Главная'], 'О компании')
+	.inner.block
+		.center
+			h1 Компания SULPHOX «САЛФОКС»
+			p
+				big Салфокс — российская компания, которая производит системы очистки воздуха
+					br
+					|  для канализационных насосных станций и очистных сооружений.
+
+	.block
+		.video
+			video(src="video/v8.mp4").controls 
+
+		.inner 
+			h4
+				color Над разработкой  и усовершенствованием технологии трудятся профессионалы, имеющие многолетний опыт успешной работы в этой области. Мы особенно гордимся тем, что среди наших коллег есть специалисты  с учёными степенями. Кроме того, Салфокс активно сотрудничает  с ведущими вузами страны (МФТИ, МГУ).
+			p Наша компания располагает собственным производством, а также конструкторским отделом и оснащённой лабораторией. Это позволяет нам оперативно решать любые задачи, связанные с очисткой воздуха  от токсичных дурнопахнущих веществ и оптимизировать наши технологии под индивидуальные решения  для каждого заказчика, сохраняя высокие показатели эффективности.
+	.inner.block
+		h2  Преимущества технологии Салфокс
+		.row
+			.col-lg-4.card-st-1
+				h4 Высокая эффективность
+				p Высокая эффективность очистки воздуха сохраняется как при низких, так и при высоких концентрациях сероводорода и других дурнопахнущих веществ.
+				.card-st-1__icon 
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 0V14.5H15.5M3 11.5L7 5.5L10 9.5L15 2.5" stroke-width="2"/>
+					</svg>
+
+			.col-lg-4.card-st-1
+				h4 Большая ёмкость катализатора
+				p Одна тонна раствора Салфокс может поглотить тонну сероводорода без изменения эффективности.
+				.card-st-1__icon 
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15 15H10.9167M15 15L15 10.9167M15 15L10.3333 10.3333M10.9167 1H15M15 1V5.08333M15 1L10.3333 5.66667M5.08333 1H1M1 1V5.08333M1 1L5.66667 5.66667M1 10.9167V15M1 15H5.08333M1 15L5.66667 10.3333" stroke-width="2"/>
+					</svg>
+
+
+			.col-lg-4.card-st-1
+				h4 Экономичность
+				p Благодаря высокой ёмкости катализатора, замена расходных материалов производится в пять раз реже, чем при использовании твёрдых сорбентов.
+				.card-st-1__icon 
+					<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 4.6H17M2.71429 9.4H9.57143M11.8571 9.4H15.2857M1 2.2L1 11.8C1 12.4627 1.51168 13 2.14286 13L15.8571 13C16.4883 13 17 12.4627 17 11.8V2.2C17 1.53726 16.4883 1 15.8571 1L2.14286 1C1.51168 1 1 1.53726 1 2.2Z" stroke-width="2"/>
+					</svg>
+
+
+			.col-lg-4.card-st-1
+				h4 Экологичность
+				p Продуктом окисления является суспензия серы — безвредное вещество, не имеющее запаха, которое утилизируется в голову очистных сооружений.
+				.card-st-1__icon 
+					<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9.57143 1L11 1.71429V3.14286L9.57143 3.85714L11.7143 5.28571H12.4286V3.85714H14.5714V5.28571L15.2857 6V7.42857L14.5714 8.14286H13.1429L10.2857 6.71429L8.85714 7.42857H6.71429L6 10.2857L8.14286 12.4286L9.57143 13.1429V15.2857L10.2857 16V17.4286L11 18.8571H12.4286L13.8571 16.7143L14.5714 15.2857V13.8571L16.7143 11L16 9.57143H18.1429V8.14286H21M11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11C21 16.5228 16.5228 21 11 21Z" stroke="#F35F42" stroke-width="2"/>
+					</svg>
+			.col-lg-8.card-st-1
+				h4 Безопасность
+				p Рабочий раствор в скруббере обладает pH близким к нейтральному, а образующаяся в результате реакции, сера является химически инертным соединением. Класс химической безопасности и катализатора, и отходов — IV, что подтверждено паспортом безопасности. 
+				p В технологии Салфокс нет электроразрядных ячеек, которые потенциально могут привести к взрыву, так как в воздушных выбросах канализационных насосных станций и очистных сооружений содержится метан.
+				.card-st-1__icon 
+					<svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 7.14286L10 2L19 7.14286V8.06843C19 13.6088 15.3272 18.4779 10 20C4.67279 18.4779 1 13.6088 1 8.06843V7.14286Z" stroke="white" stroke-width="2"/>
+					</svg>
+
+
+	
+	.block.history
+		.inner
+			h2 история компании
+			.history-slider.swiper
+				.swiper-wrapper
+					.swiper-slide.history-it
+						.history-it__title 2017
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+					.swiper-slide.history-it
+						.history-it__title 2018
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+					.swiper-slide.history-it
+						.history-it__title 2019
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+					.swiper-slide.history-it
+						.history-it__title 2020
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+					.swiper-slide.history-it
+						.history-it__title 2021
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+					.swiper-slide.history-it
+						.history-it__title 2022
+						p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+		.history__pagination
+			.history__progress
+				.history__progress-line
+	.inner.block 
+		.row._gap-22 
+			.col-lg-6.card-arrow-link
+				a(href="@").card-arrow-link__title  технология очистки
+				p Базовая технология Салфокс — двухступенчатая очистка воздушных выбросов по схеме: скруббер + адсорбер.
+				
+			.col-lg-6.card-arrow-link
+				a(href="@").card-arrow-link__title сертификаты
+				p Оборудование и реагенты сертифицированы  и имеют всю необходимую разрешительную документацию.
+	.inner.block 
+		.block__head 
+			h2  сертификаты
+				
+			a.btn._big._white(href="#") все сертификаты
+		.block__desc 
+			p Оборудование и реагенты сертифицированы и имеют всю необходимую разрешительную документацию.
+		.sertificate-gallery.swiper 
+			.swiper-wrapper 
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-1','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-2','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-3','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-4','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-1','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-2','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-3','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-4','jpg')
+					a(href="#").sertificate-it__link Скачать
+	.inner.block.news 
+		.block__head
+			h2 Новости и статьи 
+			.news__filters
+				button(type='button',data-slide='0')._white.news__filter.btn._active ВСЕ
+				button(type='button',data-slide='1')._white.news__filter.btn КНС
+				button(type='button',data-slide='2')._white.news__filter.btn Нефтепром
+		.news-slider.swiper 
+			.swiper-wrapper 
+				.swiper-slide
+					.news__row.row._gap-22
+						.col-lg-6.news-item
+							.news-item__img-wrap 
+								+picture('news-1','jpg').news-item__img
+								.news-item__tags 
+									.news-item__tag КНС
+							.news-item__head 
+								a(href="#") НОВОСТИ
+								span.news-item__divider
+								| 13.09.2022
+								span.news-item__divider
+								| 10:34
+							.news-item__title Почему он используется? 
+							.news-item__body
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+							a(href="#").news-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-6.news-item
+							.news-item__img-wrap 
+								+picture('news-2','jpg').news-item__img
+								.news-item__tags 
+									.news-item__tag нефтепром
+							.news-item__head 
+								a(href="#") НОВОСТИ
+								span.news-item__divider
+								| 13.09.2022
+								span.news-item__divider
+								| 10:34
+							.news-item__title Почему он используется? 
+							.news-item__body
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+							a(href="#").news-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+					.news__btn-wrap 
+						a(href="#")._white.btn._big Все новости 
+						a(href="#")._white.btn._big Все статьи 
+				.swiper-slide
+					.news__row.row._gap-22
+						.col-lg-6.news-item
+							.news-item__img-wrap 
+								+picture('news-1','jpg').news-item__img
+								.news-item__tags 
+									.news-item__tag КНС
+							.news-item__head 
+								a(href="#") НОВОСТИ
+								span.news-item__divider
+								| 13.09.2022
+								span.news-item__divider
+								| 10:34
+							.news-item__title Почему он используется? 
+							.news-item__body
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+							a(href="#").news-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-6.news-item
+							.news-item__img-wrap 
+								+picture('news-2','jpg').news-item__img
+								.news-item__tags 
+									.news-item__tag нефтепром
+							.news-item__head 
+								a(href="#") НОВОСТИ
+								span.news-item__divider
+								| 13.09.2022
+								span.news-item__divider
+								| 10:34
+							.news-item__title Почему он используется? 
+							.news-item__body
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+							a(href="#").news-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+					.news__btn-wrap 
+						a(href="#")._white.btn._big Все новости 
+						a(href="#")._white.btn._big Все статьи 
+				.swiper-slide
+					.news__row.row._gap-22
+						.col-lg-6.news-item
+							.news-item__img-wrap 
+								+picture('news-1','jpg').news-item__img
+								.news-item__tags 
+									.news-item__tag КНС
+							.news-item__head 
+								a(href="#") НОВОСТИ
+								span.news-item__divider
+								| 13.09.2022
+								span.news-item__divider
+								| 10:34
+							.news-item__title Почему он используется? 
+							.news-item__body
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+							a(href="#").news-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-6.news-item
+							.news-item__img-wrap 
+								+picture('news-2','jpg').news-item__img
+								.news-item__tags 
+									.news-item__tag нефтепром
+							.news-item__head 
+								a(href="#") НОВОСТИ
+								span.news-item__divider
+								| 13.09.2022
+								span.news-item__divider
+								| 10:34
+							.news-item__title Почему он используется? 
+							.news-item__body
+								p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона
+							a(href="#").news-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+						.col-lg-4.article-item
+							.article-item__head 
+								a(href="#") статьи
+								span.article-item__divider
+								| 13.09.2022
+								span.article-item__divider
+								| 10:34
+							.article-item__title Применение систем очистки  обеззараживания воздуха в музеях.
+							a(href="#").article-item__more читать целиком 
+								<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.21 1.40332V12.21M12.21 1.40332L1.40332 12.21M12.21 1.40332H1.40332"  stroke-width="2"/>
+								</svg>
+					.news__btn-wrap 
+						a(href="#")._white.btn._big Все новости 
+						a(href="#")._white.btn._big Все статьи 
+
+	.ours-project.block
+		.inner
+			.block__head 
+				h2 Наши проекты
+				.ours-project__filters 
+					button(type="button",data-slide='0').ours-project__filter.btn._white._active Все
+					button(type="button",data-slide='1').ours-project__filter.btn._white КНС
+					button(type="button",data-slide='2').ours-project__filter.btn._white Нефтепром
+			.ours-project__slider.swiper 
+				.swiper-wrapper
+					.swiper-slide
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag Все
+								.project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								.project__body 
+									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.swiper-slide
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag КНС
+								.project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								.project__body 
+									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.swiper-slide
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag Нефтепром
+								.project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								.project__body 
+									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+
+
