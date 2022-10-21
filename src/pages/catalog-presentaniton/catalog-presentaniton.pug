@@ -1,0 +1,43 @@
+extends ../../layout/layout
+block title
+	title Салфокс
+block content
+	+breadcrumb(['Главная','О компании'], 'Каталоги и презентации')
+	.inner.block.presentations
+		h1 каталоги и презентации
+		.text
+			p
+				big Мы уделяем первостепенное внимание техническому сопровождению нашего оборудования, предоставляя гарантию на все системы воздухоочистки, а также осуществляем постгарантийный ремонт и поддержку.
+		.presentations__filters
+			button(type="button",data-slide='0').presentations__filter.btn._white._active каталоги
+			button(type="button",data-slide='1').presentations__filter.btn._white презентации
+		.presentations__slider.swiper
+			.swiper-wrapper
+				.swiper-slide
+					.row._gap-22
+						.col-lg-6.presentation._bg-blue
+							.presentation__logo
+							.presentation__download
+							.presentation__text Эффективные решения по удалению запаха на канализационных насосных станциях и очистных сооружениях
+							a(href="#").presentation__link
+						.col-lg-6.presentation._bg-orange
+							.presentation__logo
+							.presentation__download
+							.presentation__text эффективные решения по удалению сероводорода в системе дыхания нефтехранилищ
+							a(href="#").presentation__link
+					.presentations__slider-btns
+						a(href="#").btn._white._big Скачать все
+				.swiper-slide
+					.row._gap-22
+						.col-lg-6.presentation._bg-blue
+							.presentation__logo
+							.presentation__download
+							.presentation__text Эффективные решения по удалению запаха на канализационных насосных станциях и очистных сооружениях
+							a(href="#").presentation__link
+						.col-lg-6.presentation._bg-orange
+							.presentation__logo
+							.presentation__download
+							.presentation__text эффективные решения по удалению сероводорода в системе дыхания нефтехранилищ
+							a(href="#").presentation__link
+					.presentations__slider-btns
+						a(href="#").btn._white._big Скачать все

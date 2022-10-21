@@ -14,9 +14,44 @@ if (document.querySelector(".project-complite__filters")) {
 					selectFilter == "all" ||
 					project.dataset.filter == selectFilter
 				) {
-					slideDown(project, 400);
+					project.classList.remove("_d-none");
+					let length =
+						project.querySelectorAll(".swiper-slide").length;
+					let pagination = project.querySelector(
+						".project__slider-paginator"
+					);
+					setTimeout(function () {
+						let swiper = new Swiper(
+							project.querySelector(".swiper"),
+							{
+								effect: "fade",
+								speed: 1000,
+								loop: true,
+								observeParents: true,
+								observer: true,
+								on: {
+									slideChange: function (swiper) {
+										pagination.innerHTML = `${String(
+											swiper.realIndex + 1
+										).padStart(
+											2,
+											"0"
+										)} <span class="project__slider-paginator-divider"></span> ${String(
+											length
+										).padStart(2, "0")}`;
+									},
+								},
+								autoplay: {
+									delay: 3000,
+								},
+							}
+						);
+					}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+					// slideDown(project, 400);
 				} else {
-					slideUp(project, 400);
+					project.classList.add("_d-none");
+					project.querySelector(".swiper").swiper.destroy();
+					// slideUp(project, 400);
 				}
 			});
 		});
