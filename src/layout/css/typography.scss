@@ -102,6 +102,12 @@ p {
 }
 
 .text {
+	max-width: 940px;
+
+	img {
+		border-radius: 30px;
+	}
+
 	ul {
 		margin-bottom: 32px;
 

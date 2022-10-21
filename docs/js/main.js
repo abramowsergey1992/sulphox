@@ -77,7 +77,6 @@ if (document.querySelector(".ours-project")) {
 	});
 }
 
-
 // Метод отчистки слайдер
 if (document.querySelector(".cleaning-method")) {
 	document.querySelectorAll(".cleaning-method").forEach((method) => {
@@ -100,6 +99,7 @@ if (document.querySelector(".cleaning-method")) {
 		});
 	});
 }
+
 
 //квиз
 if (document.querySelector(".quiz-slider")) {
@@ -239,6 +239,7 @@ document.querySelectorAll(".news-page").forEach((item) => {
 });
 
 $(function(){})
+$(function(){})
 const fadeIn = (el, timeout, display) => {
 	el.style.opacity = 0;
 	el.style.display = display || "block";
@@ -290,13 +291,13 @@ function filterRender(
 	}
 }
 
+$(function(){})
 document.querySelectorAll(".btn-arrow").forEach((btn) => {
 	btn.innerHTML =
 		btn.innerText +
 		'<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"/></svg>';
 });
 
-$(function(){})
 window.addEventListener("scroll", function () {
 	this.scrollY > 50
 		? document.body.classList.add("_not-top")
@@ -352,19 +353,6 @@ document.querySelectorAll(".project__slider").forEach((item) => {
 	}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 });
 
-document.querySelectorAll(".video").forEach((item) => {
-	let video = item.querySelector("video");
-	let play = document.createElement("div");
-	play.classList.add("video__play");
-	play.innerHTML =
-		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
-	play.addEventListener("click", function () {
-		video.play();
-		fadeOut(play, 300, "flex");
-	});
-	item.append(play);
-});
-
 // Галлерея сертификатоф
 if (document.querySelector(".sertificate-gallery")) {
 	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
@@ -387,3 +375,16 @@ if (document.querySelector(".sertificate-gallery")) {
 		});
 	});
 }
+
+document.querySelectorAll(".video").forEach((item) => {
+	let video = item.querySelector("video");
+	let play = document.createElement("div");
+	play.classList.add("video__play");
+	play.innerHTML =
+		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
+	play.addEventListener("click", function () {
+		video.play();
+		fadeOut(play, 300, "flex");
+	});
+	item.append(play);
+});

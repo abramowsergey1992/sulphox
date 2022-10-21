@@ -131,3 +131,24 @@ img {
 ._m-0 {
 	margin: 0;
 }
+
+.full-img {
+	img {
+		border-radius: 30px;
+		margin-bottom: 60px;
+	}
+
+	picture {
+		display: block;
+		border-radius: 30px;
+		margin-bottom: 60px;
+
+		img {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.pmt-minimal {
+	margin-top: -100px;
+}
