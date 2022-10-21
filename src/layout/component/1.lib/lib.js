@@ -114,3 +114,24 @@ function filterRender(
 		moreBtn.classList.remove("_d-none");
 	}
 }
+
+function moreRender(pageLength, items, reload = false, moreBtn) {
+	if (reload) {
+		items.forEach((item) => {
+			item.classList.add("_d-none");
+		});
+	}
+	let count = 1;
+
+	items.forEach((item) => {
+		if (item.classList.contains("_d-none") && count <= pageLength) {
+			item.classList.remove("_d-none");
+			count++;
+		}
+	});
+	if (count <= pageLength) {
+		moreBtn.classList.add("_d-none");
+	} else {
+		moreBtn.classList.remove("_d-none");
+	}
+}
