@@ -1,9 +1,13 @@
+.project-list .project {
+    margin-bottom: 10px;
+}
+
 .project {
     position: relative;
     overflow: hidden;
     border-radius: 30px;
 
-    &__flex {
+    tra &__flex {
         padding: 50px;
         min-height: 606px;
         display: flex;
