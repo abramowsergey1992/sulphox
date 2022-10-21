@@ -77,6 +77,7 @@ if (document.querySelector(".ours-project")) {
 	});
 }
 
+
 // Метод отчистки слайдер
 if (document.querySelector(".cleaning-method")) {
 	document.querySelectorAll(".cleaning-method").forEach((method) => {
@@ -99,7 +100,6 @@ if (document.querySelector(".cleaning-method")) {
 		});
 	});
 }
-
 
 //квиз
 if (document.querySelector(".quiz-slider")) {
@@ -238,7 +238,32 @@ document.querySelectorAll(".news-page").forEach((item) => {
 	});
 });
 
-$(function(){})
+
+// Фильт-слайдер Наших проектов
+if (document.querySelector(".project-complite__filters")) {
+	let filters = document.querySelectorAll(".project-complite__filter");
+	let projects = document.querySelectorAll(".project-list .project");
+	filters.forEach((filter) => {
+		filter.addEventListener("click", function () {
+			filters.forEach((filter) => {
+				filter.classList.remove("_active");
+			});
+			let selectFilter = filter.dataset.filter;
+			filter.classList.add("_active");
+			projects.forEach((project) => {
+				if (
+					selectFilter == "all" ||
+					project.dataset.filter == selectFilter
+				) {
+					slideDown(project, 400);
+				} else {
+					slideUp(project, 400);
+				}
+			});
+		});
+	});
+}
+
 $(function(){})
 const fadeIn = (el, timeout, display) => {
 	el.style.opacity = 0;
@@ -256,6 +281,72 @@ const fadeOut = (el, timeout) => {
 	setTimeout(() => {
 		el.style.display = "none";
 	}, timeout);
+};
+let slideUp = (target, duration = 500) => {
+	target.style.transitionProperty = "height, margin, padding";
+	target.style.transitionDuration = duration + "ms";
+	target.style.boxSizing = "border-box";
+	target.style.height = target.offsetHeight + "px";
+	target.offsetHeight;
+	target.style.overflow = "hidden";
+	target.style.height = 0;
+	target.style.paddingTop = 0;
+	target.style.paddingBottom = 0;
+	target.style.marginTop = 0;
+	target.style.marginBottom = 0;
+	window.setTimeout(() => {
+		target.style.display = "none";
+		target.style.removeProperty("height");
+		target.style.removeProperty("padding-top");
+		target.style.removeProperty("padding-bottom");
+		target.style.removeProperty("margin-top");
+		target.style.removeProperty("margin-bottom");
+		target.style.removeProperty("overflow");
+		target.style.removeProperty("transition-duration");
+		target.style.removeProperty("transition-property");
+		//alert("!");
+	}, duration);
+};
+
+/* SLIDE DOWN */
+let slideDown = (target, duration = 500) => {
+	if (window.getComputedStyle(target).display === "none") {
+		target.style.removeProperty("display");
+		let display = window.getComputedStyle(target).display;
+		if (display === "none") display = "block";
+		target.style.display = display;
+		let height = target.offsetHeight;
+		target.style.overflow = "hidden";
+		target.style.height = 0;
+		target.style.paddingTop = 0;
+		target.style.paddingBottom = 0;
+		target.style.marginTop = 0;
+		target.style.marginBottom = 0;
+		target.offsetHeight;
+		target.style.boxSizing = "border-box";
+		target.style.transitionProperty = "height, margin, padding";
+		target.style.transitionDuration = duration + "ms";
+		target.style.height = height + "px";
+		target.style.removeProperty("padding-top");
+		target.style.removeProperty("padding-bottom");
+		target.style.removeProperty("margin-top");
+		target.style.removeProperty("margin-bottom");
+		window.setTimeout(() => {
+			target.style.removeProperty("height");
+			target.style.removeProperty("overflow");
+			target.style.removeProperty("transition-duration");
+			target.style.removeProperty("transition-property");
+		}, duration);
+	}
+};
+
+/* TOOGLE */
+var slideToggle = (target, duration = 500) => {
+	if (window.getComputedStyle(target).display === "none") {
+		return slideDown(target, duration);
+	} else {
+		return slideUp(target, duration);
+	}
 };
 
 function filterRender(
