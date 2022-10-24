@@ -1,0 +1,305 @@
+extends ../../layout/layout
+block title
+	title Салфокс
+block content
+	+breadcrumb(['Главная','Каталог решений','Для КНС и ОС','Расходные материалы'], 'Запчасть 1')
+	a(href="#").back-link Назад
+	.inner.block.detail
+		.detail__row 
+			.detail__photos
+				.product-gallery
+					.product-gallery-top.swiper
+						.swiper-wrapper 
+							.swiper-slide
+								+picture('detail','png')
+							.swiper-slide
+								+picture('detail','png')
+							.swiper-slide
+								+picture('detail','png')
+							.swiper-slide
+								+picture('detail','png')
+							.swiper-slide
+								+picture('detail','png')
+			.detail__content
+				.detail__content-inner
+					h2.detail__title СкРуббер и адсорбер
+					p._w500 Концентрация сероводорода
+					.detail__concentrations
+						.detail__concentration
+							b до 70 мг/м3
+							span среднесуточная
+						.detail__concentration
+							b._infinity ∞
+							span максимальная
+					h4 Объект
+					ul 
+						li Первичные отстойники
+						li Вторичные отстойники
+						li Иловые насосные станции
+						li Цеха механического обезвоживания
+					
+
+					.detail__btns 
+						a(href="#").btn._big ОСТАВИТЬ ЗАЯВКУ
+	.inner.block.sulutions-tabs
+		.sulutions-tabs__tabs 
+			.sulutions-tabs__tab._active(type="button",data-slide='0') обзор
+			.sulutions-tabs__tab(type="button",data-slide='1') модельный ряд
+			.sulutions-tabs__tab(type="button",data-slide='2') расходные материалы
+			.sulutions-tabs__line
+		.sulutions-tabs__slider-wrap 
+			.sulutions-tabs__slider.swiper
+				.swiper-wrapper
+					.swiper-slide.sulutions-tabs__text 
+						p Аэролайф Скруббер (хемосорбционный скруббер) – жидкостная система поглощения сероводорода.
+							br
+							|Предназначен для очистки воздуха от высоких концентраций сероводорода в системах вытяжной вентиляции.
+						p Сегодня наиболее распространенные технологии очистки воздуха от летучих дурнопахнущих соединений основаны на использовании явлений адсорбции, то есть «захвате» этих соединений поверхностью твердого сорбента и дальнейшем окислении.
+						p
+							b  На этих явлениях основаны методы очистки газов с использованием
+						ul
+							li твердых сорбентов, такие как окисление адсорбированных дурнопахнущих газов озоном;
+							li активных кислородных частиц, полученными в результате плазмо-химических или фотохимических реакций.
+						p Данные методы могут быть применимы в тех случаях, когда конечные продукты окисления также летучие. Например, летучие органические соединения могут быть адсорбированы на активированном угле, далее они могут быть окислены, например, озоном до углекислого газа и воды, которые, покинув поверхность угля, «освободят место» для адсорбции новых порций дурнопахнущих соединений.
+					.swiper-slide.sulutions-tabs__pdfs
+						a.sulutions-tabs__pdf(href="#") модельный ряд
+					.swiper-slide.solutions-slider
+						.solutions-slider__slider.swiper 
+							.swiper-wrapper 
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-1','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img
+										+picture('c-2','jpg')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-3','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+
+
+								.swiper-slide.catalog-2
+									.catalog-2__img
+										+picture('c-2','jpg')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-3','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-1','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img
+										+picture('c-2','jpg')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-3','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-1','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img
+										+picture('c-2','jpg')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-3','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-1','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img
+										+picture('c-2','jpg')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-3','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее 
+							
+								.swiper-slide.catalog-2
+									.catalog-2__img._contain
+										+picture('c-1','png')
+									.catalog-2__content 
+										.catalog-2__title эффективные материалы по удалению сероводорода
+										p Хемосорбционный окислительный скруббер.
+									a(href="@").catalog-2__link.btn._white Подробнее
+	.inner.block 
+		.block__head 
+			h2  сертификаты
+				
+			a.btn._big._white(href="#") все сертификаты
+		.block__desc 
+			p Оборудование и реагенты сертифицированы и имеют всю необходимую разрешительную документацию.
+		.sertificate-gallery.swiper 
+			.swiper-wrapper 
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-1','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-2','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-3','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-4','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-1','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-2','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-3','jpg')
+					a(href="#").sertificate-it__link Скачать
+				.swiper-slide.sertificate-it
+					.sertificate-it__img 
+						+picture('s-4','jpg')
+					a(href="#").sertificate-it__link Скачать
+	.ours-project.block
+		.inner
+			.block__head 
+				h2 Наши проекты
+				.ours-project__filters 
+					button(type="button",data-slide='0').ours-project__filter.btn._white._active Все
+					button(type="button",data-slide='1').ours-project__filter.btn._white КНС
+					button(type="button",data-slide='2').ours-project__filter.btn._white Нефтепром
+			.ours-project__slider.swiper 
+				.swiper-wrapper
+					.swiper-slide
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag Все
+								.project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								.project__body 
+									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.swiper-slide
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag КНС
+								.project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								.project__body 
+									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.swiper-slide
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag Нефтепром
+								.project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								.project__body 
+									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+
+
+
+
+
