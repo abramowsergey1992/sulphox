@@ -1,8 +1,8 @@
-if (document.querySelector(".sertificate-block")) {
-	document.querySelectorAll(".sertificate-block").forEach((catalog) => {
-		let moreBtn = catalog.querySelector(".sertificate-block__more");
+if (document.querySelector(".video-page ")) {
+	document.querySelectorAll(".video-page ").forEach((page) => {
+		let moreBtn = page.querySelector(".video-page__more");
 		let pageLength = moreBtn.dataset.pagelenght;
-		let items = catalog.querySelectorAll(".sertificate-it");
+		let items = page.querySelectorAll(".video-it");
 		moreRender(pageLength, items, true, moreBtn);
 		moreBtn.addEventListener("click", function () {
 			moreRender(pageLength, items, false, moreBtn);
