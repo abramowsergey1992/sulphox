@@ -20,3 +20,12 @@ if (document.querySelector(".sertificate-gallery")) {
 		});
 	});
 }
+$(function () {
+	$(".gallery-popup").magnificPopup({
+		gallery: {
+			enabled: true,
+		},
+		delegate: "a",
+		type: "image",
+	});
+});
