@@ -1,0 +1,106 @@
+.contact-block {
+    background: #F6F8FA;
+    border-radius: 30px;
+    padding: 50px 40px;
+    margin-bottom: 22px;
+    margin-top: 50px;
+
+    &__row {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 42px 72px;
+    }
+
+    &__item {
+        &-title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 22px;
+            /* identical to box height, or 157% */
+
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+
+            color: #627197;
+            margin-bottom: 8px;
+        }
+
+        &-body {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 34px;
+            /* identical to box height, or 170% */
+
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.map {
+    overflow: hidden;
+    border-radius: 30px;
+    margin-bottom: 22px;
+}
+
+.contact-form {
+    background: #F6F8FA;
+    border-radius: 30px;
+    padding: 62px 20px;
+
+    &__item {
+
+        textarea,
+        input {
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #DFE5EE;
+            border-radius: 6px;
+            display: block;
+            width: 100%;
+            padding: 14px 23px;
+            color: $blue;
+            transition: background 0.3s;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: -0.04em;
+            font-family: 'Muller';
+
+            &::placeholder {
+                color: #42597A;
+                font-family: 'Muller';
+            }
+
+            &:hover {
+                border: 1px solid #BAC3D0;
+            }
+
+            &.valid {
+                border: 1px solid #42597A !important;
+            }
+
+            &.error {
+                border: 1px solid red !important;
+            }
+        }
+    }
+
+    &__form {
+        margin-top: 32px;
+        max-width: 683px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .btn {
+            margin-top: 32px;
+        }
+
+    }
+}

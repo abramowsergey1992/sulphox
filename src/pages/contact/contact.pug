@@ -1,0 +1,44 @@
+extends ../../layout/layout
+block title
+	title Салфокс
+block content
+	+breadcrumb(['Главная'], 'контакты')
+
+	.inner.block 
+		h1 контакты
+		p 
+			big Наши специалисты проконсультируют вас в кратчайшие сроки! Отправьте запрос на «опросник» или позвоните нам. Мы уделяем первостепенное внимание техническому сопровождению нашего оборудования, предоставляя гарантию на все системы воздухоочистки, а также осуществляем постгарантийный ремонт и поддержку.
+		.contact-block 
+			h2 ЦЕнтральный офис
+			.contact-block__row
+				.contact-block__item
+					.contact-block__item-title Адрес:
+					.contact-block__item-body Россия, 119048, г. Москва, ул. Лужники, д. 24, стр. 9
+				.contact-block__item
+					.contact-block__item-title Время работы:
+					.contact-block__item-body 10:00–18:00 по рабочим дням
+				.contact-block__item
+					.contact-block__item-title Телефон:
+					.contact-block__item-body
+						a(href="tel:+74959232720") +7 495 923-27-20 
+				.contact-block__item
+					.contact-block__item-title Электронная почта:
+					.contact-block__item-body
+						a(href="mailto:info@airlife.ru ") info@airlife.ru 
+		.map
+			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad66aaeb90834dd05cdb3d285f0ed3faf14ef0f8a1b2b8d402c2e8211600bb29b&amp;width=100%25&amp;height=517&amp;lang=ru_RU&amp;scroll=true"></script>
+		.contact-form
+			.center 
+				h2 Оставить заявку
+			form#contact-form.contact-form__form(method="POST",action="#")
+				.row._gap-22
+					.col-lg-6.contact-form__item
+						input(type="text",data-rule-required,name="name",placeholder="Имя")
+					.col-lg-6.contact-form__item
+						input(type="text",data-rule-required,name="phone",placeholder="Телефон")._mask-phone
+					.col-lg-12.contact-form__item
+						input(type="text",data-rule-required,data-rule-email,name="mail",placeholder="Email")
+					.col-lg-12.contact-form__item
+						textarea(name="desc",data-rule-required, placeholder="Опишите вашу задачу")
+				.center 
+					button(type="submit").btn._big Отправить

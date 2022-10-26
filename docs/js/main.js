@@ -1,4 +1,3 @@
-
 // Слайдер история
 if (document.querySelector(".history")) {
 	document.querySelectorAll(".history").forEach((history) => {
@@ -79,6 +78,42 @@ if (document.querySelector(".ours-project")) {
 }
 
 
+
+if (document.querySelector(".catalog")) {
+	document.querySelectorAll(".catalog").forEach((catalog) => {
+		let moreBtn = catalog.querySelector(".catalog__more");
+		let pageLength = moreBtn.dataset.pagelenght;
+		let items = catalog.querySelectorAll(".catalog-1,.catalog-2");
+		moreRender(pageLength, items, true, moreBtn);
+		moreBtn.addEventListener("click", function () {
+			moreRender(pageLength, items, false, moreBtn);
+		});
+	});
+}
+
+// Фильт-слайдер Наших проектов
+if (document.querySelector(".presentations")) {
+	document.querySelectorAll(".presentations").forEach((item) => {
+		const swiper = new Swiper(
+			item.querySelector(".presentations__slider"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+			}
+		);
+		let filters = item.querySelectorAll(".presentations__filter");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}
+
 if (document.querySelector(".video-page ")) {
 	document.querySelectorAll(".video-page ").forEach((page) => {
 		let moreBtn = page.querySelector(".video-page__more");
@@ -102,6 +137,160 @@ if (document.querySelector(".cleaning-method")) {
 			}
 		);
 		let filters = method.querySelectorAll(".cleaning-method__btn");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}
+
+$(function () {
+	if ($("#contact-form").length) {
+		let validContacnt = $("#contact-form").validate({
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$(form).find(".btn").attr("disabled", "disabled");
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					method: "POST",
+					headers: {
+						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+							"content"
+						),
+					},
+					context: document.body,
+					success: function () {
+						alert("Форма отправленна успешно");
+						$(form).find(".btn").removeAttr("disabled");
+					},
+					error: function () {
+						alert("Ошибка");
+						$(form).find(".btn").removeAttr("disabled");
+					},
+				});
+			},
+		});
+	}
+});
+
+document.querySelectorAll(".news-page").forEach((item) => {
+	let items = item.querySelectorAll(".news-item,.article-item");
+	let pagelength = item.querySelector(".news-page__row").dataset.pagelength;
+	let moreBtn = item.querySelector(".news-page__more");
+	let filters = item.querySelectorAll(".news-page__filter");
+	filterRender(pagelength, items, "all", true, moreBtn);
+	moreBtn.addEventListener("click", function () {
+		filterRender(
+			pagelength,
+			items,
+			item.querySelector(".news-page__filter._active").dataset.filter,
+			false,
+			moreBtn
+		);
+	});
+	filters.forEach((filter) => {
+		filter.addEventListener("click", function () {
+			if (!filter.classList.contains("_active")) {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				filterRender(
+					pagelength,
+					items,
+					filter.dataset.filter,
+					true,
+					moreBtn
+				);
+			}
+		});
+	});
+});
+
+
+// Фильт-слайдер Наших проектов
+if (document.querySelector(".project-complite__filters")) {
+	let filters = document.querySelectorAll(".project-complite__filter");
+	let projects = document.querySelectorAll(".project-list .project");
+	filters.forEach((filter) => {
+		filter.addEventListener("click", function () {
+			filters.forEach((filter) => {
+				filter.classList.remove("_active");
+			});
+			let selectFilter = filter.dataset.filter;
+			filter.classList.add("_active");
+			projects.forEach((project) => {
+				if (
+					selectFilter == "all" ||
+					project.dataset.filter == selectFilter
+				) {
+					project.classList.remove("_d-none");
+					let length =
+						project.querySelectorAll(".swiper-slide").length;
+					let pagination = project.querySelector(
+						".project__slider-paginator"
+					);
+					setTimeout(function () {
+						let swiper = new Swiper(
+							project.querySelector(".swiper"),
+							{
+								effect: "fade",
+								speed: 1000,
+								loop: true,
+								observeParents: true,
+								observer: true,
+								on: {
+									slideChange: function (swiper) {
+										pagination.innerHTML = `${String(
+											swiper.realIndex + 1
+										).padStart(
+											2,
+											"0"
+										)} <span class="project__slider-paginator-divider"></span> ${String(
+											length
+										).padStart(2, "0")}`;
+									},
+								},
+								autoplay: {
+									delay: 3000,
+								},
+							}
+						);
+					}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+					// slideDown(project, 400);
+				} else {
+					project.classList.add("_d-none");
+					project.querySelector(".swiper").swiper.destroy();
+					// slideUp(project, 400);
+				}
+			});
+		});
+	});
+}
+
+// табы решений
+if (document.querySelector(".service-slider")) {
+	document.querySelectorAll(".service-slider").forEach((item) => {
+		const swiper = new Swiper(
+			item.querySelector(".service-slider__slide"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+				// effect: "fade",
+				autoHeight: true,
+				fadeEffect: {
+					crossFade: true,
+				},
+			}
+		);
+
+		let filters = item.querySelectorAll(".service-slider__tab");
 		filters.forEach((filter) => {
 			filter.addEventListener("click", function () {
 				filters.forEach((filter) => {
@@ -177,48 +366,38 @@ if (document.querySelector(".solutions-slider")) {
 	});
 }
 
-document.querySelectorAll(".news-page").forEach((item) => {
-	let items = item.querySelectorAll(".news-item,.article-item");
-	let pagelength = item.querySelector(".news-page__row").dataset.pagelength;
-	let moreBtn = item.querySelector(".news-page__more");
-	let filters = item.querySelectorAll(".news-page__filter");
-	filterRender(pagelength, items, "all", true, moreBtn);
-	moreBtn.addEventListener("click", function () {
-		filterRender(
-			pagelength,
-			items,
-			item.querySelector(".news-page__filter._active").dataset.filter,
-			false,
-			moreBtn
+// табы решений
+if (document.querySelector(".sulutions-tabs")) {
+	document.querySelectorAll(".sulutions-tabs").forEach((item) => {
+		const swiper = new Swiper(
+			item.querySelector(".sulutions-tabs__slider"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+				effect: "fade",
+				autoHeight: true,
+				fadeEffect: {
+					crossFade: true,
+				},
+			}
 		);
-	});
-	filters.forEach((filter) => {
-		filter.addEventListener("click", function () {
-			if (!filter.classList.contains("_active")) {
+
+		let line = item.querySelector(".sulutions-tabs__line");
+		let active = item.querySelector(".sulutions-tabs__tab._active");
+
+		line.style.left = active.offsetLeft + "px";
+		line.style.width = active.offsetWidth + "px";
+		let filters = item.querySelectorAll(".sulutions-tabs__tab");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
 				filters.forEach((filter) => {
 					filter.classList.remove("_active");
 				});
+				line.style.left = filter.offsetLeft + "px";
+				line.style.width = filter.offsetWidth + "px";
 				filter.classList.add("_active");
-				filterRender(
-					pagelength,
-					items,
-					filter.dataset.filter,
-					true,
-					moreBtn
-				);
-			}
-		});
-	});
-});
-
-if (document.querySelector(".catalog")) {
-	document.querySelectorAll(".catalog").forEach((catalog) => {
-		let moreBtn = catalog.querySelector(".catalog__more");
-		let pageLength = moreBtn.dataset.pagelenght;
-		let items = catalog.querySelectorAll(".catalog-1,.catalog-2");
-		moreRender(pageLength, items, true, moreBtn);
-		moreBtn.addEventListener("click", function () {
-			moreRender(pageLength, items, false, moreBtn);
+				swiper.slideTo(filter.dataset.slide);
+			});
 		});
 	});
 }
@@ -326,127 +505,6 @@ if (document.querySelector(".news")) {
 	});
 }
 
-// Фильт-слайдер Наших проектов
-if (document.querySelector(".presentations")) {
-	document.querySelectorAll(".presentations").forEach((item) => {
-		const swiper = new Swiper(
-			item.querySelector(".presentations__slider"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-			}
-		);
-		let filters = item.querySelectorAll(".presentations__filter");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
-// табы решений
-if (document.querySelector(".sulutions-tabs")) {
-	document.querySelectorAll(".sulutions-tabs").forEach((item) => {
-		const swiper = new Swiper(
-			item.querySelector(".sulutions-tabs__slider"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-				effect: "fade",
-				autoHeight: true,
-				fadeEffect: {
-					crossFade: true,
-				},
-			}
-		);
-
-		let line = item.querySelector(".sulutions-tabs__line");
-		let active = item.querySelector(".sulutions-tabs__tab._active");
-
-		line.style.left = active.offsetLeft + "px";
-		line.style.width = active.offsetWidth + "px";
-		let filters = item.querySelectorAll(".sulutions-tabs__tab");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				line.style.left = filter.offsetLeft + "px";
-				line.style.width = filter.offsetWidth + "px";
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
-// Фильт-слайдер Наших проектов
-if (document.querySelector(".project-complite__filters")) {
-	let filters = document.querySelectorAll(".project-complite__filter");
-	let projects = document.querySelectorAll(".project-list .project");
-	filters.forEach((filter) => {
-		filter.addEventListener("click", function () {
-			filters.forEach((filter) => {
-				filter.classList.remove("_active");
-			});
-			let selectFilter = filter.dataset.filter;
-			filter.classList.add("_active");
-			projects.forEach((project) => {
-				if (
-					selectFilter == "all" ||
-					project.dataset.filter == selectFilter
-				) {
-					project.classList.remove("_d-none");
-					let length =
-						project.querySelectorAll(".swiper-slide").length;
-					let pagination = project.querySelector(
-						".project__slider-paginator"
-					);
-					setTimeout(function () {
-						let swiper = new Swiper(
-							project.querySelector(".swiper"),
-							{
-								effect: "fade",
-								speed: 1000,
-								loop: true,
-								observeParents: true,
-								observer: true,
-								on: {
-									slideChange: function (swiper) {
-										pagination.innerHTML = `${String(
-											swiper.realIndex + 1
-										).padStart(
-											2,
-											"0"
-										)} <span class="project__slider-paginator-divider"></span> ${String(
-											length
-										).padStart(2, "0")}`;
-									},
-								},
-								autoplay: {
-									delay: 3000,
-								},
-							}
-						);
-					}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
-					// slideDown(project, 400);
-				} else {
-					project.classList.add("_d-none");
-					project.querySelector(".swiper").swiper.destroy();
-					// slideUp(project, 400);
-				}
-			});
-		});
-	});
-}
-
-
-$(function(){})
 $(document).ready(function () {
 	$(".video-it__link").magnificPopup({
 		disableOn: 700,
@@ -469,35 +527,7 @@ if (document.querySelector(".sertificate-block")) {
 	});
 }
 
-// табы решений
-if (document.querySelector(".service-slider")) {
-	document.querySelectorAll(".service-slider").forEach((item) => {
-		const swiper = new Swiper(
-			item.querySelector(".service-slider__slide"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-				// effect: "fade",
-				autoHeight: true,
-				fadeEffect: {
-					crossFade: true,
-				},
-			}
-		);
-
-		let filters = item.querySelectorAll(".service-slider__tab");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
+$(function(){})
 const fadeIn = (el, timeout, display) => {
 	el.style.opacity = 0;
 	el.style.display = display || "block";
@@ -636,11 +666,18 @@ function moreRender(pageLength, items, reload = false, moreBtn) {
 	}
 }
 
-$(function(){})
 document.querySelectorAll(".btn-arrow").forEach((btn) => {
 	btn.innerHTML =
 		btn.innerText +
 		'<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"/></svg>';
+});
+$(function () {
+	$("._mask-phone").each(function () {
+		Inputmask("+7 (999) 999-99-99").mask(this);
+	});
+	$("._mask-date").each(function () {
+		Inputmask("99.99.9999").mask(this);
+	});
 });
 
 window.addEventListener("scroll", function () {
@@ -649,26 +686,6 @@ window.addEventListener("scroll", function () {
 		: document.body.classList.remove("_not-top");
 });
 
-let mobmenu = document.querySelector(".mobmenu");
-document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
-	let parrent = title.closest(".mobmenu__menu-li");
-	title.addEventListener("click", function () {
-		mobmenu.classList.toggle("_open-item");
-		parrent.classList.toggle("_open");
-	});
-});
-document
-	.querySelector(".header__mobmenu")
-	.addEventListener("click", function () {
-		fadeIn(mobmenu, 500, "flex");
-	});
-document
-	.querySelector(".header__mobmenu-close")
-	.addEventListener("click", function () {
-		fadeOut(mobmenu, 500, "flex");
-	});
-
-$(function(){})
 document.querySelectorAll(".project__slider").forEach((item) => {
 	let length = item.querySelectorAll(".swiper-slide").length;
 	let pagination = item.querySelector(".project__slider-paginator");
@@ -698,6 +715,7 @@ document.querySelectorAll(".project__slider").forEach((item) => {
 	}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 });
 
+$(function(){})
 // Галлерея сертификатоф
 if (document.querySelector(".sertificate-gallery")) {
 	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
@@ -742,3 +760,24 @@ document.querySelectorAll(".video").forEach((item) => {
 	});
 	item.append(play);
 });
+
+let mobmenu = document.querySelector(".mobmenu");
+document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
+	let parrent = title.closest(".mobmenu__menu-li");
+	title.addEventListener("click", function () {
+		mobmenu.classList.toggle("_open-item");
+		parrent.classList.toggle("_open");
+	});
+});
+document
+	.querySelector(".header__mobmenu")
+	.addEventListener("click", function () {
+		fadeIn(mobmenu, 500, "flex");
+	});
+document
+	.querySelector(".header__mobmenu-close")
+	.addEventListener("click", function () {
+		fadeOut(mobmenu, 500, "flex");
+	});
+
+$(function(){})
