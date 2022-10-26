@@ -1,4 +1,4 @@
-@keyframes animateAirKNS {
+@keyframes animateAirfront {
 
     0% {
         background-position: 1323px center;
@@ -10,10 +10,10 @@
     }
 }
 
-.kns-main {
+.front-main {
     position: relative;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 0px;
 
     &__bg {
 
@@ -39,7 +39,7 @@
         position: absolute;
         pointer-events: none;
         transform: translateX(-50%);
-        animation: animateAirKNS 19s infinite linear;
+        animation: animateAirfront 19s infinite linear;
     }
 }
 
@@ -55,6 +55,12 @@
 }
 
 .quiz-slider {
+    .swiper-slide {
+        height: initial !important;
+        display: flex;
+        flex-direction: column;
+    }
+
     &__paginator {
         max-width: 602px;
         margin-left: auto;
@@ -154,12 +160,17 @@
     cursor: pointer;
     line-height: 0;
 
+    width: 100%;
     text-transform: uppercase;
     overflow: hidden;
 
     &:hover {
         border-color: #fff;
         ;
+    }
+
+    &:last-of-type {
+        margin-bottom: auto;
     }
 
     input {
@@ -197,7 +208,7 @@
     }
 }
 
-.kns-about {
+.front-about {
     background: $blue;
     position: relative;
 
@@ -235,6 +246,9 @@
 
     &__title {
         color: rgba($color: #fff, $alpha: 0.2);
+        font-weight: 500;
+        text-transform: none;
+        margin-bottom: 134px;
 
         color {
             color: #fff;

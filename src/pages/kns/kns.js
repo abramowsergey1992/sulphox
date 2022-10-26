@@ -53,6 +53,7 @@ if (document.querySelector(".quiz-slider")) {
 				this.closest(".swiper-slide")
 					.querySelector(".quiz-slider__next ")
 					.removeAttribute("disabled");
+				console.log("aSasA");
 			});
 		});
 		//кнопка далее
@@ -65,8 +66,8 @@ if (document.querySelector(".quiz-slider")) {
 }
 
 // Галлерея о компании
-if (document.querySelector(".kns-about__slider")) {
-	document.querySelectorAll(".kns-about__slider").forEach((slider) => {
+if (document.querySelector(".front-about__slider")) {
+	document.querySelectorAll(".front-about__slider").forEach((slider) => {
 		const swiper = new Swiper(slider, {
 			speed: 400,
 			loop: true,
@@ -74,8 +75,8 @@ if (document.querySelector(".kns-about__slider")) {
 				delay: 5000,
 			},
 			navigation: {
-				nextEl: slider.querySelector(".kns-about__slider-next"),
-				prevEl: slider.querySelector(".kns-about__slider-prev"),
+				nextEl: slider.querySelector(".front-about__slider-next"),
+				prevEl: slider.querySelector(".front-about__slider-prev"),
 			},
 		});
 	});
