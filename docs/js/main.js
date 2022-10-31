@@ -126,29 +126,6 @@ if (document.querySelector(".video-page ")) {
 	});
 }
 
-// Метод отчистки слайдер
-if (document.querySelector(".cleaning-method")) {
-	document.querySelectorAll(".cleaning-method").forEach((method) => {
-		const swiper = new Swiper(
-			method.querySelector(".cleaning-method__swiper"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-			}
-		);
-		let filters = method.querySelectorAll(".cleaning-method__btn");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
 $(function () {
 	if ($("#contact-form").length) {
 		let validContacnt = $("#contact-form").validate({
@@ -178,6 +155,29 @@ $(function () {
 		});
 	}
 });
+
+// Метод отчистки слайдер
+if (document.querySelector(".cleaning-method")) {
+	document.querySelectorAll(".cleaning-method").forEach((method) => {
+		const swiper = new Swiper(
+			method.querySelector(".cleaning-method__swiper"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+			}
+		);
+		let filters = method.querySelectorAll(".cleaning-method__btn");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}
 
 // слайдер продукта
 if (document.querySelector(".product-gallery")) {
@@ -242,6 +242,7 @@ if (document.querySelector(".solutions-slider")) {
 	});
 }
 
+$(function(){})
 //квиз
 if (document.querySelector(".quiz-slider")) {
 	document.querySelectorAll(".quiz-slider").forEach((quiz) => {
@@ -347,7 +348,6 @@ if (document.querySelector(".news")) {
 }
 
 $(function(){})
-
 document.querySelectorAll(".news-page").forEach((item) => {
 	let items = item.querySelectorAll(".news-item,.article-item");
 	let pagelength = item.querySelector(".news-page__row").dataset.pagelength;
@@ -381,6 +381,7 @@ document.querySelectorAll(".news-page").forEach((item) => {
 		});
 	});
 });
+
 
 // Фильт-слайдер Наших проектов
 if (document.querySelector(".project-complite__filters")) {
@@ -443,6 +444,35 @@ if (document.querySelector(".project-complite__filters")) {
 }
 
 // табы решений
+if (document.querySelector(".service-slider")) {
+	document.querySelectorAll(".service-slider").forEach((item) => {
+		const swiper = new Swiper(
+			item.querySelector(".service-slider__slide"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+				// effect: "fade",
+				autoHeight: true,
+				fadeEffect: {
+					crossFade: true,
+				},
+			}
+		);
+
+		let filters = item.querySelectorAll(".service-slider__tab");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}
+
+// табы решений
 if (document.querySelector(".sulutions-tabs")) {
 	document.querySelectorAll(".sulutions-tabs").forEach((item) => {
 		const swiper = new Swiper(
@@ -471,35 +501,6 @@ if (document.querySelector(".sulutions-tabs")) {
 				});
 				line.style.left = filter.offsetLeft + "px";
 				line.style.width = filter.offsetWidth + "px";
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
-// табы решений
-if (document.querySelector(".service-slider")) {
-	document.querySelectorAll(".service-slider").forEach((item) => {
-		const swiper = new Swiper(
-			item.querySelector(".service-slider__slide"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-				// effect: "fade",
-				autoHeight: true,
-				fadeEffect: {
-					crossFade: true,
-				},
-			}
-		);
-
-		let filters = item.querySelectorAll(".service-slider__tab");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
 				filter.classList.add("_active");
 				swiper.slideTo(filter.dataset.slide);
 			});
@@ -668,7 +669,6 @@ function moreRender(pageLength, items, reload = false, moreBtn) {
 	}
 }
 
-$(function(){})
 document.querySelectorAll(".btn-arrow").forEach((btn) => {
 	btn.innerHTML =
 		btn.innerText +
@@ -689,6 +689,8 @@ window.addEventListener("scroll", function () {
 		: document.body.classList.remove("_not-top");
 });
 
+$(function(){})
+$(function(){})
 let mobmenu = document.querySelector(".mobmenu");
 document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
 	let parrent = title.closest(".mobmenu__menu-li");
@@ -708,7 +710,19 @@ document
 		fadeOut(mobmenu, 500, "flex");
 	});
 
-$(function(){})
+document.querySelectorAll(".video").forEach((item) => {
+	let video = item.querySelector("video");
+	let play = document.createElement("div");
+	play.classList.add("video__play");
+	play.innerHTML =
+		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
+	play.addEventListener("click", function () {
+		video.play();
+		fadeOut(play, 300, "flex");
+	});
+	item.append(play);
+});
+
 document.querySelectorAll(".project__slider").forEach((item) => {
 	let length = item.querySelectorAll(".swiper-slide").length;
 	let pagination = item.querySelector(".project__slider-paginator");
@@ -768,17 +782,4 @@ $(function () {
 		delegate: "a",
 		type: "image",
 	});
-});
-
-document.querySelectorAll(".video").forEach((item) => {
-	let video = item.querySelector("video");
-	let play = document.createElement("div");
-	play.classList.add("video__play");
-	play.innerHTML =
-		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
-	play.addEventListener("click", function () {
-		video.play();
-		fadeOut(play, 300, "flex");
-	});
-	item.append(play);
 });
