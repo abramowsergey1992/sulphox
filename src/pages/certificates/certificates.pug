@@ -8,23 +8,25 @@ block content
 			.block__head
 				h1 Разрешительная документация
 				a(href="#").btn._white Скачать все 
-			.row._gap-22.gallery-popup
-				.col-lg-3.sertificate-it
-					.sertificate-it__img 
-						+picture('s-1','jpg')
-					a(href="img/s-1.jpg",title='Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"').sertificate-it__text Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"
-				.col-lg-3.sertificate-it
-					.sertificate-it__img 
-						+picture('s-2','jpg')
-					a(href="img/s-2.jpg",title='Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"').sertificate-it__text Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"
-				.col-lg-3.sertificate-it
-					.sertificate-it__img 
-						+picture('s-3','jpg')
-					a(href="img/s-3.jpg",title="Диплом за второе место в номинации «Благоприятная среда обитания. Экология» выставки «Здоровье нации – основа процветания России»").sertificate-it__text Диплом за второе место в номинации «Благоприятная среда обитания. Экология» выставки «Здоровье нации – основа процветания России»
-				.col-lg-3.sertificate-it
-					.sertificate-it__img 
-						+picture('s-4','jpg')
-					a(href="img/s-4.jpg",title=" Разъяснение положений СанПиН 2.1.3.2630-10 о системе очистки воздуха в медицинских учреждениях").sertificate-it__text Разъяснение положений СанПиН 2.1.3.2630-10 о системе очистки воздуха в медицинских учреждениях
+			.gallery-popup
+				.sertificate-gallery.swiper 
+					.swiper-wrapper 
+						.swiper-slide.sertificate-it
+							.sertificate-it__img 
+								+picture('s-1','jpg')
+							a(href="img/s-1.jpg",title='Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"').sertificate-it__text Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"
+						.swiper-slide.sertificate-it
+							.sertificate-it__img 
+								+picture('s-2','jpg')
+							a(href="img/s-2.jpg",title='Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"').sertificate-it__text Институт вирусологии им. Д.И.Ивановского. ФГБУ "НИЦЭМ им. Н.Ф. Гамалеи"
+						.swiper-slide.sertificate-it
+							.sertificate-it__img 
+								+picture('s-3','jpg')
+							a(href="img/s-3.jpg",title="Диплом за второе место в номинации «Благоприятная среда обитания. Экология» выставки «Здоровье нации – основа процветания России»").sertificate-it__text Диплом за второе место в номинации «Благоприятная среда обитания. Экология» выставки «Здоровье нации – основа процветания России»
+						.swiper-slide.sertificate-it
+							.sertificate-it__img 
+								+picture('s-4','jpg')
+							a(href="img/s-4.jpg",title=" Разъяснение положений СанПиН 2.1.3.2630-10 о системе очистки воздуха в медицинских учреждениях").sertificate-it__text Разъяснение положений СанПиН 2.1.3.2630-10 о системе очистки воздуха в медицинских учреждениях
 	.block.sertificate-block
 		.inner
 			.block__head

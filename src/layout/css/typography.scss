@@ -15,6 +15,11 @@ h1 {
 	&:first-child {
 		margin-top: 0;
 	}
+
+	@media (max-width:992px) {
+		font-size: 24px;
+		letter-spacing: -0.04em;
+	}
 }
 
 .h2,
@@ -32,6 +37,11 @@ h2 {
 	&:first-child {
 		margin-top: 0;
 	}
+
+	@media (max-width:992px) {
+		font-size: 24px;
+		margin-bottom: 24px;
+	}
 }
 
 .h3,
@@ -48,6 +58,11 @@ h3 {
 
 	&:first-child {
 		margin-top: 0;
+	}
+
+	@media (max-width:992px) {
+		font-weight: 700;
+		font-size: 16px;
 	}
 }
 
@@ -67,6 +82,9 @@ h4 {
 		margin-top: 0;
 	}
 
+	@media(max-width:992px) {
+		font-size: 16px;
+	}
 }
 
 h4,
@@ -85,7 +103,12 @@ h5,
 	font-size: 20px;
 	@include lh(20, 28);
 	letter-spacing: -0.04em;
-	color: $blue
+	color: $blue;
+
+	@media(max-width:992px) {
+		font-size: 14px;
+		;
+	}
 }
 
 a {

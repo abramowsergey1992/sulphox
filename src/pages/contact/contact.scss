@@ -5,15 +5,28 @@
     margin-bottom: 22px;
     margin-top: 50px;
 
+    @media(max-width:992px) {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+
     &__row {
         margin-top: 32px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 42px 72px;
+
+        @media(max-width:992px) {
+            gap: 20px
+        }
     }
 
     &__item {
+        @media (max-width:600px) {
+            width: 100%;
+        }
+
         &-title {
             font-weight: 700;
             font-size: 14px;
@@ -97,6 +110,12 @@
         max-width: 683px;
         margin-left: auto;
         margin-right: auto;
+
+        ._gap-22 {
+            @media(max-width:992px) {
+                gap: 12px
+            }
+        }
 
         .btn {
             margin-top: 32px;

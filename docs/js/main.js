@@ -126,6 +126,29 @@ if (document.querySelector(".video-page ")) {
 	});
 }
 
+// Метод отчистки слайдер
+if (document.querySelector(".cleaning-method")) {
+	document.querySelectorAll(".cleaning-method").forEach((method) => {
+		const swiper = new Swiper(
+			method.querySelector(".cleaning-method__swiper"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+			}
+		);
+		let filters = method.querySelectorAll(".cleaning-method__btn");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}
+
 $(function () {
 	if ($("#contact-form").length) {
 		let validContacnt = $("#contact-form").validate({
@@ -156,29 +179,7 @@ $(function () {
 	}
 });
 
-// Метод отчистки слайдер
-if (document.querySelector(".cleaning-method")) {
-	document.querySelectorAll(".cleaning-method").forEach((method) => {
-		const swiper = new Swiper(
-			method.querySelector(".cleaning-method__swiper"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-			}
-		);
-		let filters = method.querySelectorAll(".cleaning-method__btn");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
+$(function(){})
 // слайдер продукта
 if (document.querySelector(".product-gallery")) {
 	document.querySelectorAll(".product-gallery").forEach((product) => {
@@ -242,7 +243,6 @@ if (document.querySelector(".solutions-slider")) {
 	});
 }
 
-$(function(){})
 //квиз
 if (document.querySelector(".quiz-slider")) {
 	document.querySelectorAll(".quiz-slider").forEach((quiz) => {
@@ -669,6 +669,7 @@ function moreRender(pageLength, items, reload = false, moreBtn) {
 	}
 }
 
+$(function(){})
 document.querySelectorAll(".btn-arrow").forEach((btn) => {
 	btn.innerHTML =
 		btn.innerText +
@@ -689,8 +690,6 @@ window.addEventListener("scroll", function () {
 		: document.body.classList.remove("_not-top");
 });
 
-$(function(){})
-$(function(){})
 let mobmenu = document.querySelector(".mobmenu");
 document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
 	let parrent = title.closest(".mobmenu__menu-li");
@@ -710,19 +709,7 @@ document
 		fadeOut(mobmenu, 500, "flex");
 	});
 
-document.querySelectorAll(".video").forEach((item) => {
-	let video = item.querySelector("video");
-	let play = document.createElement("div");
-	play.classList.add("video__play");
-	play.innerHTML =
-		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
-	play.addEventListener("click", function () {
-		video.play();
-		fadeOut(play, 300, "flex");
-	});
-	item.append(play);
-});
-
+$(function(){})
 document.querySelectorAll(".project__slider").forEach((item) => {
 	let length = item.querySelectorAll(".swiper-slide").length;
 	let pagination = item.querySelector(".project__slider-paginator");
@@ -759,7 +746,7 @@ if (document.querySelector(".sertificate-gallery")) {
 			spaceBetween: 20,
 			breakpoints: {
 				320: {
-					slidesPerView: 1.1,
+					slidesPerView: 1.3,
 				},
 				480: {
 					slidesPerView: 2.1,
@@ -782,4 +769,17 @@ $(function () {
 		delegate: "a",
 		type: "image",
 	});
+});
+
+document.querySelectorAll(".video").forEach((item) => {
+	let video = item.querySelector("video");
+	let play = document.createElement("div");
+	play.classList.add("video__play");
+	play.innerHTML =
+		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
+	play.addEventListener("click", function () {
+		video.play();
+		fadeOut(play, 300, "flex");
+	});
+	item.append(play);
 });
