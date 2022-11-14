@@ -1,108 +1,125 @@
 .btn {
-    border-radius: 53px;
-    padding: 9px 15px;
-    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
-    border: 1px solid $blue;
-    background-color: $blue;
-    color: #fff;
-    transition: color 0.5s, background 0.3s;
-    font-weight: 700;
-    font-size: 10px;
-    line-height: 140%;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
+	border-radius: 53px;
+	padding: 9px 15px;
+	box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1);
+	border: 1px solid $blue;
+	background-color: $blue;
+	color: #fff;
+	transition: color 0.5s, background 0.3s;
+	font-weight: 700;
+	font-size: 10px;
+	line-height: 140%;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
 
-    &._orange {
-        background: $orange;
-        border-color: $orange;
-        box-shadow: 0px 2px 0px rgba($orange, 0.1);
+	&._orange {
+		background: $orange;
+		border-color: $orange;
+		box-shadow: 0px 2px 0px rgba($orange, 0.1);
 
-        &:hover {
-            color: $orange
-        }
-    }
+		&:hover {
+			color: $orange
+		}
+	}
 
-    &[disabled] {
-        opacity: 0.4;
-    }
+	&._orange-inv {
+		background: #fff;
+		border-color: $orange;
+		color: $orange;
+		box-shadow: 0px 2px 0px rgba($orange, 0.1);
 
-    &._white {
-        background: #fff;
-        color: $blue;
+		&:hover {
+			background: $orange;
+			color: #fff
+		}
+	}
 
-        &:hover {
-            background-color: $blue;
-            color: #fff;
-        }
+	&[disabled] {
+		opacity: 0.4;
+	}
 
-        &._active {
-            background: $blue;
-            color: #fff;
+	&._white {
+		background: #fff;
+		color: $blue;
+
+		&:hover {
+			background-color: $blue;
+			color: #fff;
+		}
+
+		&._active {
+			background: $blue;
+			color: #fff;
 
 
-        }
-    }
+		}
+	}
 
-    &._invert {
-        border-color: #fff;
-        color: #fff;
+	&._invert {
+		border-color: #fff;
+		color: #fff;
 
-        &:hover {
-            background-color: #fff;
-            color: $blue;
-        }
-    }
+		&:hover {
+			background-color: #fff;
+			color: $blue;
+		}
+	}
 
-    &._big {
-        padding: 16px 30px;
-        font-size: 14px;
-    }
+	&._big {
+		padding: 16px 30px;
+		font-size: 14px;
+	}
 
-    &:hover {
-        background: #fff;
-        color: $blue;
-    }
+	&:hover {
+		background: #fff;
+		color: $blue;
+	}
 }
 
 .btn-arrow {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 22px;
-    text-transform: uppercase;
-    background: transparent;
-    border: 0 solid;
-    color: $blue;
-    cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 22px;
+	text-transform: uppercase;
+	background: transparent;
+	border: 0 solid;
+	color: $blue;
+	cursor: pointer;
 
-    &[disabled] {
-        opacity: 0.3;
-    }
+	&[disabled] {
+		opacity: 0.3;
+	}
 
-    &:hover {
-        svg {
-            left: 3px;
-        }
-    }
+	&:hover {
+		svg {
+			left: 3px;
+		}
+	}
 
-    svg {
-        transition: left 0.3s;
-        left: 0;
-        position: relative;
-        fill: currentColor;
-        margin-left: 10px;
-    }
+	svg {
+		transition: left 0.3s;
+		left: 0;
+		position: relative;
+		fill: currentColor;
+		margin-left: 10px;
+	}
 }
 
 blockquote {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    padding-left: 29px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-left: 3px solid #F35F42;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+	padding-left: 29px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-left: 3px solid #F35F42;
+
+	@media(max-width:992px) {
+		font-weight: 700;
+		font-size: 14px;
+	}
 }
