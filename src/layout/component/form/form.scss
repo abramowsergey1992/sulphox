@@ -123,3 +123,105 @@ blockquote {
 		font-size: 14px;
 	}
 }
+
+.form-item {
+	margin-bottom: 10px;
+
+	display: block;
+
+	span {
+		font-weight: 400;
+		font-size: 11px;
+		line-height: 11px;
+		/* identical to box height */
+
+		letter-spacing: -0.04em;
+		display: block;
+		margin-bottom: 10px;
+		color: #0A2973;
+	}
+
+	input {
+		padding: 10px 0;
+		width: 100%;
+		border: 0px solid #0A2973;
+		border-bottom: 1px solid #0A2973;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 13px;
+
+		color: $blue ;
+
+		&.valid {
+			background-image: url("data:image/svg+xml,%3Csvg width='15' height='11' viewBox='0 0 15 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L5.5 9.5L14 1' stroke='%230A2973' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+			background-position: center right;
+			background-repeat: no-repeat;
+		}
+
+		&.error {
+			border-color: rgba(255, 0, 57, 1);
+			background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L13 13M1 13L13 1' stroke='%23FF0039'/%3E%3C/svg%3E%0A");
+			background-position: center right;
+			background-repeat: no-repeat;
+		}
+
+		&::placeholder {
+			color: rgba(45, 67, 86, 0.5);
+		}
+	}
+}
+
+.form-checkbox {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+
+	input {
+		visibility: hidden;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		&:checked+.form-checkbox__indicator {
+			background-color: $blue;
+		}
+
+		&.error+.form-checkbox__indicator {
+			border-color: rgba(255, 0, 57, 1);
+		}
+	}
+
+	&__indicator {
+		width: 12px;
+		height: 12px;
+		background: #FFFFFF;
+		border: 1px solid #0A2973;
+		border-radius: 2px;
+		display: flex;
+		position: relative;
+		top: 2px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+
+	}
+
+	&__text {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 150%;
+		letter-spacing: -0.04em;
+
+		a {
+			color: $orange;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}

@@ -51,7 +51,7 @@
                 <li class="header__menu-item"><a class="header__menu-item-link" href="#">контакты</a></li>
               </ul>
             </div>
-            <button class="header__feedback btn" type="button">Обратная связь</button>
+            <button class="header__feedback btn" type="button" data-popup="#feedback">Обратная связь</button>
             <div class="header__contact"><a class="header__phone" href="tel:+74959232720">+7 495 923 27 20</a><a class="header__mail" href="mailto:info@sulphox.ru">info@sulphox.ru</a></div>
             <button class="header__mobmenu" type="button"> <span></span></button>
           </div>
@@ -66,7 +66,7 @@
                 <h2>Нефтепром</h2>
                 <p>Системы очистки воздуха от сероводорода и других дурнопахнущих токсичных веществ для нефтедобывающей и нефтеперерабатывающей отрасли</p><a class="btn _white" href="#">Подробнее</a>
               </div><img class="front__column-bg _nefteproms" src="img/nefteprom-2.svg" alt="">
-              <div class="nefteprom"><img class="nefteprom__anim" src="img/nefteprom-1.svg" alt=""><img class="nefteprom__fire" src="img/fire.gif" alt="">
+              <div class="nefteprom"><img class="nefteprom__anim" src="img/nefteprom-1.svg" alt=""><img class="nefteprom__fire" src="img/fire.gif" alt=""><img class="nefteprom__fire-state" src="img/frame_000_delay-0.02s.gif" alt="">
                 <div class="nefteprom__left"></div>
                 <div class="nefteprom__leftb"></div>
                 <div class="nefteprom__right"></div>
@@ -361,7 +361,150 @@
         </div>
         <div class="mobmenu__footer"> 
           <div class="mobmenu__contact"><a class="mobmenu__phone" href="tel:+74959232720">+7 495 923 27 20</a><a class="mobmenu__mail" href="mailto:info@sulphox.ru">info@sulphox.ru</a></div>
-          <button class="mobmenu__feedback btn" type="button">Обратная связь</button>
+          <button class="mobmenu__feedback btn" type="button" data-popup="#feedback">Обратная связь</button>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="popup-quiz">
+      <div class="popup__flex">
+        <div class="popup__overlay"></div>
+        <div class="popup__content _quiz-style">
+          <div class="popup__close"><svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          </div>
+          <div class="quiz">
+            <form class="swiper quiz-slider" action="/" method="GET">
+              <div class="quiz-slider__paginator">
+                <div class="quiz-slider__progress"><span class="quiz-slider__progress-line"></span></div>
+              </div>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h2 class="quiz-slider__title">Выберете направление</h2>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-1"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
+                  </label>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-1"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Нефтедобывающая или нефтеперерабатывающая отрасль</span>
+                  </label>
+                  <button class="quiz-slider__next btn-arrow" type="button" disabled> Далее</button>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="quiz-slider__title">Где необходимо очистить воздух 2?</h2>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-2"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
+                  </label>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-2"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Очистные сооружения</span>
+                  </label>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-2"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
+                  </label>
+                  <button class="quiz-slider__next btn-arrow" type="button" disabled> Далее</button>
+                </div>
+                <div class="swiper-slide">
+                  <h2 class="quiz-slider__title">Где необходимо очистить воздух 3?</h2>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-3"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
+                  </label>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-3"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Очистные сооружения</span>
+                  </label>
+                  <label class="quiz-radio">
+                    <input class="quiz-radio__input" type="radio" name="quiz-3"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
+                  </label>
+                  <button class="quiz-slider__next btn-arrow" type="submit" disabled> Далее</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="feedback">
+      <div class="popup__flex">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+          <div class="popup__close"><svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          </div>
+          <div class="popup__inner">
+            <h2>Оставить заявку</h2>
+            <p> Все поля являются обязательными для заполнения</p>
+            <form class="form-feedback" id="form-feedback" action="/" method="post">
+              <div class="row">
+                <div class="col-lg-6">
+                  <label class="form-item"><span> Ваше имя</span>
+                    <input name="name" data-rule-required type="text" placeholder="Поле для ввода">
+                  </label>
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-item"><span> Ваш телефон</span>
+                    <input class="_mask-phone" name="phone" data-rule-required type="text" placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ">
+                  </label>
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-item"><span> Страна</span>
+                    <input name="country" data-rule-required type="text" placeholder="Поле для ввода">
+                  </label>
+                </div>
+                <div class="col-lg-6">
+                  <label class="form-item"><span> Город</span>
+                    <input name="city" data-rule-required type="text" placeholder="Поле для ввода">
+                  </label>
+                </div>
+                <div class="col-lg-12">
+                  <label class="form-item"><span>Сообщение</span>
+                    <input name="msg" data-rule-required type="text" placeholder="Поле для ввода">
+                  </label>
+                </div>
+              </div>
+              <label class="form-checkbox form-feedback__personal-data">
+                <input type="checkbox" name="personaldata"  data-rule-required>
+                <div class="form-checkbox__indicator"><svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 2.85721L3.57143 5.00007L7 0.714355" stroke="white"/>
+</svg>
+                </div>
+                <div class="form-checkbox__text">Согласие на обработку <a href="#">персональных данных</a></div>
+              </label>
+              <button class="form-feedback__sbmt btn _big" type="submit">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="succes">
+      <div class="popup__flex">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+          <div class="popup__close"><svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          </div>
+          <div class="popup__inner _center">
+            <h2>Спасибо!</h2>
+            <p>Ваша заявка упешно отправлена!<br>В близжайшее время мы с вами свяжемся!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="error">
+      <div class="popup__flex">
+        <div class="popup__overlay"></div>
+        <div class="popup__content">
+          <div class="popup__close"><svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+          </div>
+          <div class="popup__inner _center">
+            <h2>Упс...</h2>
+            <p>Что-то пошло не так. Попробуйте заполнить форму <br>еще раз или обновите страницу.</p>
+          </div>
         </div>
       </div>
     </div><script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">

@@ -1,0 +1,135 @@
+.popup#popup-quiz
+	.popup__flex
+		.popup__overlay
+		.popup__content._quiz-style
+			.popup__close
+				<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			.quiz
+				form.swiper.quiz-slider(action="/",method="GET")
+					.quiz-slider__paginator
+						.quiz-slider__progress
+							span.quiz-slider__progress-line
+				
+					.swiper-wrapper
+						.swiper-slide
+							h2.quiz-slider__title Выберете направление
+							label.quiz-radio
+								input(type="radio",name="quiz-1").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-1").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Нефтедобывающая или нефтеперерабатывающая отрасль
+							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
+						.swiper-slide
+							h2.quiz-slider__title Где необходимо очистить воздух 2?
+							label.quiz-radio
+								input(type="radio",name="quiz-2").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-2").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-2").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Небольшая канализационная насосная станция
+							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
+						.swiper-slide
+							h2.quiz-slider__title Где необходимо очистить воздух 3?
+							label.quiz-radio
+								input(type="radio",name="quiz-3").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-3").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Очистные сооружения
+							label.quiz-radio
+								input(type="radio",name="quiz-3").quiz-radio__input
+								span.quiz-radio__indicator 
+								span.quiz-radio__text Небольшая канализационная насосная станция
+							button(type='submit',disabled).quiz-slider__next.btn-arrow  Далее
+		
+.popup#feedback
+	.popup__flex
+		.popup__overlay
+		.popup__content
+			.popup__close
+				<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+
+			.popup__inner
+				h2 Оставить заявку
+				p  Все поля являются обязательными для заполнения
+				
+				form.form-feedback#form-feedback(action="/",method="post")
+					.row
+						.col-lg-6
+							label.form-item
+								span  Ваше имя
+								input(name="name",data-rule-required, type="text",placeholder="Поле для ввода" )
+						.col-lg-6
+							label.form-item
+								span  Ваш телефон
+								input._mask-phone(name="phone",data-rule-required, type="text",placeholder="+7 (ХХХ) ХХХ-ХХ-ХХ" )
+						.col-lg-6
+							label.form-item
+								span  Страна
+								input(name="country",data-rule-required, type="text",placeholder="Поле для ввода" )
+						.col-lg-6
+							label.form-item
+								span  Город
+								input(name="city",data-rule-required, type="text",placeholder="Поле для ввода" )
+						.col-lg-12
+							label.form-item
+								span Сообщение
+								input(name="msg",data-rule-required, type="text",placeholder="Поле для ввода" )
+					label.form-checkbox.form-feedback__personal-data
+						input(type="checkbox",name="personaldata",,data-rule-required)
+						.form-checkbox__indicator
+							<svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 2.85721L3.57143 5.00007L7 0.714355" stroke="white"/>
+							</svg>
+
+						.form-checkbox__text Согласие на обработку 
+							a(href="#") персональных данных
+					button.form-feedback__sbmt.btn._big(type="submit") Оставить заявку
+.popup#succes
+	.popup__flex
+		.popup__overlay
+		.popup__content
+			.popup__close
+				<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+
+			.popup__inner._center
+				h2 Спасибо!
+				p Ваша заявка упешно отправлена!
+					br
+					| В близжайшее время мы с вами свяжемся!
+				
+.popup#error
+	.popup__flex
+		.popup__overlay
+		.popup__content
+			.popup__close
+				<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 1L36 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M36 1L1 36" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+
+			.popup__inner._center
+				h2 Упс...
+				p Что-то пошло не так. Попробуйте заполнить форму 
+					br 
+					| еще раз или обновите страницу.
