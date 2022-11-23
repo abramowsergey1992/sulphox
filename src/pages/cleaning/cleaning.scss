@@ -31,7 +31,7 @@
 	&__row {
 		display: grid;
 		grid-gap: 20px;
-		min-height: 645px;
+		min-height: 560px;
 		grid-template-columns: 1fr 2fr;
 
 		@media(max-width:992px) {

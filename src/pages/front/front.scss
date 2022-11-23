@@ -8,7 +8,11 @@
 	}
 }
 
+.svg-text {
+	fill: $blue;
+	transition: fill 0.3s;
 
+}
 
 @keyframes knsgearsmall {
 	from {
@@ -743,6 +747,14 @@
 		flex-direction: column;
 		position: relative;
 
+		.btn {
+			&:hover {
+				color: $orange;
+				border-color: $orange;
+				background: #fff;
+			}
+		}
+
 		h2,
 		.h2 {
 			color: #90ADC6;
@@ -755,11 +767,7 @@
 			transition: opacity 0.3s;
 		}
 
-		.svg-text {
-			fill: $blue;
-			transition: fill 0.3s;
 
-		}
 
 		&:hover {
 			.svg-text {
