@@ -194,7 +194,7 @@ block content
 			.center 
 				h2 Мы поможем вам подобрать решение
 			.quiz
-				form.swiper.quiz-slider(action="/",method="GET")
+				form.swiper.quiz-slider(action="/",method="GET",data-length='4')
 					.quiz-slider__paginator
 						.quiz-slider__progress
 							span.quiz-slider__progress-line
@@ -203,63 +203,22 @@ block content
 						.swiper-slide
 							h2.quiz-slider__title Где необходимо очистить воздух?
 							label.quiz-radio
-								input(type="radio",name="quiz-1").quiz-radio__input
+								input(type="radio",name="quiz-1",value="Канализационные насосные станции и очистные сооружения").quiz-radio__input
 								span.quiz-radio__indicator 
 								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
 							label.quiz-radio
-								input(type="radio",name="quiz-1").quiz-radio__input
+								input(type="radio",name="quiz-1",value="Очистные сооружения").quiz-radio__input
 								span.quiz-radio__indicator 
 								span.quiz-radio__text Очистные сооружения
 							label.quiz-radio
-								input(type="radio",name="quiz-1").quiz-radio__input
+								input(type="radio",name="quiz-1",value="Небольшая канализационная насосная станция").quiz-radio__input
 								span.quiz-radio__indicator 
 								span.quiz-radio__text Небольшая канализационная насосная станция
-							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
+							button(type='button',disabled,status="step",step="1",url="json/step-2.json",method='GET').quiz-slider__next.btn-arrow  Далее
 						.swiper-slide
-							h2.quiz-slider__title Где необходимо очистить воздух 2?
-							label.quiz-radio
-								input(type="radio",name="quiz-2").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
-							label.quiz-radio
-								input(type="radio",name="quiz-2").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Очистные сооружения
-							label.quiz-radio
-								input(type="radio",name="quiz-2").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Небольшая канализационная насосная станция
-							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
 						.swiper-slide
-							h2.quiz-slider__title Где необходимо очистить воздух 3?
-							label.quiz-radio
-								input(type="radio",name="quiz-3").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
-							label.quiz-radio
-								input(type="radio",name="quiz-3").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Очистные сооружения
-							label.quiz-radio
-								input(type="radio",name="quiz-3").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Небольшая канализационная насосная станция
-							button(type='button',disabled).quiz-slider__next.btn-arrow  Далее
 						.swiper-slide
-							h2.quiz-slider__title Где необходимо очистить воздух 4?
-							label.quiz-radio
-								input(type="radio",name="quiz-4").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Канализационные насосные станции и очистные сооружения
-							label.quiz-radio
-								input(type="radio",name="quiz-4").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Очистные сооружения
-							label.quiz-radio
-								input(type="radio",name="quiz-4").quiz-radio__input
-								span.quiz-radio__indicator 
-								span.quiz-radio__text Небольшая канализационная насосная станция
-							button(type='submit',disabled).quiz-slider__next.btn-arrow  Далее
+
 	.inner.block 
 			.row._gap-22 
 				.col-lg-6.card-arrow-link
