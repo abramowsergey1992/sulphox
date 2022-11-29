@@ -236,7 +236,7 @@
             <h2>Мы поможем вам подобрать решение</h2>
           </div>
           <div class="quiz">
-            <form class="swiper quiz-slider" action="/" method="GET">
+            <form class="swiper quiz-slider" action="/" method="GET" data-length="4">
               <div class="quiz-slider__paginator">
                 <div class="quiz-slider__progress"><span class="quiz-slider__progress-line"></span></div>
               </div>
@@ -244,55 +244,19 @@
                 <div class="swiper-slide">
                   <h2 class="quiz-slider__title">Где необходимо очистить воздух?</h2>
                   <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-1"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
+                    <input class="quiz-radio__input" type="radio" name="quiz-1" value="Канализационные насосные станции и очистные сооружения"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
                   </label>
                   <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-1"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Очистные сооружения</span>
+                    <input class="quiz-radio__input" type="radio" name="quiz-1" value="Очистные сооружения"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Очистные сооружения</span>
                   </label>
                   <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-1"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
+                    <input class="quiz-radio__input" type="radio" name="quiz-1" value="Небольшая канализационная насосная станция"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
                   </label>
-                  <button class="quiz-slider__next btn-arrow" type="button" disabled> Далее</button>
+                  <button class="quiz-slider__next btn-arrow" type="button" disabled status="step" step="1" url="json/step-2.json" method="GET"> Далее</button>
                 </div>
-                <div class="swiper-slide">
-                  <h2 class="quiz-slider__title">Где необходимо очистить воздух 2?</h2>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-2"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
-                  </label>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-2"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Очистные сооружения</span>
-                  </label>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-2"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
-                  </label>
-                  <button class="quiz-slider__next btn-arrow" type="button" disabled> Далее</button>
-                </div>
-                <div class="swiper-slide">
-                  <h2 class="quiz-slider__title">Где необходимо очистить воздух 3?</h2>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-3"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
-                  </label>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-3"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Очистные сооружения</span>
-                  </label>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-3"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
-                  </label>
-                  <button class="quiz-slider__next btn-arrow" type="button" disabled> Далее</button>
-                </div>
-                <div class="swiper-slide">
-                  <h2 class="quiz-slider__title">Где необходимо очистить воздух 4?</h2>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-4"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Канализационные насосные станции и очистные сооружения</span>
-                  </label>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-4"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Очистные сооружения</span>
-                  </label>
-                  <label class="quiz-radio">
-                    <input class="quiz-radio__input" type="radio" name="quiz-4"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
-                  </label>
-                  <button class="quiz-slider__next btn-arrow" type="submit" disabled> Далее</button>
-                </div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
+                <div class="swiper-slide"></div>
               </div>
             </form>
           </div>

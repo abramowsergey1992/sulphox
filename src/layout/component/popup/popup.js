@@ -14,6 +14,9 @@ $(function () {
 		popup.find("input").val("");
 		popup.find("input").removeClass("valid", "error");
 		popup.addClass("_display");
+		if ($(this).data("popup") == "#feedback") {
+			popup.find("h2").text($(this).text());
+		}
 		setTimeout(function () {
 			popup.addClass("_animate");
 		}, 500);
