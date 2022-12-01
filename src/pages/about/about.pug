@@ -17,8 +17,10 @@ block content
 		
 
 		.inner 
-			h5 Над разработкой  и усовершенствованием технологии трудятся профессионалы, имеющие многолетний опыт успешной работы в этой области. Мы особенно гордимся тем, что среди наших коллег есть специалисты  с учёными степенями. Кроме того, Салфокс активно сотрудничает  с ведущими вузами страны (МФТИ, МГУ).
-			p Наша компания располагает собственным производством, а также конструкторским отделом и оснащённой лабораторией. Это позволяет нам оперативно решать любые задачи, связанные с очисткой воздуха  от токсичных дурнопахнущих веществ и оптимизировать наши технологии под индивидуальные решения  для каждого заказчика, сохраняя высокие показатели эффективности.
+			h5 Наша компания располагает собственным производством, а также конструкторским отделом и оснащённой лабораторией. 
+				br
+				| Это позволяет нам оперативно решать любые задачи, связанные с очисткой воздуха  от токсичных дурнопахнущих веществ и оптимизировать наши технологии под индивидуальные решения  для каждого заказчика, сохраняя высокие показатели эффективности.
+			p Над разработкой  и усовершенствованием технологии трудятся профессионалы, имеющие многолетний опыт успешной работы в этой области. Мы особенно гордимся тем, что среди наших коллег есть специалисты  с учёными степенями. Кроме того, Салфокс активно сотрудничает  с ведущими вузами страны (МФТИ, МГУ).
 	.inner.block
 		h2  Преимущества технологии Салфокс
 		.row
@@ -356,12 +358,12 @@ block content
 			.block__head 
 				h2 Наши проекты
 				.ours-project__filters 
-					button(type="button",data-slide='0').ours-project__filter.btn._white._active Все
-					button(type="button",data-slide='1').ours-project__filter.btn._white КНС
-					button(type="button",data-slide='2').ours-project__filter.btn._white Нефтепром
+					button(type="button",data-filter='all').ours-project__filter.btn._white._active Все
+					button(type="button",data-filter='kns').ours-project__filter.btn._white КНС
+					button(type="button",data-filter='nefteprom').ours-project__filter.btn._white Нефтепром
 			.ours-project__slider.swiper 
 				.swiper-wrapper
-					.swiper-slide
+					.ours-project__slide.swiper-slide(data-filter="kns")
 						.project
 							.project__slider.swiper
 								.swiper-wrapper
@@ -376,12 +378,12 @@ block content
 								.project__slider-paginator
 							.project__flex
 								.project__tags
-									.project__tag Все
-								.project__date 01.01.2021
+									.project__tag КНС
+								//- .project__date 01.01.2021
 								.project__title НАЗВАНие ПРОеКТА
-								.project__body 
-									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
-					.swiper-slide
+								//- .project__body 
+								//- 	p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.ours-project__slide.swiper-slide(data-filter="kns")
 						.project
 							.project__slider.swiper
 								.swiper-wrapper
@@ -397,11 +399,11 @@ block content
 							.project__flex
 								.project__tags
 									.project__tag КНС
-								.project__date 01.01.2021
+								//- .project__date 01.01.2021
 								.project__title НАЗВАНие ПРОеКТА
-								.project__body 
-									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
-					.swiper-slide
+								//- .project__body 
+								//- 	p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.ours-project__slide.swiper-slide(data-filter="kns")
 						.project
 							.project__slider.swiper
 								.swiper-wrapper
@@ -417,10 +419,72 @@ block content
 								.project__slider-paginator
 							.project__flex
 								.project__tags
-									.project__tag Нефтепром
-								.project__date 01.01.2021
+									.project__tag КНС
+								//- .project__date 01.01.2021
 								.project__title НАЗВАНие ПРОеКТА
-								.project__body 
-									p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+								//- .project__body 
+								//- 	p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+
+					.ours-project__slide.swiper-slide(data-filter="nefteprom")
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag НЕФТЕПРОМ
+								//- .project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								//- .project__body 
+								//- 	p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.ours-project__slide.swiper-slide(data-filter="nefteprom")
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag НЕФТЕПРОМ
+								//- .project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								//- .project__body 
+								//- 	p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
+					.ours-project__slide.swiper-slide(data-filter="nefteprom")
+						.project
+							.project__slider.swiper
+								.swiper-wrapper
+									.swiper-slide 
+										+picture('g-3','jpg')
+									.swiper-slide 
+										+picture('g-4','jpg')
+									.swiper-slide 
+										+picture('g-1','jpg')
+									.swiper-slide 
+										+picture('g-2','jpg')
+									
+								.project__slider-paginator
+							.project__flex
+								.project__tags
+									.project__tag НЕФТЕПРОМ
+								//- .project__date 01.01.2021
+								.project__title НАЗВАНие ПРОеКТА
+								//- .project__body 
+								//- 	p Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения. 
 
 

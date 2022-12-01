@@ -3,6 +3,8 @@ if (document.querySelector(".sertificate-gallery")) {
 	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
 		const swiper = new Swiper(gallery, {
 			spaceBetween: 20,
+			preventClicks: false,
+			preventClicksPropagation: false,
 			breakpoints: {
 				320: {
 					slidesPerView: 1.3,

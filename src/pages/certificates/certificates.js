@@ -9,3 +9,9 @@ if (document.querySelector(".video-page ")) {
 		});
 	});
 }
+
+$(function () {
+	$(".mp").magnificPopup({
+		type: "image",
+	});
+});

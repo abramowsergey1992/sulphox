@@ -8,6 +8,7 @@ if (document.querySelector(".history")) {
 		//создаем слайдер
 		const swiper = new Swiper(history.querySelector(".history-slider"), {
 			slidesPerView: 1,
+			slideToClickedSlide: true,
 			centeredSlides: true,
 			on: {
 				slideChange: function () {
@@ -62,7 +63,9 @@ if (document.querySelector(".ours-project")) {
 	document.querySelectorAll(".ours-project").forEach((item) => {
 		const swiper = new Swiper(item.querySelector(".ours-project__slider"), {
 			speed: 400,
-			allowTouchMove: false,
+			observer: true,
+			spaceBetween: 10,
+			observeParents: true,
 		});
 		let filters = item.querySelectorAll(".ours-project__filter");
 		filters.forEach((filter) => {
@@ -71,7 +74,28 @@ if (document.querySelector(".ours-project")) {
 					filter.classList.remove("_active");
 				});
 				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
+				if (filter.dataset.filter == "all") {
+					document
+						.querySelectorAll(".ours-project .ours-project__slide")
+						.forEach((slide) => {
+							slide.classList.remove("d-none");
+						});
+				} else {
+					document
+						.querySelectorAll(".ours-project .ours-project__slide")
+						.forEach((slide) => {
+							if (filter.dataset.filter == slide.dataset.filter) {
+								slide.classList.remove("d-none");
+								console.log(
+									slide.querySelector(".swiper").swiper
+								);
+								slide.querySelector(".swiper").swiper.update();
+							} else {
+								slide.classList.add("d-none");
+							}
+						});
+					swiper.update();
+				}
 			});
 		});
 	});

@@ -90,6 +90,7 @@
 		margin-right: auto;
 		max-height: calc(100vh - 200px);
 		overflow-Y: auto;
+		overflow-x: none;
 
 		&._center {
 			text-align: center;
