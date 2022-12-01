@@ -65,6 +65,7 @@ if (document.querySelector(".ours-project")) {
 			speed: 400,
 			observer: true,
 			spaceBetween: 10,
+			threshold: 40,
 			observeParents: true,
 		});
 		let filters = item.querySelectorAll(".ours-project__filter");
