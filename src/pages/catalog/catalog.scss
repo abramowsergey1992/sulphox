@@ -17,6 +17,14 @@
 		}
 	}
 
+	&__wrap {
+		margin-bottom: 180px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 	&__more {
 		position: relative;
 		display: flex;

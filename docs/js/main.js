@@ -104,8 +104,9 @@ if (document.querySelector(".ours-project")) {
 
 
 if (document.querySelector(".catalog")) {
-	document.querySelectorAll(".catalog").forEach((catalog) => {
+	document.querySelectorAll(".catalog__wrap").forEach((catalog) => {
 		let moreBtn = catalog.querySelector(".catalog__more");
+		console.log("moreBtn", moreBtn);
 		let pageLength = moreBtn.dataset.pagelenght;
 		let items = catalog.querySelectorAll(".catalog-1,.catalog-2");
 		moreRender(pageLength, items, true, moreBtn);
@@ -114,6 +115,7 @@ if (document.querySelector(".catalog")) {
 		});
 	});
 }
+
 
 // Фильт-слайдер Наших проектов
 if (document.querySelector(".presentations")) {
@@ -138,6 +140,23 @@ if (document.querySelector(".presentations")) {
 	});
 }
 
+if (document.querySelector(".video-page ")) {
+	document.querySelectorAll(".video-page ").forEach((page) => {
+		let moreBtn = page.querySelector(".video-page__more");
+		let pageLength = moreBtn.dataset.pagelenght;
+		let items = page.querySelectorAll(".video-it");
+		moreRender(pageLength, items, true, moreBtn);
+		moreBtn.addEventListener("click", function () {
+			moreRender(pageLength, items, false, moreBtn);
+		});
+	});
+}
+
+$(function () {
+	$(".mp").magnificPopup({
+		type: "image",
+	});
+});
 
 // Метод отчистки слайдер
 if (document.querySelector(".cleaning-method")) {
@@ -161,6 +180,36 @@ if (document.querySelector(".cleaning-method")) {
 		});
 	});
 }
+
+$(function () {
+	if ($("#contact-form").length) {
+		let validContacnt = $("#contact-form").validate({
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$(form).find(".btn").attr("disabled", "disabled");
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					method: "POST",
+					headers: {
+						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+							"content"
+						),
+					},
+					context: document.body,
+					success: function () {
+						alert("Форма отправленна успешно");
+						$(form).find(".btn").removeAttr("disabled");
+					},
+					error: function () {
+						alert("Ошибка");
+						$(form).find(".btn").removeAttr("disabled");
+					},
+				});
+			},
+		});
+	}
+});
 
 // слайдер продукта
 if (document.querySelector(".product-gallery")) {
@@ -224,88 +273,6 @@ if (document.querySelector(".solutions-slider")) {
 		});
 	});
 }
-
-$(function () {
-	if ($("#contact-form").length) {
-		let validContacnt = $("#contact-form").validate({
-			errorPlacement: function (error, element) {},
-			submitHandler: function (form) {
-				$(form).find(".btn").attr("disabled", "disabled");
-				$.ajax({
-					url: $(form).attr("action"),
-					data: $(form).serialize(),
-					method: "POST",
-					headers: {
-						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
-							"content"
-						),
-					},
-					context: document.body,
-					success: function () {
-						alert("Форма отправленна успешно");
-						$(form).find(".btn").removeAttr("disabled");
-					},
-					error: function () {
-						alert("Ошибка");
-						$(form).find(".btn").removeAttr("disabled");
-					},
-				});
-			},
-		});
-	}
-});
-
-if (document.querySelector(".video-page ")) {
-	document.querySelectorAll(".video-page ").forEach((page) => {
-		let moreBtn = page.querySelector(".video-page__more");
-		let pageLength = moreBtn.dataset.pagelenght;
-		let items = page.querySelectorAll(".video-it");
-		moreRender(pageLength, items, true, moreBtn);
-		moreBtn.addEventListener("click", function () {
-			moreRender(pageLength, items, false, moreBtn);
-		});
-	});
-}
-
-$(function () {
-	$(".mp").magnificPopup({
-		type: "image",
-	});
-});
-
-document.querySelectorAll(".news-page").forEach((item) => {
-	let items = item.querySelectorAll(".news-item,.article-item");
-	let pagelength = item.querySelector(".news-page__row").dataset.pagelength;
-	let moreBtn = item.querySelector(".news-page__more");
-	let filters = item.querySelectorAll(".news-page__filter");
-	filterRender(pagelength, items, "all", true, moreBtn);
-	moreBtn.addEventListener("click", function () {
-		filterRender(
-			pagelength,
-			items,
-			item.querySelector(".news-page__filter._active").dataset.filter,
-			false,
-			moreBtn
-		);
-	});
-	filters.forEach((filter) => {
-		filter.addEventListener("click", function () {
-			if (!filter.classList.contains("_active")) {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				filterRender(
-					pagelength,
-					items,
-					filter.dataset.filter,
-					true,
-					moreBtn
-				);
-			}
-		});
-	});
-});
 
 $(function(){})
 //квиз
@@ -457,35 +424,41 @@ if (document.querySelector(".news")) {
 	});
 }
 
-
-// табы решений
-if (document.querySelector(".service-slider")) {
-	document.querySelectorAll(".service-slider").forEach((item) => {
-		const swiper = new Swiper(
-			item.querySelector(".service-slider__slide"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-				// effect: "fade",
-				autoHeight: true,
-				fadeEffect: {
-					crossFade: true,
-				},
-			}
+$(function(){})
+document.querySelectorAll(".news-page").forEach((item) => {
+	let items = item.querySelectorAll(".news-item,.article-item");
+	let pagelength = item.querySelector(".news-page__row").dataset.pagelength;
+	let moreBtn = item.querySelector(".news-page__more");
+	let filters = item.querySelectorAll(".news-page__filter");
+	filterRender(pagelength, items, "all", true, moreBtn);
+	moreBtn.addEventListener("click", function () {
+		filterRender(
+			pagelength,
+			items,
+			item.querySelector(".news-page__filter._active").dataset.filter,
+			false,
+			moreBtn
 		);
-
-		let filters = item.querySelectorAll(".service-slider__tab");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
+	});
+	filters.forEach((filter) => {
+		filter.addEventListener("click", function () {
+			if (!filter.classList.contains("_active")) {
 				filters.forEach((filter) => {
 					filter.classList.remove("_active");
 				});
 				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
+				filterRender(
+					pagelength,
+					items,
+					filter.dataset.filter,
+					true,
+					moreBtn
+				);
+			}
 		});
 	});
-}
+});
+
 
 // Фильт-слайдер Наших проектов
 if (document.querySelector(".project-complite__filters")) {
@@ -547,7 +520,35 @@ if (document.querySelector(".project-complite__filters")) {
 	});
 }
 
-$(function(){})
+// табы решений
+if (document.querySelector(".service-slider")) {
+	document.querySelectorAll(".service-slider").forEach((item) => {
+		const swiper = new Swiper(
+			item.querySelector(".service-slider__slide"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+				// effect: "fade",
+				autoHeight: true,
+				fadeEffect: {
+					crossFade: true,
+				},
+			}
+		);
+
+		let filters = item.querySelectorAll(".service-slider__tab");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}
+
 // табы решений
 if (document.querySelector(".sulutions-tabs")) {
 	document.querySelectorAll(".sulutions-tabs").forEach((item) => {
@@ -584,6 +585,8 @@ if (document.querySelector(".sulutions-tabs")) {
 	});
 }
 
+$(function(){})
+$(function(){})
 $(document).ready(function () {
 	$(".video-it__link").magnificPopup({
 		disableOn: 700,
@@ -606,8 +609,6 @@ if (document.querySelector(".sertificate-block")) {
 	});
 }
 
-$(function(){})
-$(function(){})
 const fadeIn = (el, timeout, display) => {
 	el.style.opacity = 0;
 	el.style.display = display || "block";
@@ -746,6 +747,7 @@ function moreRender(pageLength, items, reload = false, moreBtn) {
 	}
 }
 
+$(function(){})
 document.querySelectorAll(".btn-arrow").forEach((btn) => {
 	btn.innerHTML =
 		btn.innerText +
@@ -760,13 +762,13 @@ $(function () {
 	});
 });
 
-$(function(){})
 window.addEventListener("scroll", function () {
 	this.scrollY > 50
 		? document.body.classList.add("_not-top")
 		: document.body.classList.remove("_not-top");
 });
 
+$(function(){})
 let mobmenu = document.querySelector(".mobmenu");
 document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
 	let parrent = title.closest(".mobmenu__menu-li");
@@ -785,59 +787,6 @@ document
 	.addEventListener("click", function () {
 		fadeOut(mobmenu, 500, "flex");
 	});
-
-document.querySelectorAll(".project").forEach((project) => {
-	project.querySelectorAll(".project__slider").forEach((item) => {
-		let length = item.querySelectorAll(".swiper-slide").length;
-		let pagination = item.querySelector(".project__slider-paginator");
-		setTimeout(function () {
-			let swiper = new Swiper(item, {
-				effect: "fade",
-				speed: 1000,
-				loop: true,
-				navigation: {
-					nextEl: project.querySelector(".project__slider-next"),
-					prevEl: project.querySelector(".project__slider-prev"),
-				},
-				observeParents: true,
-				observer: true,
-				on: {
-					slideChange: function (swiper) {
-						pagination.innerHTML = `${String(
-							swiper.realIndex + 1
-						).padStart(
-							2,
-							"0"
-						)} <span class="project__slider-paginator-divider"></span> ${String(
-							length
-						).padStart(2, "0")}`;
-					},
-				},
-				autoplay: {
-					delay: 3000,
-				},
-			});
-		}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
-	});
-});
-
-$(function(){})
-document.querySelectorAll(".video").forEach((item) => {
-	let video = item.querySelector("video");
-	let play = document.createElement("div");
-	play.classList.add("video__play");
-	play.innerHTML =
-		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
-	video.addEventListener("click", function () {
-		video.pause();
-		fadeIn(play, 300, "flex");
-	});
-	play.addEventListener("click", function () {
-		video.play();
-		fadeOut(play, 300, "flex");
-	});
-	item.append(play);
-});
 
 $(function () {
 	$(".popup__close,.popup__overlay").click(function () {
@@ -916,6 +865,41 @@ $(function () {
 	}
 });
 
+document.querySelectorAll(".project").forEach((project) => {
+	project.querySelectorAll(".project__slider").forEach((item) => {
+		let length = item.querySelectorAll(".swiper-slide").length;
+		let pagination = item.querySelector(".project__slider-paginator");
+		setTimeout(function () {
+			let swiper = new Swiper(item, {
+				effect: "fade",
+				speed: 1000,
+				loop: true,
+				navigation: {
+					nextEl: project.querySelector(".project__slider-next"),
+					prevEl: project.querySelector(".project__slider-prev"),
+				},
+				observeParents: true,
+				observer: true,
+				on: {
+					slideChange: function (swiper) {
+						pagination.innerHTML = `${String(
+							swiper.realIndex + 1
+						).padStart(
+							2,
+							"0"
+						)} <span class="project__slider-paginator-divider"></span> ${String(
+							length
+						).padStart(2, "0")}`;
+					},
+				},
+				autoplay: {
+					delay: 3000,
+				},
+			});
+		}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+	});
+});
+
 // Галлерея сертификатоф
 if (document.querySelector(".sertificate-gallery")) {
 	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
@@ -948,4 +932,21 @@ $(function () {
 		delegate: "a",
 		type: "image",
 	});
+});
+
+document.querySelectorAll(".video").forEach((item) => {
+	let video = item.querySelector("video");
+	let play = document.createElement("div");
+	play.classList.add("video__play");
+	play.innerHTML =
+		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
+	video.addEventListener("click", function () {
+		video.pause();
+		fadeIn(play, 300, "flex");
+	});
+	play.addEventListener("click", function () {
+		video.play();
+		fadeOut(play, 300, "flex");
+	});
+	item.append(play);
 });
