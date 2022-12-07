@@ -580,12 +580,12 @@
 	align-items: center;
 	position: relative;
 
-	@media(max-height:800px) {
+	@media(max-height:800px) and (max-width:800px) {
 		padding-bottom: 50px;
 	}
 
 	&>.btn {
-		@media(max-height:800px) {
+		@media(max-height:800px) and (max-width:800px) {
 			display: none;
 		}
 	}
@@ -815,7 +815,7 @@
 		margin-top: 46px;
 		width: 100%;
 
-		@media(max-height:800px) {
+		@media(max-height:800px) and (max-width:800px) {
 			margin-top: 20px;
 			grid-template-columns: 1fr;
 
@@ -845,7 +845,7 @@
 	}
 
 	.nefteprom {
-		@media(max-height:800px) {
+		@media(max-height:800px) and (max-width:800px) {
 			max-width: 400px;
 			margin-left: auto;
 			margin-right: auto;
@@ -855,7 +855,7 @@
 	}
 
 	.kns {
-		@media(max-height:800px) {
+		@media(max-height:800px) and (max-width:800px) {
 			margin-bottom: 30px;
 			max-width: 450px;
 			margin-left: auto;

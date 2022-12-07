@@ -1,108 +1,3 @@
-// Слайдер история
-if (document.querySelector(".history")) {
-	document.querySelectorAll(".history").forEach((history) => {
-		let slides = history.querySelectorAll(".swiper-slide");
-		let paginatorWrap = history.querySelector(".history__pagination");
-		let progress = history.querySelector(".history__progress-line");
-
-		//создаем слайдер
-		const swiper = new Swiper(history.querySelector(".history-slider"), {
-			slidesPerView: 1,
-			slideToClickedSlide: true,
-			centeredSlides: true,
-			on: {
-				slideChange: function () {
-					progress.style.width =
-						(100 / (slides.length - 1)) * this.activeIndex + "%";
-					for (let index = 1; index <= slides.length; index++) {
-						if (index < this.activeIndex + 1) {
-							history
-								.querySelector("._p-" + index)
-								.classList.add("_past");
-							history
-								.querySelector("._p-" + index)
-								.classList.remove("_now");
-						} else if (index == this.activeIndex + 1) {
-							history
-								.querySelector("._p-" + index)
-								.classList.remove("_past");
-							history
-								.querySelector("._p-" + index)
-								.classList.add("_now");
-						} else {
-							history
-								.querySelector("._p-" + index)
-								.classList.remove("_past", "_now");
-						}
-					}
-				},
-			},
-		});
-
-		// создаем точки прогресса
-		for (let index = 1; index <= slides.length; index++) {
-			pagi = document.createElement("div");
-			pagi.classList.add("history__pagi");
-			pagi.classList.add("_p-" + index);
-			index == 1 ? pagi.classList.add("_now") : "";
-			pagi.innerHTML =
-				"<span>" +
-				slides[index - 1].querySelector(".history-it__title")
-					.innerText +
-				"</span>";
-			paginatorWrap.append(pagi);
-			pagi.addEventListener("click", function () {
-				swiper.slideTo(index - 1);
-			});
-		}
-	});
-}
-
-// Фильт-слайдер Наших проектов
-if (document.querySelector(".ours-project")) {
-	document.querySelectorAll(".ours-project").forEach((item) => {
-		const swiper = new Swiper(item.querySelector(".ours-project__slider"), {
-			speed: 400,
-			observer: true,
-			spaceBetween: 10,
-			threshold: 40,
-			observeParents: true,
-		});
-		let filters = item.querySelectorAll(".ours-project__filter");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				if (filter.dataset.filter == "all") {
-					document
-						.querySelectorAll(".ours-project .ours-project__slide")
-						.forEach((slide) => {
-							slide.classList.remove("d-none");
-						});
-				} else {
-					document
-						.querySelectorAll(".ours-project .ours-project__slide")
-						.forEach((slide) => {
-							if (filter.dataset.filter == slide.dataset.filter) {
-								slide.classList.remove("d-none");
-								console.log(
-									slide.querySelector(".swiper").swiper
-								);
-								slide.querySelector(".swiper").swiper.update();
-							} else {
-								slide.classList.add("d-none");
-							}
-						});
-					swiper.update();
-				}
-			});
-		});
-	});
-}
-
-
 if (document.querySelector(".catalog")) {
 	document.querySelectorAll(".catalog__wrap").forEach((catalog) => {
 		let moreBtn = catalog.querySelector(".catalog__more");
@@ -115,6 +10,7 @@ if (document.querySelector(".catalog")) {
 		});
 	});
 }
+
 
 
 // Фильт-слайдер Наших проектов
@@ -521,35 +417,6 @@ if (document.querySelector(".project-complite__filters")) {
 }
 
 // табы решений
-if (document.querySelector(".service-slider")) {
-	document.querySelectorAll(".service-slider").forEach((item) => {
-		const swiper = new Swiper(
-			item.querySelector(".service-slider__slide"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-				// effect: "fade",
-				autoHeight: true,
-				fadeEffect: {
-					crossFade: true,
-				},
-			}
-		);
-
-		let filters = item.querySelectorAll(".service-slider__tab");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
-// табы решений
 if (document.querySelector(".sulutions-tabs")) {
 	document.querySelectorAll(".sulutions-tabs").forEach((item) => {
 		const swiper = new Swiper(
@@ -585,6 +452,35 @@ if (document.querySelector(".sulutions-tabs")) {
 	});
 }
 
+// табы решений
+if (document.querySelector(".service-slider")) {
+	document.querySelectorAll(".service-slider").forEach((item) => {
+		const swiper = new Swiper(
+			item.querySelector(".service-slider__slide"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+				// effect: "fade",
+				autoHeight: true,
+				fadeEffect: {
+					crossFade: true,
+				},
+			}
+		);
+
+		let filters = item.querySelectorAll(".service-slider__tab");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
+		});
+	});
+}
+
 $(function(){})
 $(function(){})
 $(document).ready(function () {
@@ -605,6 +501,142 @@ if (document.querySelector(".sertificate-block")) {
 		moreRender(pageLength, items, true, moreBtn);
 		moreBtn.addEventListener("click", function () {
 			moreRender(pageLength, items, false, moreBtn);
+		});
+	});
+}
+
+// Слайдер история
+if (document.querySelector(".history")) {
+	document.querySelectorAll(".history").forEach((history) => {
+		let slides = history.querySelectorAll(".swiper-slide");
+		let paginatorWrap = history.querySelector(".history__pagination");
+		let progress = history.querySelector(".history__progress-line");
+
+		//создаем слайдер
+		const swiper = new Swiper(history.querySelector(".history-slider"), {
+			slidesPerView: 1,
+			slideToClickedSlide: true,
+			centeredSlides: true,
+			on: {
+				slideChange: function () {
+					progress.style.width =
+						(100 / (slides.length - 1)) * this.activeIndex + "%";
+					for (let index = 1; index <= slides.length; index++) {
+						if (index < this.activeIndex + 1) {
+							history
+								.querySelector("._p-" + index)
+								.classList.add("_past");
+							history
+								.querySelector("._p-" + index)
+								.classList.remove("_now");
+						} else if (index == this.activeIndex + 1) {
+							history
+								.querySelector("._p-" + index)
+								.classList.remove("_past");
+							history
+								.querySelector("._p-" + index)
+								.classList.add("_now");
+						} else {
+							history
+								.querySelector("._p-" + index)
+								.classList.remove("_past", "_now");
+						}
+					}
+				},
+			},
+		});
+
+		// создаем точки прогресса
+		for (let index = 1; index <= slides.length; index++) {
+			pagi = document.createElement("div");
+			pagi.classList.add("history__pagi");
+			pagi.classList.add("_p-" + index);
+			index == 1 ? pagi.classList.add("_now") : "";
+			pagi.innerHTML =
+				"<span>" +
+				slides[index - 1].querySelector(".history-it__title")
+					.innerText +
+				"</span>";
+			paginatorWrap.append(pagi);
+			pagi.addEventListener("click", function () {
+				swiper.slideTo(index - 1);
+			});
+		}
+	});
+}
+
+// Фильт-слайдер Наших проектов
+if (document.querySelector(".ours-project")) {
+	document.querySelectorAll(".ours-project").forEach((item) => {
+		let pagination = item.querySelector(".ours-project__slider-paginator");
+		const swiper = new Swiper(item.querySelector(".ours-project__slider"), {
+			speed: 400,
+			observer: true,
+			spaceBetween: 10,
+			threshold: 40,
+			observeParents: true,
+			navigation: {
+				nextEl: item.querySelector(".ours-project__slider-next"),
+				prevEl: item.querySelector(".ours-project__slider-prev"),
+			},
+			on: {
+				init: function (swiper) {
+					pagination.innerHTML = `${String(
+						swiper.realIndex + 1
+					).padStart(
+						2,
+						"0"
+					)} <span class="project__slider-paginator-divider"></span> ${String(
+						item.querySelectorAll(".swiper-slide:not(.d-none)")
+							.length
+					).padStart(2, "0")}`;
+				},
+
+				slideChange: function (swiper) {
+					pagination.innerHTML = `${String(
+						swiper.realIndex + 1
+					).padStart(
+						2,
+						"0"
+					)} <span class="project__slider-paginator-divider"></span> ${String(
+						item.querySelectorAll(".swiper-slide:not(.d-none)")
+							.length
+					).padStart(2, "0")}`;
+				},
+			},
+		});
+		let filters = item.querySelectorAll(".ours-project__filter");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				if (filter.dataset.filter == "all") {
+					document
+						.querySelectorAll(".ours-project .ours-project__slide")
+						.forEach((slide) => {
+							slide.classList.remove("d-none");
+						});
+				} else {
+					document
+						.querySelectorAll(".ours-project .ours-project__slide")
+						.forEach((slide) => {
+							if (filter.dataset.filter == slide.dataset.filter) {
+								slide.classList.remove("d-none");
+							} else {
+								slide.classList.add("d-none");
+							}
+						});
+					swiper.update();
+				}
+				pagination.innerHTML = `${String(swiper.realIndex + 1).padStart(
+					2,
+					"0"
+				)} <span class="project__slider-paginator-divider"></span> ${String(
+					item.querySelectorAll(".swiper-slide:not(.d-none)").length
+				).padStart(2, "0")}`;
+			});
 		});
 	});
 }
@@ -768,7 +800,6 @@ window.addEventListener("scroll", function () {
 		: document.body.classList.remove("_not-top");
 });
 
-$(function(){})
 let mobmenu = document.querySelector(".mobmenu");
 document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
 	let parrent = title.closest(".mobmenu__menu-li");
@@ -787,6 +818,76 @@ document
 	.addEventListener("click", function () {
 		fadeOut(mobmenu, 500, "flex");
 	});
+
+$(function(){})
+// Галлерея сертификатоф
+if (document.querySelector(".sertificate-gallery")) {
+	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
+		const swiper = new Swiper(gallery, {
+			spaceBetween: 20,
+			preventClicks: false,
+			preventClicksPropagation: false,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.3,
+				},
+				480: {
+					slidesPerView: 2.1,
+				},
+				740: {
+					slidesPerView: 3,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+			},
+		});
+	});
+}
+$(function () {
+	$(".gallery-popup").magnificPopup({
+		gallery: {
+			enabled: true,
+		},
+		delegate: "a",
+		type: "image",
+	});
+});
+
+document.querySelectorAll(".project").forEach((project) => {
+	project.querySelectorAll(".project__slider").forEach((item) => {
+		let length = item.querySelectorAll(".swiper-slide").length;
+		let pagination = item.querySelector(".project__slider-paginator");
+		setTimeout(function () {
+			let swiper = new Swiper(item, {
+				effect: "fade",
+				speed: 1000,
+				loop: true,
+				navigation: {
+					nextEl: project.querySelector(".project__slider-next"),
+					prevEl: project.querySelector(".project__slider-prev"),
+				},
+				observeParents: true,
+				observer: true,
+				on: {
+					slideChange: function (swiper) {
+						pagination.innerHTML = `${String(
+							swiper.realIndex + 1
+						).padStart(
+							2,
+							"0"
+						)} <span class="project__slider-paginator-divider"></span> ${String(
+							length
+						).padStart(2, "0")}`;
+					},
+				},
+				autoplay: {
+					delay: 3000,
+				},
+			});
+		}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+	});
+});
 
 $(function () {
 	$(".popup__close,.popup__overlay").click(function () {
@@ -863,75 +964,6 @@ $(function () {
 			},
 		});
 	}
-});
-
-document.querySelectorAll(".project").forEach((project) => {
-	project.querySelectorAll(".project__slider").forEach((item) => {
-		let length = item.querySelectorAll(".swiper-slide").length;
-		let pagination = item.querySelector(".project__slider-paginator");
-		setTimeout(function () {
-			let swiper = new Swiper(item, {
-				effect: "fade",
-				speed: 1000,
-				loop: true,
-				navigation: {
-					nextEl: project.querySelector(".project__slider-next"),
-					prevEl: project.querySelector(".project__slider-prev"),
-				},
-				observeParents: true,
-				observer: true,
-				on: {
-					slideChange: function (swiper) {
-						pagination.innerHTML = `${String(
-							swiper.realIndex + 1
-						).padStart(
-							2,
-							"0"
-						)} <span class="project__slider-paginator-divider"></span> ${String(
-							length
-						).padStart(2, "0")}`;
-					},
-				},
-				autoplay: {
-					delay: 3000,
-				},
-			});
-		}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
-	});
-});
-
-// Галлерея сертификатоф
-if (document.querySelector(".sertificate-gallery")) {
-	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
-		const swiper = new Swiper(gallery, {
-			spaceBetween: 20,
-			preventClicks: false,
-			preventClicksPropagation: false,
-			breakpoints: {
-				320: {
-					slidesPerView: 1.3,
-				},
-				480: {
-					slidesPerView: 2.1,
-				},
-				740: {
-					slidesPerView: 3,
-				},
-				992: {
-					slidesPerView: 4,
-				},
-			},
-		});
-	});
-}
-$(function () {
-	$(".gallery-popup").magnificPopup({
-		gallery: {
-			enabled: true,
-		},
-		delegate: "a",
-		type: "image",
-	});
 });
 
 document.querySelectorAll(".video").forEach((item) => {

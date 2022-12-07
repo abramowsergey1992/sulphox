@@ -88,7 +88,7 @@ img {
 }
 
 .block {
-	margin-bottom: 130px;
+	margin-bottom: 100px;
 
 	@media (max-width: 992px) {
 		margin-bottom: 80px;
@@ -156,6 +156,11 @@ img {
 			margin-bottom: 0;
 		}
 	}
+}
+
+.constructor_image {
+	border-radius: 30px;
+	max-height: calc(100vh - 160px);
 }
 
 .pmt-minimal {

@@ -30,8 +30,9 @@
 		margin-left: auto;
 		margin-right: auto;
 
-		@media(max-height:800px) {
+		@media(max-height:850px) {
 			margin-top: 30px;
+			max-width: 700px;
 		}
 	}
 

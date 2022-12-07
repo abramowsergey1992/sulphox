@@ -61,12 +61,42 @@ if (document.querySelector(".history")) {
 // Фильт-слайдер Наших проектов
 if (document.querySelector(".ours-project")) {
 	document.querySelectorAll(".ours-project").forEach((item) => {
+		let pagination = item.querySelector(".ours-project__slider-paginator");
 		const swiper = new Swiper(item.querySelector(".ours-project__slider"), {
 			speed: 400,
 			observer: true,
 			spaceBetween: 10,
 			threshold: 40,
 			observeParents: true,
+			navigation: {
+				nextEl: item.querySelector(".ours-project__slider-next"),
+				prevEl: item.querySelector(".ours-project__slider-prev"),
+			},
+			on: {
+				init: function (swiper) {
+					pagination.innerHTML = `${String(
+						swiper.realIndex + 1
+					).padStart(
+						2,
+						"0"
+					)} <span class="project__slider-paginator-divider"></span> ${String(
+						item.querySelectorAll(".swiper-slide:not(.d-none)")
+							.length
+					).padStart(2, "0")}`;
+				},
+
+				slideChange: function (swiper) {
+					pagination.innerHTML = `${String(
+						swiper.realIndex + 1
+					).padStart(
+						2,
+						"0"
+					)} <span class="project__slider-paginator-divider"></span> ${String(
+						item.querySelectorAll(".swiper-slide:not(.d-none)")
+							.length
+					).padStart(2, "0")}`;
+				},
+			},
 		});
 		let filters = item.querySelectorAll(".ours-project__filter");
 		filters.forEach((filter) => {
@@ -87,16 +117,18 @@ if (document.querySelector(".ours-project")) {
 						.forEach((slide) => {
 							if (filter.dataset.filter == slide.dataset.filter) {
 								slide.classList.remove("d-none");
-								console.log(
-									slide.querySelector(".swiper").swiper
-								);
-								slide.querySelector(".swiper").swiper.update();
 							} else {
 								slide.classList.add("d-none");
 							}
 						});
 					swiper.update();
 				}
+				pagination.innerHTML = `${String(swiper.realIndex + 1).padStart(
+					2,
+					"0"
+				)} <span class="project__slider-paginator-divider"></span> ${String(
+					item.querySelectorAll(".swiper-slide:not(.d-none)").length
+				).padStart(2, "0")}`;
 			});
 		});
 	});
