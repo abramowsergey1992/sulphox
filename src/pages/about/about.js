@@ -1,3 +1,38 @@
+//создаем слайдер
+document.querySelectorAll(".one-slider").forEach((slider) => {
+	let pagination = slider.querySelector(".one-slider__slider-paginator");
+	const one = new Swiper(slider, {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		preventClicks: false,
+		preventClicksPropagation: false,
+
+		navigation: {
+			nextEl: slider.querySelector(".one-slider__slider-next"),
+			prevEl: slider.querySelector(".one-slider__slider-prev"),
+		},
+		on: {
+			init: function (swiper) {
+				pagination.innerHTML = `${String(swiper.realIndex + 1).padStart(
+					2,
+					"0"
+				)} <span class="one-slider__slider-paginator-divider"></span> ${String(
+					slider.querySelectorAll(".swiper-slide:not(.d-none)").length
+				).padStart(2, "0")}`;
+			},
+
+			slideChange: function (swiper) {
+				pagination.innerHTML = `${String(swiper.realIndex + 1).padStart(
+					2,
+					"0"
+				)} <span class="one-slider__slider-paginator-divider"></span> ${String(
+					slider.querySelectorAll(".swiper-slide:not(.d-none)").length
+				).padStart(2, "0")}`;
+			},
+		},
+	});
+});
+
 // Слайдер история
 if (document.querySelector(".history")) {
 	document.querySelectorAll(".history").forEach((history) => {
@@ -5,12 +40,6 @@ if (document.querySelector(".history")) {
 		let paginatorWrap = history.querySelector(".history__pagination");
 		let progress = history.querySelector(".history__progress-line");
 
-		//создаем слайдер
-		const swiper = new Swiper(history.querySelector(".one-slider"), {
-			slidesPerView: 1,
-			slideToClickedSlide: true,
-			centeredSlides: true,
-		});
 		//создаем слайдер
 		const swiper = new Swiper(history.querySelector(".history-slider"), {
 			slidesPerView: 1,

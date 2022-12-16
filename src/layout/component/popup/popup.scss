@@ -18,7 +18,17 @@
 		cursor: pointer;
 
 		@media(max-width:992px) {
-			right: 0;
+			right: 9px;
+			top: 4px;
+
+			svg {
+				width: 20px !important;
+
+				path {
+					stroke-width: 2px;
+					stroke: #000 !important;
+				}
+			}
 		}
 
 		&:hover {

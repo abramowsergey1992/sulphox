@@ -238,6 +238,9 @@
 	background: $blue;
 	position: relative;
 
+	&__sub-title {
+		@media(max-width:992px) {}
+	}
 
 	@media(max-width:992px) {
 		padding-top: 62px;
@@ -268,10 +271,16 @@
 
 	&__row {
 		display: grid;
-		grid-template-columns: 740px auto;
+		gap: 50px;
+		grid-template-columns: 670px auto;
+
+		max-width: 1164px;
+		margin-left: auto;
+		margin-right: auto;
 
 		@media(max-width:992px) {
 			display: flex;
+			gap: 0;
 			flex-direction: column-reverse;
 		}
 	}
@@ -295,7 +304,7 @@
 		}
 
 		@media(max-width:992px) {
-			height: initial;
+			height: initial !important;
 			display: block;
 		}
 
@@ -363,7 +372,7 @@
 			}
 
 			@media(max-width:992px) {
-				height: 450px;
+				height: 450px !important;
 			}
 		}
 

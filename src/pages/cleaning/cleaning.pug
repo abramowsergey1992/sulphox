@@ -101,7 +101,9 @@ block content
 				.efficiency__left 
 					.h3 Эффективность
 					.h2 98,8 %— эффективность очистки воздуха от сероводорода 
-					p  Высокие показатели сохраняются даже при больших концентрациях H2S (до 1 400 мг/м3).
+					p  Высокие показатели сохраняются даже при больших концентрациях H2S (до 1 400 мг/м3)
+					.efficiency__img-scroll 
+						img(src="img/efficiency.svg", alt="")
 				.efficiency__right
 					blockquote Сероводород H2S — 98,8 %
 						br
@@ -112,13 +114,7 @@ block content
 						| Метилмеркаптан CH4S— 98,6 %
 						br
 						| Аммиак NH3— 97,6 %
-
-				.efficiency__left 
-					.efficiency__img-scroll 
-						img(src="img/efficiency.svg", alt="")
-				.efficiency__right._bottom
 					blockquote Эффективность очистки воздуха подтверждена независимыми исследованиями.
-				.efficiency__left 
 					.efficiency__legends
 						.efficiency__legend
 							.efficiency__legend-color(style="background:#fff")
@@ -132,12 +128,15 @@ block content
 								sub 2
 								|S на выходе из установки, мг/м
 								sup 3 
+					
 	.inner
 		.block 
 			.block__head 
 				h2  сертификаты
 					
-				a.btn._big._white(href="#") все сертификаты
+				a.btn._big._white._v-desc(href="#") все сертификаты
 			.block__desc 
 				p Оборудование и реагенты сертифицированы и имеют всю необходимую разрешительную документацию.
 			include ../../layout/component/sertificate-gallery/sertificate-gallery
+			.block__footer
+				a.btn._big._white._v-mob(href="#") все сертификаты

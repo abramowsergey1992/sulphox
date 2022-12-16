@@ -1,116 +1,117 @@
 .sulutions-tabs {
-    &__slider {
-        overflow: visible;
-    }
+	&__slider {
+		overflow: visible;
+	}
 
-    &__tabs {
-        display: flex;
-        flex-direction: row;
-        gap: 70px;
-        position: relative;
-        margin-bottom: 51px;
-        border-bottom: 1px solid #F1F3F6;
-        overflow-x: auto;
-    }
+	&__tabs {
+		display: flex;
+		flex-direction: row;
+		gap: 70px;
+		position: relative;
+		margin-bottom: 51px;
+		border-bottom: 1px solid #F1F3F6;
+		overflow-x: auto;
+	}
 
-    &__line {
-        display: block;
-        content: '';
-        width: 100%;
-        transition: width 0.3s, left 0.3s;
-        position: absolute;
-        bottom: 0px;
-        height: 2px;
-        background: $orange;
-        width: 100px;
-    }
+	&__line {
+		display: block;
+		content: '';
+		width: 100%;
+		transition: width 0.3s, left 0.3s;
+		position: absolute;
+		bottom: 0px;
+		height: 2px;
+		background: $orange;
+		width: 100px;
+	}
 
-    &__pdf {
-        background: #FFFFFF;
-        border: 1px solid #DFE5EE;
-        border-radius: 10px;
-        padding: 30px;
-        padding-left: 67px;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 14px;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #0A2973 !important;
+	&__pdf {
+		background: #FFFFFF;
+		border: 1px solid #DFE5EE;
+		border-radius: 10px;
+		padding: 30px;
+		padding-left: 67px;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 14px;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #0A2973 !important;
+		display: inline-block;
+		margin-bottom: 3px;
+		position: relative;
 
-        position: relative;
+		&::after {
+			display: block;
+			content: '';
+			width: 24px;
+			height: 28px;
+			left: 30px;
+			top: 50%;
+			transform: translateY(-50%);
+			position: absolute;
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='28' viewBox='0 0 24 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.26148 18.0057C6.26148 17.5418 5.93956 17.2651 5.37157 17.2651C5.13963 17.2651 4.98255 17.288 4.90039 17.3099V18.7984C4.99767 18.8203 5.11726 18.8276 5.28211 18.8276C5.88753 18.8276 6.26148 18.5218 6.26148 18.0057Z' fill='%23F35F42'/%3E%3Cpath d='M9.77768 17.2803C9.52332 17.2803 9.35894 17.3022 9.26172 17.325V20.6216C9.359 20.6444 9.51608 20.6444 9.65809 20.6444C10.69 20.6517 11.3629 20.0837 11.3629 18.8802C11.3702 17.8336 10.757 17.2803 9.77768 17.2803Z' fill='%23F35F42'/%3E%3Cpath d='M16.3107 0.0322266H5.09065C3.4515 0.0322266 2.11741 1.36724 2.11741 3.00547V14H1.82701C1.16544 14 0.628906 14.536 0.628906 15.1982V22.4642C0.628906 23.1263 1.16538 23.6622 1.82701 23.6622H2.11741V24.9946C2.11741 26.6346 3.4515 27.9678 5.09065 27.9678H20.4C22.0381 27.9678 23.3724 26.6345 23.3724 24.9946V7.0691L16.3107 0.0322266ZM3.77203 16.5094C4.12315 16.4501 4.61669 16.4054 5.31204 16.4054C6.01475 16.4054 6.51559 16.5395 6.85211 16.8089C7.17357 17.0628 7.3905 17.4819 7.3905 17.9751C7.3905 18.4682 7.22612 18.8874 6.92703 19.1713C6.53801 19.5375 5.96272 19.7019 5.28973 19.7019C5.13996 19.7019 5.00571 19.6945 4.90072 19.6799V21.4817H3.77203V16.5094ZM20.4 26.147H5.09065C4.45596 26.147 3.93913 25.6301 3.93913 24.9946V23.6622H18.2106C18.8723 23.6622 19.4087 23.1263 19.4087 22.4642V15.1982C19.4087 14.536 18.8723 14 18.2106 14H3.93913V3.00547C3.93913 2.37171 4.45602 1.85488 5.09065 1.85488L15.6295 1.84387V5.73941C15.6295 6.87725 16.5528 7.80136 17.6915 7.80136L21.5076 7.7904L21.5505 24.9945C21.5505 25.6301 21.0346 26.147 20.4 26.147ZM8.1183 21.4588V16.5094C8.53692 16.4428 9.08255 16.4054 9.65837 16.4054C10.6153 16.4054 11.2359 16.577 11.7221 16.9432C12.2454 17.3322 12.5741 17.9523 12.5741 18.8425C12.5741 19.8068 12.2229 20.4726 11.7367 20.8834C11.2061 21.3245 10.3984 21.5337 9.41177 21.5337C8.82089 21.5337 8.40226 21.4962 8.1183 21.4588ZM16.2779 18.5285V19.4553H14.4684V21.4817H13.3247V16.4428H16.4048V17.3769H14.4684V18.5285H16.2779Z' fill='%23F35F42'/%3E%3C/svg%3E%0A");
+			background-position: center;
+			background-repeat: no-repeat;
+		}
 
-        &::after {
-            display: block;
-            content: '';
-            width: 24px;
-            height: 28px;
-            left: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            position: absolute;
-            background-image: url("data:image/svg+xml,%3Csvg width='24' height='28' viewBox='0 0 24 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.26148 18.0057C6.26148 17.5418 5.93956 17.2651 5.37157 17.2651C5.13963 17.2651 4.98255 17.288 4.90039 17.3099V18.7984C4.99767 18.8203 5.11726 18.8276 5.28211 18.8276C5.88753 18.8276 6.26148 18.5218 6.26148 18.0057Z' fill='%23F35F42'/%3E%3Cpath d='M9.77768 17.2803C9.52332 17.2803 9.35894 17.3022 9.26172 17.325V20.6216C9.359 20.6444 9.51608 20.6444 9.65809 20.6444C10.69 20.6517 11.3629 20.0837 11.3629 18.8802C11.3702 17.8336 10.757 17.2803 9.77768 17.2803Z' fill='%23F35F42'/%3E%3Cpath d='M16.3107 0.0322266H5.09065C3.4515 0.0322266 2.11741 1.36724 2.11741 3.00547V14H1.82701C1.16544 14 0.628906 14.536 0.628906 15.1982V22.4642C0.628906 23.1263 1.16538 23.6622 1.82701 23.6622H2.11741V24.9946C2.11741 26.6346 3.4515 27.9678 5.09065 27.9678H20.4C22.0381 27.9678 23.3724 26.6345 23.3724 24.9946V7.0691L16.3107 0.0322266ZM3.77203 16.5094C4.12315 16.4501 4.61669 16.4054 5.31204 16.4054C6.01475 16.4054 6.51559 16.5395 6.85211 16.8089C7.17357 17.0628 7.3905 17.4819 7.3905 17.9751C7.3905 18.4682 7.22612 18.8874 6.92703 19.1713C6.53801 19.5375 5.96272 19.7019 5.28973 19.7019C5.13996 19.7019 5.00571 19.6945 4.90072 19.6799V21.4817H3.77203V16.5094ZM20.4 26.147H5.09065C4.45596 26.147 3.93913 25.6301 3.93913 24.9946V23.6622H18.2106C18.8723 23.6622 19.4087 23.1263 19.4087 22.4642V15.1982C19.4087 14.536 18.8723 14 18.2106 14H3.93913V3.00547C3.93913 2.37171 4.45602 1.85488 5.09065 1.85488L15.6295 1.84387V5.73941C15.6295 6.87725 16.5528 7.80136 17.6915 7.80136L21.5076 7.7904L21.5505 24.9945C21.5505 25.6301 21.0346 26.147 20.4 26.147ZM8.1183 21.4588V16.5094C8.53692 16.4428 9.08255 16.4054 9.65837 16.4054C10.6153 16.4054 11.2359 16.577 11.7221 16.9432C12.2454 17.3322 12.5741 17.9523 12.5741 18.8425C12.5741 19.8068 12.2229 20.4726 11.7367 20.8834C11.2061 21.3245 10.3984 21.5337 9.41177 21.5337C8.82089 21.5337 8.40226 21.4962 8.1183 21.4588ZM16.2779 18.5285V19.4553H14.4684V21.4817H13.3247V16.4428H16.4048V17.3769H14.4684V18.5285H16.2779Z' fill='%23F35F42'/%3E%3C/svg%3E%0A");
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+		&:hover {
+			border-color: $orange
+		}
+	}
 
-        &:hover {
-            border-color: $orange
-        }
-    }
+	&__text {
+		font-size: 16px;
 
-    &__text {
-        font-size: 16px;
+		p {
+			font-size: 16px;
 
-        p {
-            font-size: 16px;
+			b {
+				font-weight: 500;
+			}
+		}
 
-            b {
-                font-weight: 500;
-            }
-        }
+		ul {
+			margin-left: 22px;
+			margin-bottom: 32px;
+			margin-top: -10px;
 
-        ul {
-            margin-left: 22px;
-            margin-bottom: 32px;
-            margin-top: -10px;
+			li {
+				position: relative;
+				padding-left: 16px;
+				margin-bottom: 12px;
 
-            li {
-                position: relative;
-                padding-left: 16px;
-                margin-bottom: 12px;
+				&::after {
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+					background: $orange;
+					position: absolute;
+					left: 0;
+					top: 11px;
+					content: '';
+				}
+			}
+		}
+	}
 
-                &::after {
-                    width: 4px;
-                    height: 4px;
-                    border-radius: 50%;
-                    background: $orange;
-                    position: absolute;
-                    left: 0;
-                    top: 11px;
-                    content: '';
-                }
-            }
-        }
-    }
+	&__tab {
+		font-weight: 400;
+		white-space: nowrap;
+		font-size: 16px;
+		line-height: 34px;
 
-    &__tab {
-        font-weight: 400;
-        white-space: nowrap;
-        font-size: 16px;
-        line-height: 34px;
-        letter-spacing: -0.02em;
-        text-transform: uppercase;
-        color: #627197;
-        cursor: pointer;
-        font-weight: 500;
-        position: relative;
+		text-transform: uppercase;
+		color: #627197;
+		cursor: pointer;
+		font-weight: 500;
+		position: relative;
 
 
 
-        &:hover,
-        &.active {
-            color: $orange;
-        }
-    }
+		&:hover,
+		&.active {
+			color: $orange;
+		}
+	}
 }

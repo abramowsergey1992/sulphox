@@ -1,7 +1,8 @@
 let mobmenu = document.querySelector(".mobmenu");
 document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
 	let parrent = title.closest(".mobmenu__menu-li");
-	title.addEventListener("click", function () {
+	title.addEventListener("click", function (e) {
+		e.preventDefault();
 		mobmenu.classList.toggle("_open-item");
 		parrent.classList.toggle("_open");
 	});

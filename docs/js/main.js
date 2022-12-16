@@ -1,3 +1,38 @@
+//создаем слайдер
+document.querySelectorAll(".one-slider").forEach((slider) => {
+	let pagination = slider.querySelector(".one-slider__slider-paginator");
+	const one = new Swiper(slider, {
+		slidesPerView: 1,
+		spaceBetween: 10,
+		preventClicks: false,
+		preventClicksPropagation: false,
+
+		navigation: {
+			nextEl: slider.querySelector(".one-slider__slider-next"),
+			prevEl: slider.querySelector(".one-slider__slider-prev"),
+		},
+		on: {
+			init: function (swiper) {
+				pagination.innerHTML = `${String(swiper.realIndex + 1).padStart(
+					2,
+					"0"
+				)} <span class="one-slider__slider-paginator-divider"></span> ${String(
+					slider.querySelectorAll(".swiper-slide:not(.d-none)").length
+				).padStart(2, "0")}`;
+			},
+
+			slideChange: function (swiper) {
+				pagination.innerHTML = `${String(swiper.realIndex + 1).padStart(
+					2,
+					"0"
+				)} <span class="one-slider__slider-paginator-divider"></span> ${String(
+					slider.querySelectorAll(".swiper-slide:not(.d-none)").length
+				).padStart(2, "0")}`;
+			},
+		},
+	});
+});
+
 // Слайдер история
 if (document.querySelector(".history")) {
 	document.querySelectorAll(".history").forEach((history) => {
@@ -5,12 +40,6 @@ if (document.querySelector(".history")) {
 		let paginatorWrap = history.querySelector(".history__pagination");
 		let progress = history.querySelector(".history__progress-line");
 
-		//создаем слайдер
-		const swiper = new Swiper(history.querySelector(".one-slider"), {
-			slidesPerView: 1,
-			slideToClickedSlide: true,
-			centeredSlides: true,
-		});
 		//создаем слайдер
 		const swiper = new Swiper(history.querySelector(".history-slider"), {
 			slidesPerView: 1,
@@ -141,6 +170,7 @@ if (document.querySelector(".ours-project")) {
 }
 
 
+
 // Фильт-слайдер Наших проектов
 if (document.querySelector(".presentations")) {
 	document.querySelectorAll(".presentations").forEach((item) => {
@@ -152,43 +182,6 @@ if (document.querySelector(".presentations")) {
 			}
 		);
 		let filters = item.querySelectorAll(".presentations__filter");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
-if (document.querySelector(".catalog")) {
-	document.querySelectorAll(".catalog__wrap").forEach((catalog) => {
-		let moreBtn = catalog.querySelector(".catalog__more");
-		console.log("moreBtn", moreBtn);
-		let pageLength = moreBtn.dataset.pagelenght;
-		let items = catalog.querySelectorAll(".catalog-1,.catalog-2");
-		moreRender(pageLength, items, true, moreBtn);
-		moreBtn.addEventListener("click", function () {
-			moreRender(pageLength, items, false, moreBtn);
-		});
-	});
-}
-
-
-// Метод отчистки слайдер
-if (document.querySelector(".cleaning-method")) {
-	document.querySelectorAll(".cleaning-method").forEach((method) => {
-		const swiper = new Swiper(
-			method.querySelector(".cleaning-method__swiper"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-			}
-		);
-		let filters = method.querySelectorAll(".cleaning-method__btn");
 		filters.forEach((filter) => {
 			filter.addEventListener("click", function () {
 				filters.forEach((filter) => {
@@ -218,6 +211,19 @@ $(function () {
 		type: "image",
 	});
 });
+
+if (document.querySelector(".catalog")) {
+	document.querySelectorAll(".catalog__wrap").forEach((catalog) => {
+		let moreBtn = catalog.querySelector(".catalog__more");
+		console.log("moreBtn", moreBtn);
+		let pageLength = moreBtn.dataset.pagelenght;
+		let items = catalog.querySelectorAll(".catalog-1,.catalog-2");
+		moreRender(pageLength, items, true, moreBtn);
+		moreBtn.addEventListener("click", function () {
+			moreRender(pageLength, items, false, moreBtn);
+		});
+	});
+}
 
 $(function () {
 	if ($("#contact-form").length) {
@@ -367,40 +373,28 @@ if (document.querySelector(".solutions-slider")) {
 }
 
 $(function(){})
-document.querySelectorAll(".news-page").forEach((item) => {
-	let items = item.querySelectorAll(".news-item,.article-item");
-	let pagelength = item.querySelector(".news-page__row").dataset.pagelength;
-	let moreBtn = item.querySelector(".news-page__more");
-	let filters = item.querySelectorAll(".news-page__filter");
-	filterRender(pagelength, items, "all", true, moreBtn);
-	moreBtn.addEventListener("click", function () {
-		filterRender(
-			pagelength,
-			items,
-			item.querySelector(".news-page__filter._active").dataset.filter,
-			false,
-			moreBtn
+// Метод отчистки слайдер
+if (document.querySelector(".cleaning-method")) {
+	document.querySelectorAll(".cleaning-method").forEach((method) => {
+		const swiper = new Swiper(
+			method.querySelector(".cleaning-method__swiper"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+			}
 		);
-	});
-	filters.forEach((filter) => {
-		filter.addEventListener("click", function () {
-			if (!filter.classList.contains("_active")) {
+		let filters = method.querySelectorAll(".cleaning-method__btn");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
 				filters.forEach((filter) => {
 					filter.classList.remove("_active");
 				});
 				filter.classList.add("_active");
-				filterRender(
-					pagelength,
-					items,
-					filter.dataset.filter,
-					true,
-					moreBtn
-				);
-			}
+				swiper.slideTo(filter.dataset.slide);
+			});
 		});
 	});
-});
-
+}
 
 //квиз
 if (document.querySelector(".quiz-slider")) {
@@ -552,6 +546,41 @@ if (document.querySelector(".news")) {
 }
 
 $(function(){})
+document.querySelectorAll(".news-page").forEach((item) => {
+	let items = item.querySelectorAll(".news-item,.article-item");
+	let pagelength = item.querySelector(".news-page__row").dataset.pagelength;
+	let moreBtn = item.querySelector(".news-page__more");
+	let filters = item.querySelectorAll(".news-page__filter");
+	filterRender(pagelength, items, "all", true, moreBtn);
+	moreBtn.addEventListener("click", function () {
+		filterRender(
+			pagelength,
+			items,
+			item.querySelector(".news-page__filter._active").dataset.filter,
+			false,
+			moreBtn
+		);
+	});
+	filters.forEach((filter) => {
+		filter.addEventListener("click", function () {
+			if (!filter.classList.contains("_active")) {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				filterRender(
+					pagelength,
+					items,
+					filter.dataset.filter,
+					true,
+					moreBtn
+				);
+			}
+		});
+	});
+});
+
+
 // Фильт-слайдер Наших проектов
 if (document.querySelector(".project-complite__filters")) {
 	let filters = document.querySelectorAll(".project-complite__filter");
@@ -612,7 +641,6 @@ if (document.querySelector(".project-complite__filters")) {
 	});
 }
 
-$(function(){})
 // табы решений
 if (document.querySelector(".service-slider")) {
 	document.querySelectorAll(".service-slider").forEach((item) => {
@@ -638,28 +666,6 @@ if (document.querySelector(".service-slider")) {
 				filter.classList.add("_active");
 				swiper.slideTo(filter.dataset.slide);
 			});
-		});
-	});
-}
-
-$(document).ready(function () {
-	$(".video-it__link").magnificPopup({
-		disableOn: 700,
-		type: "iframe",
-		mainClass: "mfp-fade",
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false,
-	});
-});
-if (document.querySelector(".sertificate-block")) {
-	document.querySelectorAll(".sertificate-block").forEach((catalog) => {
-		let moreBtn = catalog.querySelector(".sertificate-block__more");
-		let pageLength = moreBtn.dataset.pagelenght;
-		let items = catalog.querySelectorAll(".sertificate-it");
-		moreRender(pageLength, items, true, moreBtn);
-		moreBtn.addEventListener("click", function () {
-			moreRender(pageLength, items, false, moreBtn);
 		});
 	});
 }
@@ -701,6 +707,28 @@ if (document.querySelector(".sulutions-tabs")) {
 }
 
 $(function(){})
+$(function(){})
+$(document).ready(function () {
+	$(".video-it__link").magnificPopup({
+		type: "iframe",
+		mainClass: "mfp-fade",
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: false,
+	});
+});
+if (document.querySelector(".sertificate-block")) {
+	document.querySelectorAll(".sertificate-block").forEach((catalog) => {
+		let moreBtn = catalog.querySelector(".sertificate-block__more");
+		let pageLength = moreBtn.dataset.pagelenght;
+		let items = catalog.querySelectorAll(".sertificate-it");
+		moreRender(pageLength, items, true, moreBtn);
+		moreBtn.addEventListener("click", function () {
+			moreRender(pageLength, items, false, moreBtn);
+		});
+	});
+}
+
 const fadeIn = (el, timeout, display) => {
 	el.style.opacity = 0;
 	el.style.display = display || "block";
@@ -860,10 +888,12 @@ $(function () {
 	});
 });
 
+$(function(){})
 let mobmenu = document.querySelector(".mobmenu");
 document.querySelectorAll(".mobmenu__menu-drop-title").forEach((title) => {
 	let parrent = title.closest(".mobmenu__menu-li");
-	title.addEventListener("click", function () {
+	title.addEventListener("click", function (e) {
+		e.preventDefault();
 		mobmenu.classList.toggle("_open-item");
 		parrent.classList.toggle("_open");
 	});
@@ -878,93 +908,6 @@ document
 	.addEventListener("click", function () {
 		fadeOut(mobmenu, 500, "flex");
 	});
-
-$(function(){})
-document.querySelectorAll(".project").forEach((project) => {
-	project.querySelectorAll(".project__slider").forEach((item) => {
-		let length = item.querySelectorAll(".swiper-slide").length;
-		let pagination = item.querySelector(".project__slider-paginator");
-		setTimeout(function () {
-			let swiper = new Swiper(item, {
-				effect: "fade",
-				speed: 1000,
-				loop: true,
-				navigation: {
-					nextEl: project.querySelector(".project__slider-next"),
-					prevEl: project.querySelector(".project__slider-prev"),
-				},
-				observeParents: true,
-				observer: true,
-				on: {
-					slideChange: function (swiper) {
-						pagination.innerHTML = `${String(
-							swiper.realIndex + 1
-						).padStart(
-							2,
-							"0"
-						)} <span class="project__slider-paginator-divider"></span> ${String(
-							length
-						).padStart(2, "0")}`;
-					},
-				},
-				autoplay: {
-					delay: 3000,
-				},
-			});
-		}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
-	});
-});
-
-// Галлерея сертификатоф
-if (document.querySelector(".sertificate-gallery")) {
-	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
-		const swiper = new Swiper(gallery, {
-			spaceBetween: 20,
-			preventClicks: false,
-			preventClicksPropagation: false,
-			breakpoints: {
-				320: {
-					slidesPerView: 1.3,
-				},
-				480: {
-					slidesPerView: 2.1,
-				},
-				740: {
-					slidesPerView: 3,
-				},
-				992: {
-					slidesPerView: 4,
-				},
-			},
-		});
-	});
-}
-$(function () {
-	$(".gallery-popup").magnificPopup({
-		gallery: {
-			enabled: true,
-		},
-		delegate: ".sertificate-it__text",
-		type: "image",
-	});
-});
-
-document.querySelectorAll(".video").forEach((item) => {
-	let video = item.querySelector("video");
-	let play = document.createElement("div");
-	play.classList.add("video__play");
-	play.innerHTML =
-		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
-	video.addEventListener("click", function () {
-		video.pause();
-		fadeIn(play, 300, "flex");
-	});
-	play.addEventListener("click", function () {
-		video.play();
-		fadeOut(play, 300, "flex");
-	});
-	item.append(play);
-});
 
 $(function () {
 	$(".popup__close,.popup__overlay").click(function () {
@@ -1041,4 +984,90 @@ $(function () {
 			},
 		});
 	}
+});
+
+document.querySelectorAll(".project").forEach((project) => {
+	project.querySelectorAll(".project__slider").forEach((item) => {
+		let length = item.querySelectorAll(".swiper-slide").length;
+		let pagination = item.querySelector(".project__slider-paginator");
+		setTimeout(function () {
+			let swiper = new Swiper(item, {
+				effect: "fade",
+				speed: 1000,
+				loop: true,
+				navigation: {
+					nextEl: project.querySelector(".project__slider-next"),
+					prevEl: project.querySelector(".project__slider-prev"),
+				},
+				observeParents: true,
+				observer: true,
+				on: {
+					slideChange: function (swiper) {
+						pagination.innerHTML = `${String(
+							swiper.realIndex + 1
+						).padStart(
+							2,
+							"0"
+						)} <span class="project__slider-paginator-divider"></span> ${String(
+							length
+						).padStart(2, "0")}`;
+					},
+				},
+				autoplay: {
+					delay: 3000,
+				},
+			});
+		}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+	});
+});
+
+document.querySelectorAll(".video").forEach((item) => {
+	let video = item.querySelector("video");
+	let play = document.createElement("div");
+	play.classList.add("video__play");
+	play.innerHTML =
+		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
+	video.addEventListener("click", function () {
+		video.pause();
+		fadeIn(play, 300, "flex");
+	});
+	play.addEventListener("click", function () {
+		video.play();
+		fadeOut(play, 300, "flex");
+	});
+	item.append(play);
+});
+
+// Галлерея сертификатоф
+if (document.querySelector(".sertificate-gallery")) {
+	document.querySelectorAll(".sertificate-gallery").forEach((gallery) => {
+		const swiper = new Swiper(gallery, {
+			spaceBetween: 20,
+			preventClicks: false,
+			preventClicksPropagation: false,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.3,
+				},
+				480: {
+					slidesPerView: 2.1,
+				},
+				740: {
+					slidesPerView: 3,
+				},
+				992: {
+					slidesPerView: 4,
+				},
+			},
+		});
+	});
+}
+$(function () {
+	$(".gallery-popup").magnificPopup({
+		gallery: {
+			enabled: true,
+		},
+		delegate: ".sertificate-it__text",
+		type: "image",
+	});
 });

@@ -6,18 +6,23 @@ block content
 	.inner.block 
 		.swiper.one-slider
 			.swiper-wrapper 
-				.swiper-slide
+				.swiper-slide.video
 					video(preload="metadata" src="video/v8.mp4") 
-				.swiper-slide
+				.swiper-slide.photo
 					+picture('news-1','jpg')
-				.swiper-slide
+				.swiper-slide.photo
 					+picture('news-1','jpg')
+			<div class="one-slider__slider-paginator"></div>
+			<div class="one-slider__slider-nav">
+				<div class="one-slider__slider-prev"></div>
+				<div class="one-slider__slider-next"></div>
+			</div>
 	.inner.block
 		.center
 			h1 Компания SULPHOX «САЛФОКС»
 			p
 				big Салфокс — российская компания, которая производит системы очистки воздуха
-					br
+					
 					|  для канализационных насосных станций и очистных сооружений.
 			.video
 				video(src="video/v8.mp4").controls 

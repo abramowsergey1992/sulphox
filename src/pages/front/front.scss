@@ -580,15 +580,12 @@
 	align-items: center;
 	position: relative;
 
-	@media(max-height:800px) and (max-width:800px) {
+	@media(max-height:900px) and (max-width:800px) {
 		padding-bottom: 50px;
+		padding-top: 80px;
 	}
 
-	&>.btn {
-		@media(max-height:800px) and (max-width:800px) {
-			display: none;
-		}
-	}
+	&>.btn {}
 
 	.nefteprom {
 		&__fire-state {}
@@ -827,7 +824,7 @@
 
 		@media(max-height:800px) {
 			margin-top: 0;
-			max-width: 80%;
+
 
 			.front__column-wrap {
 				z-index: 10;
@@ -839,7 +836,8 @@
 			}
 		}
 
-		@media(max-height:800px) and (max-width:800px) {
+		@media(max-height:900px) and (max-width:800px) {
+			max-width: 345px;
 			margin-top: 20px;
 			max-width: 100%;
 			grid-template-columns: 1fr;
@@ -874,7 +872,7 @@
 	}
 
 	.nefteprom {
-		@media(max-height:800px) and (max-width:800px) {
+		@media(max-height:900px) and (max-width:800px) {
 			max-width: 400px;
 			margin-left: auto;
 			margin-right: auto;
@@ -884,7 +882,7 @@
 	}
 
 	.kns {
-		@media(max-height:800px) and (max-width:800px) {
+		@media(max-height:900px) and (max-width:800px) {
 			margin-bottom: 30px;
 			max-width: 450px;
 			margin-left: auto;

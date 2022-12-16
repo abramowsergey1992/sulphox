@@ -1,64 +1,64 @@
 .sertificate-block {
-    &__more {
-        position: relative;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: center;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 26px;
-        cursor: pointer;
-        letter-spacing: -0.04em;
-        margin-top: 80px;
+	&__more {
+		position: relative;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: center;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 26px;
+		cursor: pointer;
 
-        &:hover {
-            svg {
-                transform: scale(1.4);
-            }
-        }
+		margin-top: 80px;
 
-        &::before {
-            border-top: 1px solid #DFE8F3;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: 0;
-            display: block;
-            content: '';
-        }
+		&:hover {
+			svg {
+				transform: scale(1.4);
+			}
+		}
 
-        span {
-            z-index: 4;
-            position: relative;
-            padding: 0 30px;
-            background: #fff;
+		&::before {
+			border-top: 1px solid #DFE8F3;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			height: 0;
+			display: block;
+			content: '';
+		}
 
-            svg {
-                margin-right: 20px;
-                position: relative;
-                top: 2px;
-                transition: transform 0.3s;
-            }
-        }
-    }
+		span {
+			z-index: 4;
+			position: relative;
+			padding: 0 30px;
+			background: #fff;
+
+			svg {
+				margin-right: 20px;
+				position: relative;
+				top: 2px;
+				transition: transform 0.3s;
+			}
+		}
+	}
 }
 
 .mfp-title {
-    text-align: left;
-    line-height: 18px;
-    color: #F3F3F3;
-    word-wrap: break-word;
-    padding-right: 36px;
-    background: #000000b3;
-    display: inline;
-    position: absolute;
-    right: 0;
-    bottom: 4px;
-    ;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 5px 20px;
+	text-align: left;
+	line-height: 18px;
+	color: #F3F3F3;
+	word-wrap: break-word;
+	padding-right: 36px;
+	background: #000000b3;
+	display: inline;
+	position: absolute;
+	right: 0;
+	bottom: 4px;
+	;
+	font-weight: 500;
+	font-size: 14px;
+	padding: 5px 20px;
 }

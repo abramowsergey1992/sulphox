@@ -6,7 +6,7 @@ h1 {
 	font-size: 50px;
 	@include lh(50, 60);
 	line-height: 120%;
-	letter-spacing: -0.04em;
+
 	text-transform: uppercase;
 	color: $orange;
 	margin-top: 22px;
@@ -18,7 +18,7 @@ h1 {
 
 	@media (max-width:992px) {
 		font-size: 24px;
-		letter-spacing: -0.04em;
+
 	}
 }
 
@@ -29,7 +29,7 @@ h2 {
 	font-weight: 800;
 	font-size: 40px;
 	@include lh(40, 50);
-	letter-spacing: -0.04em;
+
 	text-transform: uppercase;
 	margin-top: 22px;
 	margin-bottom: 12px;
@@ -51,7 +51,7 @@ h3 {
 	font-weight: 700;
 	font-size: 24px;
 	@include lh(20, 34);
-	letter-spacing: -0.02em;
+
 	text-transform: uppercase;
 	margin-top: 22px;
 	margin-bottom: 12px;
@@ -73,7 +73,7 @@ h4 {
 	font-weight: 700;
 	font-size: 20px;
 	@include lh(20, 28);
-	letter-spacing: -0.02em;
+
 	text-transform: uppercase;
 	margin-top: 22px;
 	margin-bottom: 12px;
@@ -102,7 +102,7 @@ h5,
 	font-weight: 400;
 	font-size: 20px;
 	@include lh(20, 28);
-	letter-spacing: -0.04em;
+
 	color: $blue;
 	margin-bottom: 14px;
 

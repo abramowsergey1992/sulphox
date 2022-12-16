@@ -6,6 +6,7 @@
 	position: relative;
 	overflow: hidden;
 	border-radius: 30px;
+	min-height: 250px;
 
 	&__link {
 		position: absolute;
@@ -80,6 +81,11 @@
 			display: flex;
 			flex-direction: row;
 			gap: 15px;
+
+			@media (max-width: 992px) {
+				top: 55px;
+				right: 20px;
+			}
 		}
 
 		&-prev {
@@ -111,7 +117,7 @@
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 26px;
-			letter-spacing: -0.04em;
+
 			text-align: right;
 			left: initial !important;
 
@@ -196,7 +202,7 @@
 		font-weight: 400;
 		font-size: 16px;
 		margin-bottom: 10px;
-		letter-spacing: -0.04em;
+
 
 		@media(max-width:992px) {
 			font-size: 14px;
@@ -208,7 +214,7 @@
 		font-weight: 800;
 		font-size: 32px;
 		line-height: 140%;
-		letter-spacing: -0.04em;
+
 		text-transform: uppercase;
 		margin-bottom: 20px;
 

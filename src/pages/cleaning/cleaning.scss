@@ -78,7 +78,27 @@
 	background: $blue;
 	border-radius: 30px;
 	color: #fff;
-	padding: 80px 40px;
+	padding: 84px 20px 60px;
+
+	@media(max-width:992px) {
+		padding: 30px;
+	}
+
+	blockquote {
+		font-size: 16px;
+		line-height: 28px;
+
+
+		@media(max-width:992px) {
+			margin-bottom: 0px;
+			margin-top: 29px;
+		}
+	}
+
+	&__img-scroll {
+		// max-width: 571px;
+
+	}
 
 	@media(max-height:800px) and(min-width:800px) {
 		padding-top: 40px;
@@ -100,10 +120,7 @@
 			gap: 0 20px;
 		}
 
-		blockquote {
-			font-size: 14px;
-			line-height: 23px;
-		}
+
 
 		.h2 {
 			font-size: 22px;
@@ -124,16 +141,33 @@
 		border-radius: 0;
 	}
 
-	&__img-scroll {
-		@media(max-width:992px) {
-			overflow: auto;
-			max-width: calc(100vw - 20px);
+	&__left {
 
-			img {
-				min-width: 768px;
-				width: 100%;
-			}
+		.h2,
+		h2 {
+			margin-top: 9px;
 		}
+
+		.h3,
+		h3 {
+			@media(min-width:990px) {
+				font-size: 32px;
+			}
+
+			margin-bottom: 0;
+		}
+	}
+
+	&__img-scroll {
+		// @media(max-width:992px) {
+		// 	overflow: auto;
+		// 	max-width: calc(100vw - 20px);
+
+		// 	img {
+		// 		min-width: 768px;
+		// 		width: 100%;
+		// 	}
+		// }
 	}
 
 	.h2,
@@ -143,7 +177,7 @@
 		text-transform: none;
 		/* or  */
 
-		letter-spacing: -0.04em;
+
 
 		color: #FFFFFF;
 	}
@@ -157,9 +191,9 @@
 		color: #fff
 	}
 
-	&__right._bottom {
+	&__right {
 		display: flex;
-		align-items: flex-end;
+		flex-direction: column;
 	}
 
 	&__legend {
@@ -169,8 +203,8 @@
 		line-height: 100%;
 
 		&-color {
-			width: 42px;
-			height: 5px;
+			width: 45px;
+			height: 4px;
 			margin-right: 11px;
 			position: relative;
 			top: 6px;
@@ -178,20 +212,35 @@
 	}
 
 	&__legends {
-		padding-left: 40px;
-		gap: 40px;
+		gap: 20px;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		margin-top: auto;
 
 		@media(max-width:992px) {
-			display: none;
+			order: -1;
+			margin-bottom: 15px;
 		}
 	}
 
 	&__row-2 {
 		display: grid;
-		grid-template-columns: auto 40%;
+		grid-template-columns: auto 390px;
 		grid-gap: 25px 50px;
+
+		margin-right: -50px;
+
+		@media(max-width:1440px) {
+			margin-right: calc(-1 * ((100vw - 1164px)/2) + 90px);
+		}
+
+		@media(max-width:1300px) {
+			margin-right: calc(-1 * ((100vw - 1164px)/2) + 60px);
+		}
+
+		@media(max-width:1200px) {
+			margin-right: 0px;
+		}
 
 		@media(max-width:992px) {
 			grid-template-columns: 1fr;
@@ -201,7 +250,7 @@
 
 	&__row {
 		display: grid;
-		grid-template-columns: auto 380px;
+		grid-template-columns: auto 343px;
 		grid-gap: 25px 50px;
 
 		@media(max-width:992px) {
