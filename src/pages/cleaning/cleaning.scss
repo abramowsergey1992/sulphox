@@ -80,11 +80,41 @@
 	color: #fff;
 	padding: 80px 40px;
 
-	@media(max-height:800px) {
+	@media(max-height:800px) and(min-width:800px) {
 		padding-top: 40px;
 		padding-left: 20px;
 		padding-right: 20px;
 		padding-bottom: 30px;
+		max-width: 880px;
+		max-width: 880px;
+		margin-left: auto;
+		margin-right: auto;
+
+		.efficiency__legend {
+			line-height: 1;
+			font-size: 12px;
+		}
+
+		.efficiency__row {
+			grid-template-columns: auto 329px;
+			gap: 0 20px;
+		}
+
+		blockquote {
+			font-size: 14px;
+			line-height: 23px;
+		}
+
+		.h2 {
+			font-size: 22px;
+			margin: 0;
+			margin-bottom: 4px;
+		}
+
+		p {
+			line-height: 1;
+			font-size: 12px;
+		}
 	}
 
 	@media(max-width:992px) {

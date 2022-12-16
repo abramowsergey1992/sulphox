@@ -27,7 +27,7 @@ $(function () {
 		gallery: {
 			enabled: true,
 		},
-		delegate: "a",
+		delegate: ".sertificate-it__text",
 		type: "image",
 	});
 });

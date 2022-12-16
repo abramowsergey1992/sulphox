@@ -6,6 +6,12 @@ if (document.querySelector(".history")) {
 		let progress = history.querySelector(".history__progress-line");
 
 		//создаем слайдер
+		const swiper = new Swiper(history.querySelector(".one-slider"), {
+			slidesPerView: 1,
+			slideToClickedSlide: true,
+			centeredSlides: true,
+		});
+		//создаем слайдер
 		const swiper = new Swiper(history.querySelector(".history-slider"), {
 			slidesPerView: 1,
 			slideToClickedSlide: true,

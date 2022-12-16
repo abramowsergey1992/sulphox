@@ -54,9 +54,63 @@ if (document.querySelector(".solutions-slider")) {
 				nextEl: next,
 				prevEl: prev,
 			},
+			preventClicks: false,
+			preventClicksPropagation: false,
 			spaceBetween: 21,
 			setWrapperSize: true,
 			slidesPerView: "auto",
+			on: {
+				resize: function () {
+					const slider = this;
+					const wrapper = this.wrapperEl;
+					let mh = 0;
+
+					[].forEach.call(slider.slides, function (slide) {
+						let title = slide.querySelector(".catalog-2__title");
+						title.style.height = "";
+						if (title.offsetHeight >= mh) {
+							mh = title.offsetHeight;
+						}
+
+						slide.style.height = "";
+					});
+
+					setTimeout(() => {
+						[].forEach.call(slider.slides, function (slide) {
+							slide.style.height = wrapper.clientHeight + "px";
+							let title =
+								slide.querySelector(".catalog-2__title");
+							title.style.height = mh + "px";
+						});
+					}, 300);
+				},
+				init: function () {
+					const slider = this;
+					let mh = 0;
+					const wrapper = this.wrapperEl;
+
+					[].forEach.call(slider.slides, function (slide) {
+						slide.style.height = "";
+						let title = slide.querySelector(".catalog-2__title");
+						title.style.height = "";
+
+						if (title.offsetHeight >= mh) {
+							mh = title.offsetHeight;
+						}
+						console.log(mh);
+					});
+
+					setTimeout(() => {
+						[].forEach.call(slider.slides, function (slide) {
+							slide.style.height = wrapper.clientHeight + "px";
+							let title =
+								slide.querySelector(".catalog-2__title");
+
+							title.style.height = mh + "px";
+						});
+					}, 300);
+				},
+			},
 		});
 	});
 }

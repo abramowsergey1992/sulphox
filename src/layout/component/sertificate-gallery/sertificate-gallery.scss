@@ -8,6 +8,7 @@
 .sertificate-it {
 	position: relative;
 	overflow: hidden;
+	padding-bottom: 30px;
 
 	.sertificate-block & {
 		margin-bottom: 20px;
@@ -60,10 +61,16 @@
 		line-height: 22px;
 		/* identical to box height, or 157% */
 
-		text-align: center;
+		text-align: left;
 		text-transform: uppercase;
 		text-decoration: none;
 		transition: none;
+		display: block;
+		position: relative;
+		z-index: 10;
+		position: absolute;
+		left: 0;
+		bottom: 0;
 
 		&:hover {
 			color: $orange;

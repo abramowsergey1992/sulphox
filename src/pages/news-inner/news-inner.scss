@@ -1,6 +1,10 @@
 .news-detail {
 	margin-top: -50px;
 
+	@media(max-height:850px) {
+		margin-top: -15px;
+	}
+
 	@media(max-width:992px) {
 		margin-top: 0px;
 	}

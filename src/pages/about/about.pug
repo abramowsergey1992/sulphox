@@ -3,6 +3,15 @@ block title
 	title Салфокс
 block content
 	+breadcrumb(['Главная'], 'О компании')
+	.inner.block 
+		.swiper.one-slider
+			.swiper-wrapper 
+				.swiper-slide
+					video(preload="metadata" src="video/v8.mp4") 
+				.swiper-slide
+					+picture('news-1','jpg')
+				.swiper-slide
+					+picture('news-1','jpg')
 	.inner.block
 		.center
 			h1 Компания SULPHOX «САЛФОКС»
