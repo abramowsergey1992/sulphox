@@ -60,6 +60,7 @@
 			overflow: hidden;
 			max-height: 500px;
 			margin-bottom: 20px;
+			padding-top: 4px;
 
 			._open-item & {
 				max-height: 0;
@@ -94,6 +95,7 @@
 
 		._open-item & {
 			max-height: 0;
+			opacity: 0;
 		}
 
 		li {
@@ -119,8 +121,10 @@
 	&__menu-drop-item {
 		max-height: 0;
 		// transition: max-height 0.3s;
+		opacity: 0;
 
 		._open & {
+			opacity: 1;
 			max-height: 699px;
 		}
 
@@ -132,7 +136,11 @@
 		}
 
 		ul {
-			margin-top: 30px;
+			.mobmenu__menu-li._open & {
+				margin-top: 20px;
+			}
+
+			margin-top: 10px;
 		}
 
 		li {

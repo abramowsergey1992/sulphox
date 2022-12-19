@@ -219,7 +219,9 @@ block content
 								input(type="radio",name="quiz-1",value="Небольшая канализационная насосная станция").quiz-radio__input
 								span.quiz-radio__indicator 
 								span.quiz-radio__text Небольшая канализационная насосная станция
-							button(type='button',disabled,status="step",step="1",url="json/step-2.json",method='GET').quiz-slider__next.btn-arrow  Далее
+							.quiz-slider__btns
+								button(type='button').quiz-slider__prev.btn-arrow  Назад
+								button(type='button',disabled,status="step",step="1",url="json/step-2.json",method='GET').quiz-slider__next.btn-arrow  Далее
 						.swiper-slide
 						.swiper-slide
 						.swiper-slide

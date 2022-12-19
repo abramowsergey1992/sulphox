@@ -64,6 +64,11 @@ if (document.querySelector(".quiz-slider")) {
 				.removeAttribute("disabled");
 		});
 	});
+	$(document).on("click", ".quiz-slider__prev", function () {
+		let wrapper = $(this).closest(".swiper");
+		let swiper = $(this).closest(".swiper")[0].swiper;
+		swiper.slidePrev();
+	});
 	$(document).on("click", ".quiz-slider__next", function () {
 		let wrapper = $(this).closest(".swiper");
 		let nextSlide = $(this).closest(".swiper-slide").next(".swiper-slide");
@@ -92,11 +97,11 @@ if (document.querySelector(".quiz-slider")) {
 								<input class="quiz-radio__input" type="radio" name="${i.name}" value="${i.value}"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">${i.text}</span>
 							</label>`;
 						});
-						html += `<button class="quiz-slider__next btn-arrow" type="button" disabled="" status="${
+						html += `<div class="quiz-slider__btns"><button class="quiz-slider__prev btn-arrow" type="button">НАЗАД<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"></path></svg></button><button class="quiz-slider__next btn-arrow" type="button" disabled="" status="${
 							data.status
 						}" url="${data.url}" method="${data.method}">${
 							data.status == "step" ? "Далее" : "Завершить"
-						}<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"></path></svg></button>`;
+						}<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"></path></svg></button></div>`;
 						nextSlide.html(html);
 						console.log("swiper", swiper);
 						swiper.slideNext();

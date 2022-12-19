@@ -257,7 +257,10 @@
                   <label class="quiz-radio">
                     <input class="quiz-radio__input" type="radio" name="quiz-1" value="Небольшая канализационная насосная станция"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">Небольшая канализационная насосная станция</span>
                   </label>
-                  <button class="quiz-slider__next btn-arrow" type="button" disabled status="step" step="1" url="json/step-2.json" method="GET"> Далее</button>
+                  <div class="quiz-slider__btns">
+                    <button class="quiz-slider__prev btn-arrow" type="button"> Назад</button>
+                    <button class="quiz-slider__next btn-arrow" type="button" disabled status="step" step="1" url="json/step-2.json" method="GET"> Далее</button>
+                  </div>
                 </div>
                 <div class="swiper-slide"></div>
                 <div class="swiper-slide"></div>
@@ -811,7 +814,8 @@
         </div>
       </div>
     </div>
-    <button class="fixed-question" data-popup="#feedback"><span>Задать вопрос</span></button><script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    <button class="fixed-question" data-popup="#feedback"><span>Задать вопрос</span></button><div id="cookies" class="coockie ">Мы используем файлы <a href="/policy">cookie</a>. Они помогают улучшить ваше взаимодействие с сайтом.<button class="btn coockie__btn">Ок</button>
+</div><script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
 </script>
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>

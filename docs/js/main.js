@@ -1,3 +1,4 @@
+$(function(){})
 //создаем слайдер
 document.querySelectorAll(".one-slider").forEach((slider) => {
 	let pagination = slider.querySelector(".one-slider__slider-paginator");
@@ -170,6 +171,19 @@ if (document.querySelector(".ours-project")) {
 }
 
 
+if (document.querySelector(".catalog")) {
+	document.querySelectorAll(".catalog__wrap").forEach((catalog) => {
+		let moreBtn = catalog.querySelector(".catalog__more");
+		console.log("moreBtn", moreBtn);
+		let pageLength = moreBtn.dataset.pagelenght;
+		let items = catalog.querySelectorAll(".catalog-1,.catalog-2");
+		moreRender(pageLength, items, true, moreBtn);
+		moreBtn.addEventListener("click", function () {
+			moreRender(pageLength, items, false, moreBtn);
+		});
+	});
+}
+
 
 // Фильт-слайдер Наших проектов
 if (document.querySelector(".presentations")) {
@@ -212,15 +226,25 @@ $(function () {
 	});
 });
 
-if (document.querySelector(".catalog")) {
-	document.querySelectorAll(".catalog__wrap").forEach((catalog) => {
-		let moreBtn = catalog.querySelector(".catalog__more");
-		console.log("moreBtn", moreBtn);
-		let pageLength = moreBtn.dataset.pagelenght;
-		let items = catalog.querySelectorAll(".catalog-1,.catalog-2");
-		moreRender(pageLength, items, true, moreBtn);
-		moreBtn.addEventListener("click", function () {
-			moreRender(pageLength, items, false, moreBtn);
+// Метод отчистки слайдер
+if (document.querySelector(".cleaning-method")) {
+	document.querySelectorAll(".cleaning-method").forEach((method) => {
+		const swiper = new Swiper(
+			method.querySelector(".cleaning-method__swiper"),
+			{
+				speed: 400,
+				allowTouchMove: false,
+			}
+		);
+		let filters = method.querySelectorAll(".cleaning-method__btn");
+		filters.forEach((filter) => {
+			filter.addEventListener("click", function () {
+				filters.forEach((filter) => {
+					filter.classList.remove("_active");
+				});
+				filter.classList.add("_active");
+				swiper.slideTo(filter.dataset.slide);
+			});
 		});
 	});
 }
@@ -373,29 +397,6 @@ if (document.querySelector(".solutions-slider")) {
 }
 
 $(function(){})
-// Метод отчистки слайдер
-if (document.querySelector(".cleaning-method")) {
-	document.querySelectorAll(".cleaning-method").forEach((method) => {
-		const swiper = new Swiper(
-			method.querySelector(".cleaning-method__swiper"),
-			{
-				speed: 400,
-				allowTouchMove: false,
-			}
-		);
-		let filters = method.querySelectorAll(".cleaning-method__btn");
-		filters.forEach((filter) => {
-			filter.addEventListener("click", function () {
-				filters.forEach((filter) => {
-					filter.classList.remove("_active");
-				});
-				filter.classList.add("_active");
-				swiper.slideTo(filter.dataset.slide);
-			});
-		});
-	});
-}
-
 //квиз
 if (document.querySelector(".quiz-slider")) {
 	// let qtitle = <h2 class="quiz-slider__title"></h2>;
@@ -462,6 +463,11 @@ if (document.querySelector(".quiz-slider")) {
 				.removeAttribute("disabled");
 		});
 	});
+	$(document).on("click", ".quiz-slider__prev", function () {
+		let wrapper = $(this).closest(".swiper");
+		let swiper = $(this).closest(".swiper")[0].swiper;
+		swiper.slidePrev();
+	});
 	$(document).on("click", ".quiz-slider__next", function () {
 		let wrapper = $(this).closest(".swiper");
 		let nextSlide = $(this).closest(".swiper-slide").next(".swiper-slide");
@@ -490,11 +496,11 @@ if (document.querySelector(".quiz-slider")) {
 								<input class="quiz-radio__input" type="radio" name="${i.name}" value="${i.value}"><span class="quiz-radio__indicator"> </span><span class="quiz-radio__text">${i.text}</span>
 							</label>`;
 						});
-						html += `<button class="quiz-slider__next btn-arrow" type="button" disabled="" status="${
+						html += `<div class="quiz-slider__btns"><button class="quiz-slider__prev btn-arrow" type="button">НАЗАД<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"></path></svg></button><button class="quiz-slider__next btn-arrow" type="button" disabled="" status="${
 							data.status
 						}" url="${data.url}" method="${data.method}">${
 							data.status == "step" ? "Далее" : "Завершить"
-						}<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"></path></svg></button>`;
+						}<svg width="14" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m7.593 8.393-.707.707L8.3 10.514l.707-.707-1.414-1.414ZM11.9 5.5l.707.707.707-.707-.707-.707-.707.707ZM9.007 1.193 8.3.486 6.886 1.9l.707.707 1.414-1.414Zm0 8.614 3.6-3.6-1.414-1.414-3.6 3.6 1.414 1.414Zm3.6-5.014-3.6-3.6-1.414 1.414 3.6 3.6 1.414-1.414ZM11.9 4.5H.2v2h11.7v-2Z"></path></svg></button></div>`;
 						nextSlide.html(html);
 						console.log("swiper", swiper);
 						swiper.slideNext();
@@ -986,6 +992,23 @@ $(function () {
 	}
 });
 
+document.querySelectorAll(".video").forEach((item) => {
+	let video = item.querySelector("video");
+	let play = document.createElement("div");
+	play.classList.add("video__play");
+	play.innerHTML =
+		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
+	video.addEventListener("click", function () {
+		video.pause();
+		fadeIn(play, 300, "flex");
+	});
+	play.addEventListener("click", function () {
+		video.play();
+		fadeOut(play, 300, "flex");
+	});
+	item.append(play);
+});
+
 document.querySelectorAll(".project").forEach((project) => {
 	project.querySelectorAll(".project__slider").forEach((item) => {
 		let length = item.querySelectorAll(".swiper-slide").length;
@@ -1021,21 +1044,8 @@ document.querySelectorAll(".project").forEach((project) => {
 	});
 });
 
-document.querySelectorAll(".video").forEach((item) => {
-	let video = item.querySelector("video");
-	let play = document.createElement("div");
-	play.classList.add("video__play");
-	play.innerHTML =
-		'<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 42V2L30 22L2 42Z" stroke="white" stroke-width="3" stroke-linejoin="round"/></svg>';
-	video.addEventListener("click", function () {
-		video.pause();
-		fadeIn(play, 300, "flex");
-	});
-	play.addEventListener("click", function () {
-		video.play();
-		fadeOut(play, 300, "flex");
-	});
-	item.append(play);
+$(function () {
+	$(".project__body").click(function () {});
 });
 
 // Галлерея сертификатоф

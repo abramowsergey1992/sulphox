@@ -282,6 +282,11 @@
 	.swiper-slide {
 		width: 320px;
 		height: 100%;
-		pointer-events: all !important;
+
 	}
+}
+
+.sulutions-tabs .swiper-slide-active .swiper-slide {
+	pointer-events: all !important;
+
 }

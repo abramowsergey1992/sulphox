@@ -95,7 +95,7 @@ img {
 	}
 
 	@media (max-width: 992px) {
-		margin-bottom: 80px;
+		margin-bottom: 50px;
 	}
 
 	&__desc {
@@ -132,6 +132,10 @@ img {
 		.h1 {
 			margin: 0;
 			margin-right: AUTO;
+
+			@media(min-width:992px) {
+				margin-top: 6px;
+			}
 		}
 	}
 }
@@ -170,6 +174,8 @@ img {
 .constructor_image {
 	border-radius: 30px;
 	max-height: calc(100vh - 160px);
+	margin: 0 auto;
+	display: block;
 }
 
 .pmt-minimal {
@@ -249,4 +255,65 @@ sub {
 	vertical-align: sub;
 	margin: -31px 0;
 	display: inline-block;
+}
+
+#cookies {
+	display: none;
+	position: fixed;
+	left: 50%;
+	bottom: 10px;
+	color: #2e4256;
+	max-width: calc(100% - 40px);
+	padding: 25px 25px;
+	transform: translateX(-50%);
+	width: 918px;
+	background: rgba(255, 255, 255, 42%);
+	border: 1px solid $blue;
+	background: #ffffffd6;
+	box-sizing: border-box;
+	backdrop-filter: blur(15px);
+	border-radius: 3px;
+
+}
+
+#cookies._open {
+	display: block;
+}
+
+#cookies a {
+	color: $blue;
+	text-decoration: underline;
+}
+
+#cookies a:hover {
+	text-decoration: none;
+}
+
+#cookies .btn {
+
+	min-width: 150px;
+
+}
+
+#cookies .btn:hover {
+	background: #fff;
+	border-color: $blue;
+	color: $blue;
+}
+
+@media(min-width: 700px) {
+	#cookies {
+		padding-right: 205px;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	#cookies .btn {
+		padding: 10px;
+		position: absolute;
+		margin-top: 0;
+		right: 25px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }

@@ -640,6 +640,10 @@
 		transform: translateX(-50%);
 		bottom: 150px;
 		pointer-events: none;
+
+		@media(max-width:992px) {
+			display: none !important;
+		}
 	}
 
 	&::before {
@@ -823,7 +827,7 @@
 		width: 100%;
 
 		@media(max-height:800px) {
-			margin-top: 0;
+			margin-top: 10px;
 
 
 			.front__column-wrap {
@@ -833,6 +837,10 @@
 			.kns,
 			.nefteprom {
 				margin-top: -40px;
+				// max-width: 450px;
+				// margin-left: auto;
+				// margin-right: auto;
+				// width: 100%;
 			}
 		}
 
@@ -872,7 +880,7 @@
 	}
 
 	.nefteprom {
-		@media(max-height:900px) and (max-width:800px) {
+		@media(max-height:900px) and (min-width:800px) {
 			max-width: 400px;
 			margin-left: auto;
 			margin-right: auto;
@@ -882,7 +890,7 @@
 	}
 
 	.kns {
-		@media(max-height:900px) and (max-width:800px) {
+		@media(max-height:900px) and (min-width:800px) {
 			margin-bottom: 30px;
 			max-width: 450px;
 			margin-left: auto;
