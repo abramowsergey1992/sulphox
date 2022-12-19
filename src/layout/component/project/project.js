@@ -32,3 +32,7 @@ document.querySelectorAll(".project").forEach((project) => {
 		}, 1000 * Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 	});
 });
+
+$(function () {
+	$(".project__body").click(function () {});
+});
