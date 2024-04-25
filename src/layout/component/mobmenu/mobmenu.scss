@@ -65,8 +65,10 @@
 			._open-item & {
 				max-height: 0;
 				margin-bottom: 0;
+				padding: 0;
 
 				&._open {
+					padding-top: 4px;
 					max-height: 700px;
 				}
 			}
